@@ -1,6 +1,6 @@
 # MWC_2.0
-## Welcome to this github repository
-## We are HÍ HÍ HÌ HÌ from HCMUT (Ho Chi Minh University of Technology)
+**Welcome to this github repository**
+**We are HÍ HÍ HÌ HÌ from HCMUT (Ho Chi Minh University of Technology)**
 ## Introduction
 This MWC Project is our Software Engineering's capstone project. In this project we will try to implement an MWC system from scratch.
 There will multiple steps from analyze requirement to modelling and finally a Desktop-view central  dashboard websites made by our team.
