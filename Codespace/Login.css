@@ -9,12 +9,12 @@ body {
 .login {
     float: left;
     width: 400px;
-    height: 400px;
+    height: 390px;
     border: 5px double #0c612f;
     background-color: rgb(236, 236, 236);
     text-align: center;
     border-radius: 10px;
-    margin-left: 130px;
+    margin-left: 110px;
     margin-top: 150px;
 }
 .login h1 {
