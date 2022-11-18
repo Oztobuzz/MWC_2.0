@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
 }
+section{
+    height: 100%;
+}
 .login {
     float: left;
     width: 400px;
@@ -15,7 +18,7 @@ body {
     text-align: center;
     border-radius: 10px;
     margin-left: 110px;
-    margin-top: 150px;
+    margin-top: 80px;
 }
 .login h1 {
     display: inline-block;
@@ -24,6 +27,15 @@ body {
     font-family: sans-serif;
     color: #023822;
     font-weight: 750;
+}
+.nav h2 {
+    display: inline-block;
+    margin-top: -20px;
+    color: white;
+    font-size: 75px; 
+    font-weight: 1000;
+    font-family: sans-serif;
+    text-align: center;
 }
 .login input {
     height: 45px;
@@ -61,13 +73,8 @@ body {
 }
 .nav {
     float: left;
-    height: 1000px;
+    height: 65vh;
     width: 50%;
     background-image: url(dark-green.jpg);
-    color: white;
-    font-size: 75px; 
-    font-weight: 1000;
-    font-family: sans-serif;
-    padding-top: 250px;
-    text-align: center;
+    padding-top: 200px;
 }
