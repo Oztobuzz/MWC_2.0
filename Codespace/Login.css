@@ -28,7 +28,7 @@ section{
     color: #023822;
     font-weight: 750;
 }
-.nav h2 {
+.span h2 {
     display: inline-block;
     margin-top: -20px;
     color: white;
@@ -71,7 +71,7 @@ section{
 .login button:hover {
     font-size: 19px;
 }
-.nav {
+.span {
     float: left;
     height: 65vh;
     width: 50%;
