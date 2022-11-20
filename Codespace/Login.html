@@ -13,13 +13,26 @@
         <br>
         <p>Username</p>
         <br>
-        <input type="text" placeholder="Enter Username">
+        <input type="text" id="username" placeholder="Enter Username">
         <br>
         <p>Password</p>
         <br>
-        <input type="password" placeholder="Enter Password">
+        <input type="password" id="password" placeholder="Enter Password">
         <br>
-        <button>Login</button>
+        <button onclick="auth()">Login</button>
     </div>
+    <script>
+        function auth() {
+            /*var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;*/
+            if (document.getElementById("username").value == "Gia Linh Tran" && document.getElementById("password").value == "00990022") {
+                window.location.assign("main.html");
+            }
+            else {
+                alert("Invalid Information");
+                return;
+            }
+        }
+    </script>
 </body>
 </html>
