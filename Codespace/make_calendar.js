@@ -131,3 +131,27 @@ function gotoDate() {
     alert("Invalid date");
 }
 
+
+
+// Popup
+
+let PreDate = document.querySelectorAll(".prev-date");
+
+
+function openPopup(){
+    document.getElementById('popup').classList.add('open-popup');
+    document.querySelector('body').classList.add('stop-scrolling');
+}
+function closePopup(){
+    document.getElementById('popup').classList.remove('open-popup');
+    document.querySelector('body').classList.remove('stop-scrolling');
+}
+
+let dayArray = document.querySelectorAll(".day");
+
+dayArray.forEach(element => {
+    if(element.classList.value !== "day prev-date" 
+        && element.classList.value !== 'day next-date'){
+        element.addEventListener("click", openPopup);
+    }
+});

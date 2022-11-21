@@ -7,6 +7,8 @@
     <title>Overall calendar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.0/css/font-awesome.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -50,30 +52,45 @@
             </div>
         </div>
 
-        <div class="right">
-            <div class="today-date">
-                <div class="event-day">Web</div>
-                <div class="event-date">18 November 2022</div>
-            </div>
-            <div class="events">
-                <div class="event">
-                    <div class="title">
+    </div>
+
+    <div class="popup-assign" id="popup">
+        <div class="assign-box">
+            <div class="frame f1">
+                <div class="today-date">
+                    <div class="event-date">18 November 2022</div>
+                </div>
+                <div class="events">
+                    <div class="event">
                         <i class="fa fa-circle"></i>
                         <h3 class="event-title">Event 1</h3>
                     </div>
+                    <div class="event">
+                        <i class="fa fa-circle"></i>
+                        <h3 class="event-title">Event 2</h3>
+                </div>
+                </div>
+                <div class="add-task-area">
+                    <button class="add-btn">
+                        <p>Add task</p>
+                        <i class="fa fa-plus close"></i>
+                    </button>
                 </div>
             </div>
-            <div class="title">Add task</div>
-            <div class="add-event-wrapper">
-                <i class="fa fa-plus close"></i>
+            <div class="frame f2">
+                <div class="empty-div"></div>
+                <div class="assign-task"></div>
+                <div class="confirm-task-area"></div>
             </div>
+            <div class="frame f3">
+                <div class="close-box">
+                    <i class="fa fa-times" onclick=closePopup()></i>
+                </div>
+                <div class="info-up"></div>
+            </div>
+        </div>  
         </div>
-    </div>
-
-    <div class="add-event-body">
-        <div class="add-event-input">
-
-        </div>
+        <!-- <button type="button" onclick="closePopup()">OK</button> -->
     </div>
 
     <script src="make_calendar.js"></script>
