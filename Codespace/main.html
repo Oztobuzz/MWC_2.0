@@ -6,49 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overall calendar</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            margin: 0;
-        }
-
-        .container {
-            width: 100vw;
-            height: 10vh;
-
-            font-family: 'Quicksand', sans-serif;
-            font-weight: bold;
-            font-size: 20px;
-
-            display: grid;
-
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: 50px 1fr 1fr 100px;
-
-            gap: 0;
-
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container a {
-            padding: 10px;
-            border: 1px solid #256b25;
-            background-color: #256b25;
-            text-decoration: none;
-            color: white;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container">
-        <a href='' class="header" style="text-decoration: underline">DASHBOARD</a>
-        <a href='' class="header">WORKER</a>
-        <a href='' class="header">VEHICLE</a>
-        <a href='' class="header">MCPS</a>
-        <a href='' class="header">CONTACT</a>
-        <a href='' class="header">LOGOUT</a>
+        <ul>
+            <li><a href='#' class="fa fa-tachometer" style="text-decoration: underline">DASHBOARD</a></li>
+            <li><a href='#' class="fa fa-male">WORKER</a></li>
+            <li><a href='#' class="fa fa-truck">VEHICLE</a></li>
+            <li><a href='#' class="fa fa-trash">MCP</a></li>
+            <li><a href='#' class="fa fa-phone">CONTACT</a></li>
+            <li><a href='#' class="fa fa-sign-out">LOGOUT</a></li>
+        </ul>
     </div>
 
     <div class="container1">
@@ -81,20 +50,17 @@
             </div>
         </div>
 
-<!--        <div class="right">-->
-<!--            <div class="logo">-->
-<!--                <a href="#" id="click-a"><i class="fa fa-bars"></i></a>-->
-<!--            </div>-->
+        <div class="right">
+            <div class="today-date">
+                <div class="event-day">Web</div>
+                <div class="event-date">18 November 2022</div>
+            </div>
+            <div class="events">
+                <div class="event">
 
-<!--            <div class="task ">-->
-<!--                <ul>-->
-<!--                    <li><a href="#">Task1</a></li>-->
-<!--                    <li><a href="#">Task1</a></li>-->
-<!--                    <li><a href="#">Task1</a></li>-->
-<!--                    <li><a href="#">Task1</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="make_calendar.js"></script>

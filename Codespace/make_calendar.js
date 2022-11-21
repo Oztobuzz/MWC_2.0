@@ -131,10 +131,3 @@ function gotoDate() {
     alert("Invalid date");
 }
 
-getbar = document.querySelector(".logo");
-getbar.addEventListener("click", showTask);
-
-function showTask() {
-    let div1 = document.querySelector('.task');
-    div1.classList.toggle('task-view');
-}
