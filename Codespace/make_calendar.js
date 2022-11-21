@@ -137,7 +137,6 @@ function gotoDate() {
 
 let PreDate = document.querySelectorAll(".prev-date");
 
-
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
