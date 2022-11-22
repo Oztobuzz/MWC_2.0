@@ -1,0 +1,57 @@
+body{
+  background-color:whitesmoke;
+}
+
+.cardlist{
+  background-color: grey;
+  margin: 0px 20px;
+
+}
+
+.header{
+  display:flex;  
+}
+
+.card{
+  display: flex;
+  border: 1px black solid;
+  padding: 5px 5px;
+  font-size: medium;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  height: 30px;
+}
+.header
+{
+  display: flex;
+  border: 1px black solid;
+  padding: 5px 5px;
+  font-size: medium;
+  justify-content: space-between;
+  
+}
+.header h2{
+  width: 300px;
+  text-align: left;
+  padding: 0px 30px;
+  font-weight: 900;
+  color: aliceblue;
+}
+.card p{
+  width: 300px;
+  text-align: left;
+  padding: 0px 30px;
+  font-size: small;
+}
+
+.card:hover{
+  scale: 102%;
+}
+
+.searchBox{
+  width: 80%;
+  margin: 20px;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 0px 10px;
+}

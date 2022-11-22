@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overall calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="#"><i class="fa fa-tachometer"></i>DASHBOARD</a></li>
+            <li><a href="#"><i class="fa fa-male"></i>WORKER</a></li>
+            <li><a href="#"><i class="fa fa-truck"></i>VEHICLE</a></li>
+            <li><a href="#"><i class="fa fa-trash"></i>MCP</a></li>
+            <li><a href="#"><i class="fa fa-phone"></i>CONTACT</a></li>
+            <li><a href="#"><i class="fa fa-sign-out"></i>LOGOUT</a></li>
+        </ul>
+    </div>
+
+    <div class="container1">
+        <div class="left">
+            <div class="calendar">
+                <div class="month">
+                    <i class="fa fa-angle-left prev change-month"></i>
+                    <div class="date"></div>
+                    <i class="fa fa-angle-right next change-month"></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sunday</div>
+                    <div>Monday</div>
+                    <div>Tuesday</div>
+                    <div>Wednesday</div>
+                    <div>Thursday</div>
+                    <div>Friday</div>
+                    <div>Saturday</div>
+                </div>
+                <div class="days">
+                    <!-- js -->
+                </div>
+                <div class="goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn go-btn">Go</button>
+                    </div>
+                    <button class="today-btn go-btn">Today</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="popup-assign" id="popup">
+        <div class="assign-box">
+            <div class="frame f1">
+                <div class="today-date">
+                    <div class="event-date">18 November 2022</div>
+                </div>
+                <div class="events">
+                    <div class="event">
+                        <i class="fa fa-circle"></i>
+                        <h3 class="event-title">Event 1</h3>
+                    </div>
+                    <div class="event">
+                        <i class="fa fa-circle"></i>
+                        <h3 class="event-title">Event 2</h3>
+                    </div>
+                    <div class="event">
+                        <i class="fa fa-circle"></i>
+                        <h3 class="event-title">Event 2</h3>
+                    </div>
+                </div>
+                <div class="add-task-area">
+                    <button class="add-btn">
+                        <p>Add task</p>
+                        <i class="fa fa-plus close"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="frame f2">
+                <div class="empty-div"></div>
+                <div class="assign-task"></div>
+                <div class="confirm-task-area"></div>
+            </div>
+            <div class="frame f3">
+                <div class="close-box">
+                    <i class="fa fa-times" onclick=closePopup()></i>
+                </div>
+                <div class="info-up"></div>
+            </div>
+        </div>  
+        </div>
+    </div>
+
+    <script src="make_calendar.js"></script>
+
+</body>
+</html>
