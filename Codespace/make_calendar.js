@@ -135,8 +135,6 @@ function gotoDate() {
 
 // Popup
 
-let PreDate = document.querySelectorAll(".prev-date");
-
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
@@ -146,11 +144,18 @@ function closePopup(){
     document.querySelector('body').classList.remove('stop-scrolling');
 }
 
-let dayArray = document.querySelectorAll(".day");
+function addPopup() {
+    document.querySelectorAll(".day").forEach(element => {
+        if(element.classList.value !== "day prev-date" 
+            && element.classList.value !== 'day next-date'){
+            element.addEventListener("click", openPopup);
+        }
+    });
+}
 
-dayArray.forEach(element => {
-    if(element.classList.value !== "day prev-date" 
-        && element.classList.value !== 'day next-date'){
-        element.addEventListener("click", openPopup);
-    }
-});
+addPopup();
+
+document.querySelectorAll(".change-month").forEach(element => {
+    element.addEventListener("click", addPopup);
+})
+
