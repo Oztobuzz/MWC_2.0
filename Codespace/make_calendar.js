@@ -159,3 +159,7 @@ document.querySelectorAll(".change-month").forEach(element => {
     element.addEventListener("click", addPopup);
 })
 
+document.querySelectorAll(".go-btn").forEach(element => {
+    element.addEventListener("click", addPopup);
+})
+
