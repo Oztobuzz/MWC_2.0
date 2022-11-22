@@ -1,0 +1,146 @@
+[
+  {
+    "ID": "JNT001",
+    "Name": "Thế Phi Cường",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT003",
+    "Name": "Vưu Nghĩa Dũng",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT002",
+    "Name": "Thạch Minh Khôi",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT112",
+    "Name": "Nhâm Tuấn Hải",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT342",
+    "Name": "Đỗ Thiện Minh",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT130",
+    "Name": "Ngạc Việt Phương",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT452",
+    "Name": "Ngọ Ðình Quảng",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT855",
+    "Name": "Ung Chiến Thắng",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT999",
+    "Name": "Xung Mạnh Ðình",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT004",
+    "Name": "Thi Trọng Khánh",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT142",
+    "Name": "Mẫn Cao Kỳ",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT734",
+    "Name": "Giàng Ðức Minh",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT232",
+    "Name": "Phùng Thiện Ngôn",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT464",
+    "Name": "Điêu Duy Quang",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT7462",
+    "Name": "Cát Ðình Trung",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT822",
+    "Name": "Tiếp Hữu Vượng",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT546",
+    "Name": "Thành Trung Dũng",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT832",
+    "Name": "Quách Hữu Hiệp",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT133",
+    "Name": "Tôn Thất Thành Long",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT875",
+    "Name": "Đào Quốc Trường",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT654",
+    "Name": "Đào Quốc Trường",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT363",
+    "Name": "Kông Ngọc Khôi",
+    "Role": "Janitor",
+    "State": "Free"
+  },
+  {
+    "ID": "CLT738",
+    "Name": "Liễu Thiên Mạnh",
+    "Role": "Collector",
+    "State": "Free"
+  },
+  {
+    "ID": "JNT360",
+    "Name": "Mạc Hoàng Thái",
+    "Role": "Janitor",
+    "State": "Free"
+  }
+]
