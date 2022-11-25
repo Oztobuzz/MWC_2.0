@@ -291,7 +291,7 @@ body {
 
 .open-popup {
     visibility: visible;
-} 
+}
 
 .stop-scrolling {
     overflow: hidden;
@@ -447,3 +447,114 @@ body {
     justify-content: center;
 }
 
+.assign-task .choose-type {
+    width: 100%;
+    display: inline;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.assign-task .worker-ID {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.add-worker-btn {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.add-vehicle-btn {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.assign-task .vehicle-ID {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.choose-MCP {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.choose-MCP-btn {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.MCP-final {
+    text-align: center;
+    position: absolute;
+    height: 100px;
+    left: 400px;
+    bottom: 85px;
+}
+
+.MCP-final .make-route-btn {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.MCP-final .identify-MCP-btn {
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    border-radius: 12px;
+    margin: 4px 2px 0 15px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
