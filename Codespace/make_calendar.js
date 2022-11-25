@@ -137,7 +137,7 @@ function gotoDate() {
 
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
-    document.querySelector('body').classList.add('stop-scrolling');
+    document.querySelector('body').classList.add('stop-scrolling');    
 }
 function closePopup(){
     document.getElementById('popup').classList.remove('open-popup');
@@ -148,7 +148,18 @@ function addPopup() {
     document.querySelectorAll(".day").forEach(element => {
         if(element.classList.value !== "day prev-date" 
             && element.classList.value !== 'day next-date'){
-            element.addEventListener("click", openPopup);
+            element.addEventListener("click", ()=>{
+                let str = element.innerHTML;
+                let tmp = str.length;
+                let dayN = "";
+                for(var i = 0; i < tmp; i++){
+                    if(str[i] >= '0' && str[i] <= 9) dayN += str[i];
+                }
+                dayN += " " + document.querySelector(".date").innerHTML;
+                document.querySelector(".event-date").innerHTML = dayN;
+                openPopup();
+            });
+
         }
     });
 }
