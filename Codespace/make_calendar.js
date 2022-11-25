@@ -1,7 +1,7 @@
-const   calendar = document.querySelector(".calendar"),
-        date = document.querySelector(".date"),
-        daysContainer = document.querySelector(".days"),
-        prev = document.querySelector(".prev");
+const calendar = document.querySelector(".calendar"),
+    date = document.querySelector(".date"),
+    daysContainer = document.querySelector(".days"),
+    prev = document.querySelector(".prev");
 (next = document.querySelector(".next")),
 (todayBtn = document.querySelector(".today-btn")),
 (gotoBtn = document.querySelector(".goto-btn")),
@@ -131,10 +131,46 @@ function gotoDate() {
     alert("Invalid date");
 }
 
-getbar = document.querySelector(".logo");
-getbar.addEventListener("click", showTask);
 
-function showTask() {
-    let div1 = document.querySelector('.task');
-    div1.classList.toggle('task-view');
+
+// Popup
+
+function openPopup(){
+    document.getElementById('popup').classList.add('open-popup');
+    document.querySelector('body').classList.add('stop-scrolling');    
 }
+function closePopup(){
+    document.getElementById('popup').classList.remove('open-popup');
+    document.querySelector('body').classList.remove('stop-scrolling');
+}
+
+function addPopup() {
+    document.querySelectorAll(".day").forEach(element => {
+        if(element.classList.value !== "day prev-date" 
+            && element.classList.value !== 'day next-date'){
+            element.addEventListener("click", ()=>{
+                let str = element.innerHTML;
+                let tmp = str.length;
+                let dayN = "";
+                for(var i = 0; i < tmp; i++){
+                    if(str[i] >= '0' && str[i] <= 9) dayN += str[i];
+                }
+                dayN += " " + document.querySelector(".date").innerHTML;
+                document.querySelector(".event-date").innerHTML = dayN;
+                openPopup();
+            });
+
+        }
+    });
+}
+
+addPopup();
+
+document.querySelectorAll(".change-month").forEach(element => {
+    element.addEventListener("click", addPopup);
+})
+
+document.querySelectorAll(".go-btn").forEach(element => {
+    element.addEventListener("click", addPopup);
+})
+
