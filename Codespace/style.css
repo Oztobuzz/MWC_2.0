@@ -1,433 +1,123 @@
-:root {
-    --primary-clr: #b38add;
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-body {
-    background-color: #6FB98F;
-    margin: 0;
+*{outline: rgb(214, 214, 214);}
+
+.container{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; height: 100%;
 }
 
-.container {
-    width: 100%;
-    height: 49px;
-
-    gap: 0;
-
-    padding: 0;
+header{
+    border-bottom: 5px solid rgb(214, 214, 214);
+    border-left: 5px solid rgb(214, 214, 214);
+    border-right: 5px solid rgb(214, 214, 214);
+    width: 100%; height: 8%;
+    background-color: white;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
 }
 
-.container {
-    color: #fff;
-    background: linear-gradient(to right, #0b6b41, #cfe796);
-    text-align: center;
-    font-weight: 700;
-    font-size: 22px;
+header div{
+    width: 90%; height: 50%;
+    margin: 1% !important;
+    background-color: white;
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: flex-start;
 }
 
-.container ul {
+header div label{
+    margin-left: 10px;
+}
+
+header div input{
+    border: none;
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px;
+    width: 70%; height: 100%;
+    margin-left: 10px;
+}
+
+header div button{
+    width: max-content; height: max-content;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+main{
+    width: 100%; height: 85%;
+    background-color: white;
+    border-bottom: 5px solid rgb(214, 214, 214);
+    border-left: 5px solid rgb(214, 214, 214);
+    border-right: 5px solid rgb(214, 214, 214);
+}
+
+main>div{
+    width: 100%; height: max-content;
+    display: flex;
+}
+
+main>div>div{
+    width: 50%; height: max-content;
+    display: flex; flex-direction: column;
+    flex-wrap: wrap; overflow-wrap: anywhere;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+main>div.friend-msg{
+    justify-content: flex-start;
+}
+
+main>div.my-msg{
+    justify-content: flex-end;
+}
+
+main>div>div>div.title{
+    width: 100%; height: max-content;
+    display: flex;
+    font: bold 11pt segoe ui historic;
+}
+
+main>div>div>div.content-msg{
+    font: normal 11pt segoe ui historic;
+    width: 100%; height: max-content;
     display: inline-flex;
-    list-style: none;
-}
-
-.container ul li {
-    width: 180px;
-    padding: 12px;
-}
-
-.container ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.container ul li:hover {
-    background: linear-gradient(to left, #0b6b41, #cfe796);
-    border-radius: 2px;
-}
-
-.container .fa {
-    margin-right: 8px;
-}
-
-.container1 {
-    position: relative;
-    width: 1200px;
-    min-height: 850px;
-    margin: 30px auto;
-    padding: 2px;
-    color: #fff;
-    display: flex;
+    background-color: rgb(244, 242, 242);
     border-radius: 10px;
-    background-color: #373c4f;
 }
 
-.left {
-    width: 100%;
-    padding: 30px;
+main>div.my-msg>div>div{
+    justify-content: flex-end;
+    padding: 5px;
 }
 
-.calendar {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: #878895;
-    border-radius: 5px;
-    border: 1px solid black;
-    background-color: #ffffff;
+main>div.friend-msg>div>div{
+    justify-content: flex-start;
+    padding: 5px;
 }
 
-.calendar::before,
-.calendar::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 12px;
-    height: 97%;
-    border-radius: 0 5px 5px 0;
-
+footer{
+    width: 100%; height: 6%;
+    background-color: white;
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: center;
+    border-left: 5px solid rgb(214, 214, 214);
+    border-right: 5px solid rgb(214, 214, 214);
 }
 
-.calendar .month {
-    width: 92%;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 50px;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
-.calendar .month .prev,
-.calendar .month .next {
-    cursor: pointer;
-}
-
-.calendar .month .prev:hover,
-.calendar .month .next:hover {
-    color: var(--primary-clr);
-}
-
-.calendar .weekdays {
-    width: 96%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-transform: capitalize;
-}
-
-.calendar .weekdays div {
-    width: 13%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.calendar .days {
-    width: 96%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 20px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.calendar .days .day {
-    width: 13%;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--primary-clr);
-    border: 1px solid;
-    margin-bottom: 10px;
-}
-
-.calendar .day:not(.prev-date, .next-date):hover {
-    color: #fff;
-    background-color: var(--primary-clr);
-}
-
-.calendar .days .prev-date,
-.calendar .days .next-date {
-    color: #b3b3b3;
-}
-
-.calendar .days .active {
-    position: relative;
-    font-size: 2rem;
-    color: #fff;
-    background-color: var(--primary-clr);
-}
-
-.calendar .days .active::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 0 10px 2px var(--primary-clr);
-}
-
-.calendar .days .today{
-    font-size: 2rem;
-}
-
-.calendar .days .event {
-    position: relative;
-}
-
-.calendar .days .event::after {
-    content: "";
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    width: 75%;
-    height: 6px;
-    border-radius: 30px;
-    transform: translateX(-50%);
-    background-color: var(--primary-clr);
-}
-
-.calendar .event:hover::after {
-    background-color: #fff;
-}
-
-.calendar .active.event::after {
-    background-color: #fff;
-    bottom: 20%;
-}
-
-.calendar .active.event {
-    padding-bottom: 10px;
-}
-
-.calendar .goto-today {
-    width: 90%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    padding: 0 20px;
-    margin-bottom: 20px;
-    color: var(--primary-clr)
-}
-
-.calendar .goto-today .goto {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid var(--primary-clr);
-}
-
-.calendar .goto-today .goto input {
-    width: 90%;
-    height: 30px;
-    outline: none;
+footer textarea{
+    border-radius: 10px;
+    width: 80%; height: 60%;
+    padding: 2px; 
+    font: normal 11pt segoe ui historic;
+    resize: none;
     border: none;
-    border-radius: 5px;
-    padding: 0 20px;
-    color: var(--primary-clr);
+    background-color: rgb(214, 214, 214);
+    padding-left: 10px;
 }
 
-.calendar .goto-today button {
-    width: 80px;
-    height: 40px;
-    padding: 5px 10px;
-    border: 1px solid var(--primary-clr);
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-    color: var(--primary-clr);
-}
-
-.calendar .goto-today button:hover {
-    color: #fff;
-    background-color: var(--primary-clr);
-}
-
-.calendar .goto-today .goto button {
-    border: none;
-    border-left: 1px solid var(--primary-clr);
-    border-radius: 0;
-}
-
-
-.popup-assign {
-    background: rgb(110, 109, 109, 0.4);
-    top: 0;
-    left: 0;
-    transition: transform 0.4s, top 0.4s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    border-radius: 10px;
-    /* display: none; */
-    visibility: hidden;
-}
-
-.open-popup {
-    visibility: visible;
-} 
-
-.stop-scrolling {
-    overflow: hidden;
-}
-
-.assign-box {
-    width: 90%;
-    height: 80vh;
-    background: #ffffff;        /*temp*/
-    display: flex;
-    gap: 0;
-}
-
-.frame {
-    height: 80vh;
-    border: 1px solid rgb(0, 255, 4);   /*temp*/
-    gap: 0 0;
-}
-
-.f1{
-    width: 60%;
-}
-
-.f2{
-    width: 100%;
-}
-
-.f3{
-    width: 130%;
-}
-
-.today-date {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border: 1px solid red;
-    padding: 10px 0 5px 20px;      /*caution*/
-}
-
-.today-date .event-date {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    color:rgb(15, 45, 16);
-}
-
-.events {
-    width: 100%;
-    height: 430px;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(255, 0, 0);
-}
-
-.events .event {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0 20px;
-    padding: 20px 0 20px 20px;
-    color: #1a9623;
+footer button{
+    width: max-content; height: 80%;
+    margin-left: 15px; 
     cursor: pointer;
 }
-
-.events .event:hover{
-    background: linear-gradient(90deg, #979797, transparent);
-}
-
-.events .event .event-title {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.add-task-area{
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(255, 0, 0);
-}
-
-.add-task-area .add-btn {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 1.2rem;
-    padding: 5px 10px 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.empty-div {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    border: 1px solid red;
-    padding: 10px 0 5px 20px;      /*caution*/
-}
-
-.assign-task {
-    width: 100%;
-    height: 430px;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgb(255, 0, 0);
-}
-
-.confirm-task-area {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgb(255, 0, 0);
-}
-
-.close-box {
-    border: 1px solid red;
-    height: 8%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 0 15px 0 0;
-}
-
-.close-box i{
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.info-up {
-    border: 1px solid red;
-    height: 92%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-

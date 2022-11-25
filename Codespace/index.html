@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="friend-list">
+        <div class="c1">
+            <label>My-ID</label>
+            <input type="text" id="my-id" class="myID">
+        </div>
+    </div>
+    <div class="container">
+
+        <header>
+            <div class="c2">
+                <img src="./image/clipart--person-icon--cliparts-15.png" alt="avatar" width="30">
+                <label>Friend-ID</label>
+                <input type="text" id="f-id" class="fID">
+                <button id="conn">Connect</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="my-msg">
+                <div>
+                    <div class="title"></div>
+                    <div class="content-msg"></div>
+                </div>
+            </div>
+            <div class="friend-msg">
+                <div>
+                    <div class="title"></div>
+                    <div class="content-msg"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <textarea id="msg"></textarea>
+            <button id="send">SEND</button>
+        </footer>
+
+    </div>
+    <div class="friend-info"></div>
+</body>
+
+<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<script defer src = "index.js"></script>
+
+</html>
