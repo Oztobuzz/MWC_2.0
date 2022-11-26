@@ -84,36 +84,42 @@
     <div class="frame f2">
         <div class="empty-div"></div>
         <div class="assign-task">
-            <div class="choose-type">
-                <label for="workers">Choose type:</label>
-                <select name="workers" id="workers">
-                    <option value="Collector">Collector</option>
-                    <option value="Janitor">Janitor</option>
-                </select>
-            </div>
+            <div class="popup-asg-info" id="popup-edit-task">
+                <div class="choose-type">
+                    <label for="workers">Choose type:</label>
+                    <select name="workers" id="workers">
+                        <option value="Collector">Collector</option>
+                        <option value="Janitor">Janitor</option>
+                    </select>
+                </div>
 
-            <div class="worker-ID">
-                <p>Choose a worker:</p>
-                <button class="add-worker-btn">Add worker</button>
-            </div>
+                <div class="worker-ID">
+                    <p>Choose a worker:</p>
+                    <button class="add-worker-btn">Add worker</button>
+                </div>
 
-            <div class="vehicle-ID">
-                <p>Choose a vehicle:</p>
-                <button class="add-vehicle-btn">Add vehicle</button>
-            </div>
+                <div class="vehicle-ID">
+                    <p>Choose a vehicle:</p>
+                    <button class="add-vehicle-btn">Add vehicle</button>
+                </div>
 
-            <div class="choose-MCP">
-                <p>Choose MCPs:</p>
-                <button class="choose-MCP-btn">Choose MCPs</button>
-            </div>
+                <div class="choose-MCP">
+                    <div class="choose-MCP-in">
+                        <p>Choose MCPs:</p>
+                        <button class="choose-MCP-btn">Choose MCPs</button>
+                    </div>
+                </div>
 
-            <div class="MCP-final">
-                <button class="make-route-btn">Make route</button>
-                <button class="identify-MCP-btn">Make route</button>
+                <div class="MCP-final">
+                    <button class="make-route-btn">Make route</button>
+                    <button class="identify-MCP-btn">Identify MCP</button>
+                </div>
             </div>
         </div>
         <div class="confirm-task-area">
-            <button class="confirm-btn">Confirm</button>
+            <div class="popup-asg-info" id="popup-confirm-btn">
+                <button class="confirm-btn">Confirm</button>
+            </div>
         </div>
     </div>
     <div class="frame f3">

@@ -410,7 +410,7 @@ body {
 .assign-task {
     width: 100%;
     height: 80%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgb(0, 0, 0);
@@ -419,9 +419,6 @@ body {
 
 .confirm-task-area {
     height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     /* border: 1px solid rgb(255, 0, 0); */
 }
 
@@ -447,14 +444,37 @@ body {
     justify-content: center;
 }
 
-.assign-task .choose-type {
+.popup-asg-info{
     width: 100%;
+    height: 100%;
+}
+
+#popup-confirm-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-edit-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.assign-task .choose-type {
+    height: 5%;
     display: inline;
     margin-left: 20px;
     margin-top: 10px;
 }
 
 .assign-task .worker-ID {
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10%;
     margin-left: 20px;
     margin-top: 10px;
 }
@@ -488,13 +508,30 @@ body {
 }
 
 .assign-task .vehicle-ID {
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10%;
     margin-left: 20px;
     margin-top: 10px;
 }
 
 .choose-MCP {
+    display:flex;
+    gap: 0 20px;
+    width: 100%;
+    height: 45%;
     margin-left: 20px;
     margin-top: 10px;
+}
+
+.choose-MCP-in{
+    display: flex;
+    align-items: center;;
+    gap: 0 20px;
+    width: 100%;
+    height: 20%;
 }
 
 .choose-MCP-btn {
@@ -513,10 +550,6 @@ body {
 
 .MCP-final {
     text-align: center;
-    position: absolute;
-    height: 100px;
-    left: 400px;
-    bottom: 85px;
 }
 
 .MCP-final .make-route-btn {
