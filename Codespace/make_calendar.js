@@ -139,10 +139,7 @@ function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
 }
-function closePopup(){
-    document.getElementById('popup').classList.remove('open-popup');
-    document.querySelector('body').classList.remove('stop-scrolling');
-}
+
 
 function addPopup() {
     document.querySelectorAll(".day").forEach(element => {
@@ -173,3 +170,51 @@ document.querySelectorAll(".change-month").forEach(element => {
 document.querySelectorAll(".go-btn").forEach(element => {
     element.addEventListener("click", addPopup);
 })
+
+function openPopup2(){
+    document.getElementById('popup-edit-task').classList.add('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.add('open-subpopup');
+}
+
+document.querySelector(".add-btn").addEventListener("click", ()=>{
+    openPopup2();
+})
+
+document.querySelector('.identify-MCP-btn').disabled = true;
+
+function unableToggle(el, cl1, cl2){
+    el.classList.toggle(cl1);
+    el.classList.toggle(cl2);
+}
+
+document.getElementById('workers').addEventListener("change", ()=>{
+    if(document.getElementById('workers').value === "Janitor") {
+        let tmpa = document.querySelector('.identify-MCP-btn')
+        let tmpb = document.querySelector('.add-vehicle-btn')
+        let tmpc = document.querySelector('.make-route-btn')
+        tmpa.disabled = false;
+        tmpb.disabled = true;
+        tmpc.disable = true;
+        unableToggle(tmpa, "disable-color", "unable-color");
+        unableToggle(tmpc, "unable-color", "disable-color");
+        unableToggle(tmpb, "unable-color", "disable-color");
+    }
+    else{
+        let tmpa = document.querySelector('.identify-MCP-btn')
+        let tmpb = document.querySelector('.add-vehicle-btn')
+        let tmpc = document.querySelector('.make-route-btn')
+        tmpa.disabled = true;
+        tmpb.disabled = false;
+        tmpc.disable = false;
+        unableToggle(tmpa, "unable-color", "disable-color");
+        unableToggle(tmpc, "disable-color", "unable-color");
+        unableToggle(tmpb, "disable-color", "unable-color");
+    }
+})
+
+function closePopup(){
+    document.getElementById('popup').classList.remove('open-popup');
+    document.querySelector('body').classList.remove('stop-scrolling');
+    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+}

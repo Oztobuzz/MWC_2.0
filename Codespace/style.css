@@ -397,6 +397,10 @@ body {
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #04AA6D;
+    border: none;
+
+    /* color: white; */
 }
 
 .empty-div {
@@ -444,24 +448,6 @@ body {
     justify-content: center;
 }
 
-.popup-asg-info{
-    width: 100%;
-    height: 100%;
-}
-
-#popup-confirm-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#popup-edit-task{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 10px;
-}
-
 .assign-task .choose-type {
     height: 5%;
     display: inline;
@@ -480,7 +466,6 @@ body {
 }
 
 .add-worker-btn {
-    background-color: #04AA6D; /* Green */
     border: none;
     color: white;
     padding: 10px;
@@ -494,7 +479,6 @@ body {
 }
 
 .add-vehicle-btn {
-    background-color: #04AA6D; /* Green */
     border: none;
     color: white;
     padding: 10px;
@@ -535,7 +519,6 @@ body {
 }
 
 .choose-MCP-btn {
-    background-color: #04AA6D; /* Green */
     border: none;
     color: white;
     padding: 10px;
@@ -552,8 +535,7 @@ body {
     text-align: center;
 }
 
-.MCP-final .make-route-btn {
-    background-color: gray;
+.make-route-btn {
     border: none;
     color: white;
     padding: 10px;
@@ -567,8 +549,7 @@ body {
     cursor: pointer;
 }
 
-.MCP-final .identify-MCP-btn {
-    background-color: gray;
+.identify-MCP-btn {
     color: white;
     border: none;
     padding: 10px;
@@ -583,6 +564,7 @@ body {
 }
 
 .confirm-btn {
+    border: none;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -590,4 +572,36 @@ body {
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #04AA6D;
+}
+
+.popup-asg-info{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#popup-confirm-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-edit-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.open-subpopup{
+    visibility: visible;
+}
+
+.unable-color{
+    background-color: #04AA6D;
+}
+
+.disable-color{
+    background-color: gray;
 }
