@@ -8,106 +8,106 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.0/css/font-awesome.min.css"> -->
-    
+
 </head>
 <body>
-    <div class="container">
-        <ul>
-            <li><a href="#"><i class="fa fa-tachometer"></i>DASHBOARD</a></li>
-            <li><a href="#"><i class="fa fa-male"></i>WORKER</a></li>
-            <li><a href="#"><i class="fa fa-truck"></i>VEHICLE</a></li>
-            <li><a href="#"><i class="fa fa-trash"></i>MCP</a></li>
-            <li><a href="#"><i class="fa fa-phone"></i>CONTACT</a></li>
-            <li><a href="#"><i class="fa fa-sign-out"></i>LOGOUT</a></li>
-        </ul>
-    </div>
+<div class="container">
+    <ul>
+        <li><a href="#"><i class="fa fa-tachometer"></i>DASHBOARD</a></li>
+        <li><a href="#"><i class="fa fa-male"></i>WORKER</a></li>
+        <li><a href="#"><i class="fa fa-truck"></i>VEHICLE</a></li>
+        <li><a href="#"><i class="fa fa-trash"></i>MCP</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i>CONTACT</a></li>
+        <li><a href="#"><i class="fa fa-sign-out"></i>LOGOUT</a></li>
+    </ul>
+</div>
 
-    <div class="container1">
-        <div class="left">
-            <div class="calendar">
-                <div class="month">
-                    <i class="fa fa-angle-left prev change-month"></i>
-                    <div class="date"></div>
-                    <i class="fa fa-angle-right next change-month"></i>
+<div class="container1">
+    <div class="left">
+        <div class="calendar">
+            <div class="month">
+                <i class="fa fa-angle-left prev change-month"></i>
+                <div class="date"></div>
+                <i class="fa fa-angle-right next change-month"></i>
+            </div>
+            <div class="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+            <div class="days">
+                <!-- js -->
+            </div>
+            <div class="goto-today">
+                <div class="goto">
+                    <input type="text" placeholder="mm/yyyy" class="date-input">
+                    <button class="goto-btn go-btn">Go</button>
                 </div>
-                <div class="weekdays">
-                    <div>Sunday</div>
-                    <div>Monday</div>
-                    <div>Tuesday</div>
-                    <div>Wednesday</div>
-                    <div>Thursday</div>
-                    <div>Friday</div>
-                    <div>Saturday</div>
-                </div>
-                <div class="days">
-                    <!-- js -->
-                </div>
-                <div class="goto-today">
-                    <div class="goto">
-                        <input type="text" placeholder="mm/yyyy" class="date-input">
-                        <button class="goto-btn go-btn">Go</button>
-                    </div>
-                    <button class="today-btn go-btn">Today</button>
-                </div>
+                <button class="today-btn go-btn">Today</button>
             </div>
         </div>
-
     </div>
 
-    <div class="popup-assign" id="popup">
-        <div class="assign-box">
-            <div class="frame f1">
-                <div class="today-date">
-                    <div class="event-date"></div>
+</div>
+
+<div class="popup-assign" id="popup">
+    <div class="assign-box">
+        <div class="frame f1">
+            <div class="today-date">
+                <div class="event-date"></div>
+            </div>
+            <div class="events">
+                <div class="event">
+                    <i class="fa fa-circle"></i>
+                    <h3 class="event-title">Event 1</h3>
                 </div>
-                <div class="events">
-                    <div class="event">
-                        <i class="fa fa-circle"></i>
-                        <h3 class="event-title">Event 1</h3>
-                    </div>
-                    <div class="event">
-                        <i class="fa fa-circle"></i>
-                        <h3 class="event-title">Event 2</h3>
-                    </div>
-                    <div class="event">
-                        <i class="fa fa-circle"></i>
-                        <h3 class="event-title">Event 3</h3>
-                    </div>
+                <div class="event">
+                    <i class="fa fa-circle"></i>
+                    <h3 class="event-title">Event 2</h3>
                 </div>
-                <div class="add-task-area">
-                    <button class="add-btn">
-                        <p>Add task</p>
-                        <i class="fa fa-plus close"></i>
-                    </button>
+                <div class="event">
+                    <i class="fa fa-circle"></i>
+                    <h3 class="event-title">Event 3</h3>
                 </div>
             </div>
-            <div class="frame f2">
-                <div class="empty-div"></div>
-                <div class="assign-task">
-                    <!--New-->
-                    <div class="create-add-worker-button">
-                        <button add-worker-button="#worker">Add Worker</button>
-                    </div>
-                    <br>
-                    <div class="create-add-vehicle-button">
-                        <button add-vehicle-button="#vehicle">Add Vehicle</button>
-                    </div>
-                    <br>
-                    <div class="create-add-MCP-button">
-                        <button add-MCP-button="#MCP">Add MCP</button>
-                    </div>
-                    <!--New-->
-                </div>
-                <div class="confirm-task-area"></div>
+            <div class="add-task-area">
+                <button class="add-btn">
+                    <p>Add task</p>
+                    <i class="fa fa-plus close"></i>
+                </button>
             </div>
-            <div class="frame f3">
-                <div class="close-box">
-                    <i class="fa fa-times" onclick=closePopup()></i>
+        </div>
+        <div class="frame f2">
+            <div class="empty-div"></div>
+            <div class="assign-task">
+                <!--New-->
+                <div class="create-add-worker-button">
+                    <button add-worker-button="#worker">Add Worker</button>
                 </div>
-                <div class="info-up">
-                    <!--New-->
-                    <div class="container2" id="container2">
-                        <div class="content"><table class="table-fixed">
+                <br>
+                <div class="create-add-vehicle-button">
+                    <button add-vehicle-button="#vehicle">Add Vehicle</button>
+                </div>
+                <br>
+                <div class="create-add-MCP-button">
+                    <button add-MCP-button="#MCP">Add MCP</button>
+                </div>
+                <!--New-->
+            </div>
+            <div class="confirm-task-area"></div>
+        </div>
+        <div class="frame f3">
+            <div class="close-box">
+                <i class="fa fa-times" onclick=closePopup()></i>
+            </div>
+            <div class="info-up">
+                <!--New-->
+                <div class="container2" id="container2">
+                    <div class="content"><table class="table-fixed">
                         <thead><tr>
                             <th width="90px">ID</th>
                             <th width="208.5px">Name</th>
@@ -116,170 +116,171 @@
                         </tr></thead>
                         <tbody id="myTable1"></tbody>
                     </table></div>
-                    </div>
-                    <script>
-                        var WorkerList = [
-                            {
+                    <input type="button" id="tst" value="OK" onclick="fnselect()" />
+                </div>
+                <script>
+                    var WorkerList = [
+                        {
                             "ID": "JNT001",
                             "Name": "Thế Phi Cường",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT003",
                             "Name": "Vưu Nghĩa Dũng",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT002",
                             "Name": "Thạch Minh Khôi",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT112",
                             "Name": "Nhâm Tuấn Hải",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT342",
                             "Name": "Đỗ Thiện Minh",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT130",
                             "Name": "Ngạc Việt Phương",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT452",
                             "Name": "Ngọ Ðình Quảng",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT855",
                             "Name": "Ung Chiến Thắng",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT999",
                             "Name": "Xung Mạnh Ðình",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT004",
                             "Name": "Thi Trọng Khánh",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT142",
                             "Name": "Mẫn Cao Kỳ",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT734",
                             "Name": "Giàng Ðức Minh",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT232",
                             "Name": "Phùng Thiện Ngôn",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT464",
                             "Name": "Điêu Duy Quang",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT7462",
                             "Name": "Cát Ðình Trung",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT822",
                             "Name": "Tiếp Hữu Vượng",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT546",
                             "Name": "Thành Trung Dũng",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT832",
                             "Name": "Quách Hữu Hiệp",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT133",
                             "Name": "Tôn Thất Thành Long",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT875",
                             "Name": "Đào Quốc Trường",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT654",
                             "Name": "Đào Quốc Trường",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT363",
                             "Name": "Kông Ngọc Khôi",
                             "Role": "Janitor",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "CLT738",
                             "Name": "Liễu Thiên Mạnh",
                             "Role": "Collector",
                             "State": "Free"
-                            },
-                            {
+                        },
+                        {
                             "ID": "JNT360",
                             "Name": "Mạc Hoàng Thái",
                             "Role": "Janitor",
                             "State": "Free"
-                            }
-                        ]
-                        buildTable(WorkerList)
-                        function buildTable(data){
-                            var table = document.getElementById('myTable1')
-                            for (var i = 0; i < data.length; i++){
-                                var row = `<tr>
+                        }
+                    ]
+                    buildTable(WorkerList)
+                    function buildTable(data) {
+                        var table = document.getElementById('myTable1')
+                        for (var i = 0; i < data.length; i++){
+                            var row = `<tr>
                                                 <td width="80px">${data[i].ID}</td>
                                                 <td width="200px">${data[i].Name}</td>
                                                 <td width="80px">${data[i].Role}</td>
                                                 <td width="60px">${data[i].State}</td>
-                                          </tr>`
-                                table.innerHTML += row
-                            }
+                                       </tr>`
+                            table.innerHTML += row
                         }
-                    </script>
-                    <div class="container3" id="container3">
-                        <div class="content1"><table class="table-fixed1">
+                    }
+                </script>
+                <div class="container3" id="container3">
+                    <div class="content1"><table class="table-fixed1">
                         <thead><tr>
                             <th width="79px">ID</th>
                             <th width="93px">Weight (Tons)</th>
@@ -289,9 +290,9 @@
                         </tr></thead>
                         <tbody id="myTable2"></tbody>
                     </table></div>
-                    </div>
-                    <script>
-                        var VehicleList = [
+                </div>
+                <script>
+                    var VehicleList = [
                         {
                             "ID": "VHC131",
                             "Weight": 6,
@@ -460,24 +461,24 @@
                             "FuelConsumption": 230,
                             "State": "Available"
                         }
-                        ]
-                        buildTable(VehicleList)
-                        function buildTable(data){
-                            var table = document.getElementById('myTable2')
-                            for (var i = 0; i < data.length; i++){
-                                var row = `<tr>
+                    ]
+                    buildTable(VehicleList)
+                    function buildTable(data){
+                        var table = document.getElementById('myTable2')
+                        for (var i = 0; i < data.length; i++){
+                            var row = `<tr>
                                                 <td width="80px">${data[i].ID}</td>
                                                 <td width="95px">${data[i].Weight}</td>
                                                 <td width="80px">${data[i].Capacity}</td>
                                                 <td width="145px">${data[i].FuelConsumption}</td>
                                                 <td width="80px">${data[i].State}</td>
                                           </tr>`
-                                table.innerHTML += row
-                            }
+                            table.innerHTML += row
                         }
-                    </script>
-                    <div class="container4" id="container4">
-                        <div class="content2"><table class="table-fixed2">
+                    }
+                </script>
+                <div class="container4" id="container4">
+                    <div class="content2"><table class="table-fixed2">
                         <thead><tr>
                             <th width="80px">ID</th>
                             <th width="340px">Address</th>
@@ -485,9 +486,9 @@
                         </tr></thead>
                         <tbody id="myTable3"></tbody>
                     </table></div>
-                    </div>
-                    <script>
-                        var MCPList = [
+                </div>
+                <script>
+                    var MCPList = [
                         {
                             "ID": "MCP131",
                             "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
@@ -608,26 +609,26 @@
                             "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
                             "State": "20%"
                         }
-                        ]
-                        buildTable(MCPList)
-                        function buildTable(data){
-                            var table = document.getElementById('myTable3')
-                            for (var i = 0; i < data.length; i++){
-                                var row = `<tr>
+                    ]
+                    buildTable(MCPList)
+                    function buildTable(data){
+                        var table = document.getElementById('myTable3')
+                        for (var i = 0; i < data.length; i++){
+                            var row = `<tr>
                                                 <td width="80px">${data[i].ID}</td>
                                                 <td width="330px">${data[i].Address}</td>
                                                 <td width="70px">${data[i].State}</td>
                                           </tr>`
-                                table.innerHTML += row
-                            }
+                            table.innerHTML += row
                         }
-                    </script>
-                    <!--New-->
-                </div>
+                    }
+                </script>
+                <!--New-->
             </div>
-        </div>  
         </div>
     </div>
-    <script src="make_calendar.js"></script>
+</div>
+</div>
+<script src="make_calendar.js"></script>
 </body>
 </html>

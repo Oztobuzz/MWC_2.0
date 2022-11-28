@@ -3,9 +3,9 @@ const calendar = document.querySelector(".calendar"),
     daysContainer = document.querySelector(".days"),
     prev = document.querySelector(".prev");
 (next = document.querySelector(".next")),
-(todayBtn = document.querySelector(".today-btn")),
-(gotoBtn = document.querySelector(".goto-btn")),
-(dateInput = document.querySelector(".date-input"));
+    (todayBtn = document.querySelector(".today-btn")),
+    (gotoBtn = document.querySelector(".goto-btn")),
+    (dateInput = document.querySelector(".date-input"));
 
 let today = new Date();
 let activeDay;
@@ -51,13 +51,13 @@ function initCalendar() {
     for (let x = day; x > 0; x--) {
         days += `<div class="day prev-date"><div class="day-number">${prevDays - x + 1}</div></div>`;
     }
-    
+
     for (let i = 1; i <= lastDate; i++) {
         if (i === new Date().getDate() &&
             year === new Date().getFullYear() &&
             month === new Date().getMonth()) {
-                days += `<div class="day today"><div class="day-number">${i}</div></div>`;
-            }
+            days += `<div class="day today"><div class="day-number">${i}</div></div>`;
+        }
         else {
             days += `<div class="day"><div class="day-number">${i}</div></div>`
         }
@@ -137,7 +137,7 @@ function gotoDate() {
 
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
-    document.querySelector('body').classList.add('stop-scrolling');    
+    document.querySelector('body').classList.add('stop-scrolling');
 }
 function closePopup(){
     document.getElementById('popup').classList.remove('open-popup');
@@ -152,7 +152,7 @@ function closePopup(){
 
 function addPopup() {
     document.querySelectorAll(".day").forEach(element => {
-        if(element.classList.value !== "day prev-date" 
+        if(element.classList.value !== "day prev-date"
             && element.classList.value !== 'day next-date'){
             element.addEventListener("click", ()=>{
                 let str = element.innerHTML;
@@ -180,10 +180,11 @@ document.querySelectorAll(".go-btn").forEach(element => {
     element.addEventListener("click", addPopup);
 })
 /*------------------------New------------------------------*/
+
 const addworkerButton = document.querySelectorAll('[add-worker-button]')
 addworkerButton.forEach(button => {
     button.addEventListener('click', () => {
-        openWorkerList(container2)
+        openWorkerList(container2);
     })
 })
 
@@ -228,3 +229,22 @@ function openMCPList(container4) {
     container3.classList.remove('active')
 }
 /*--------------------New-----------------------------*/
+
+var table = document.querySelector(".table-fixed");
+var selected = table.getElementsByClassName('selected');
+table.onclick = highlight;
+
+function highlight(e) {
+    if (selected[0]) selected[0].className = '';
+    e.target.parentNode.className = 'selected';
+}
+
+function fnselect() {
+    let element = document.querySelectorAll('.selected');
+    if (element[0]!== undefined) { //it must be selected
+        console.log(element[0].children);
+        /*
+        console.log(element[0].children[1].innerHTML);
+        alert(element[0].children[0].firstChild.data); */
+    }
+}

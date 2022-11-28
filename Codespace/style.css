@@ -291,7 +291,7 @@ body {
 
 .open-popup {
     visibility: visible;
-} 
+}
 
 .stop-scrolling {
     overflow: hidden;
@@ -622,3 +622,8 @@ table {
     transform: scale(1);
 }
 /*--------------------New-------------------------*/
+
+.selected {
+    background-color: #373c4f;
+    color: #FFF;
+}
