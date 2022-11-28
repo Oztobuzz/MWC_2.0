@@ -199,14 +199,19 @@ function openPopup2(){
 document.querySelector(".add-btn").addEventListener("click", ()=>{
     openPopup2();
     console.log(dayN);
+    document.querySelector(".add-btn").toggleAttribute("disabled");
+})
+
+document.querySelector(".confirm-btn").addEventListener("click", ()=>{
     const event = new Event(`Event ${document.querySelectorAll(".event").length + 1}`, dayN);
     events.push(event);
     const el = document.createElement(`div`);
     el.classList.add("event","newlyadd");
     el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
-    document.querySelector(".add-btn").toggleAttribute("disabled");
     eventAvail.append(el);
-
+    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    document.querySelector(".add-btn").toggleAttribute("disabled");
 })
 
 document.querySelector('.identify-MCP-btn').disabled = true;
