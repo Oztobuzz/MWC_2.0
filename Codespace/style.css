@@ -446,6 +446,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+/*----------------New----------------*/
 .container2 {
     position: fixed;
     display: flex;
@@ -620,3 +621,4 @@ table {
 .container4.active {
     transform: scale(1);
 }
+/*--------------------New-------------------------*/

@@ -173,7 +173,7 @@ document.querySelectorAll(".change-month").forEach(element => {
 document.querySelectorAll(".go-btn").forEach(element => {
     element.addEventListener("click", addPopup);
 })
-
+/*------------------------New------------------------------*/
 const addworkerButton = document.querySelectorAll('[add-worker-button]')
 addworkerButton.forEach(button => {
     button.addEventListener('click', () => {
@@ -221,3 +221,4 @@ function openMCPList(container4) {
     if (container3 == null) return
     container3.classList.remove('active')
 }
+/*--------------------New-----------------------------*/
