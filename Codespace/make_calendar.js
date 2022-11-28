@@ -12,6 +12,7 @@ let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+
 class Event{
     constructor(name,date){
        this.name = name;
@@ -168,6 +169,7 @@ function addPopup() {
                     {
                         const el = document.createElement(`div`);
                         el.classList.add("event","newlyadd");
+                        // let NumT = document.querySelectorAll(".event");
                         el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${events[i].name}</h3></div>`;
                         eventAvail.append(el);
                     }
@@ -197,7 +199,7 @@ function openPopup2(){
 document.querySelector(".add-btn").addEventListener("click", ()=>{
     openPopup2();
     console.log(dayN);
-    const event = new Event(`Event ${events.length + 4}`, dayN);
+    const event = new Event(`Event ${document.querySelectorAll(".event").length + 1}`, dayN);
     events.push(event);
     const el = document.createElement(`div`);
     el.classList.add("event","newlyadd");
