@@ -5,12 +5,20 @@ const calendar = document.querySelector(".calendar"),
 (next = document.querySelector(".next")),
     (todayBtn = document.querySelector(".today-btn")),
     (gotoBtn = document.querySelector(".goto-btn")),
-    (dateInput = document.querySelector(".date-input"));
+    (dateInput = document.querySelector(".date-input")),
+    eventAvail = document.querySelector(".events") ;
 
 let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+class Event{
+    constructor(name,date){
+       this.name = name;
+       this.date = date; 
+    }
+}
+let events = [];
 
 const months = [
     "January",
@@ -134,7 +142,7 @@ function gotoDate() {
 
 
 // Popup
-
+let dayN = "";
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
@@ -148,12 +156,22 @@ function addPopup() {
             element.addEventListener("click", ()=>{
                 let str = element.innerHTML;
                 let tmp = str.length;
-                let dayN = "";
+                dayN = "";
                 for(var i = 0; i < tmp; i++){
                     if(str[i] >= '0' && str[i] <= 9) dayN += str[i];
                 }
                 dayN += " " + document.querySelector(".date").innerHTML;
                 document.querySelector(".event-date").innerHTML = dayN;
+                for(let i = 0; i < events.length; i ++)
+                {
+                    if(events[i].date === dayN)
+                    {
+                        const el = document.createElement(`div`);
+                        el.classList.add("event","newlyadd");
+                        el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${events[i].name}</h3></div>`;
+                        eventAvail.append(el);
+                    }
+                }
                 openPopup();
             });
 
@@ -178,6 +196,15 @@ function openPopup2(){
 
 document.querySelector(".add-btn").addEventListener("click", ()=>{
     openPopup2();
+    console.log(dayN);
+    const event = new Event(`Event ${events.length + 4}`, dayN);
+    events.push(event);
+    const el = document.createElement(`div`);
+    el.classList.add("event","newlyadd");
+    el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
+    document.querySelector(".add-btn").toggleAttribute("disabled");
+    eventAvail.append(el);
+
 })
 
 document.querySelector('.identify-MCP-btn').disabled = true;
@@ -211,10 +238,17 @@ document.getElementById('workers').addEventListener("change", ()=>{
         unableToggle(tmpb, "disable-color", "unable-color");
     }
 })
-
+function removeElementsByClass(className){
+    const elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
 function closePopup(){
     document.getElementById('popup').classList.remove('open-popup');
     document.querySelector('body').classList.remove('stop-scrolling');
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    removeElementsByClass('newlyadd');
+    document.querySelector('.add-btn').removeAttribute("disabled");
 }
