@@ -605,3 +605,185 @@ body {
 .disable-color{
     background-color: gray;
 }
+
+/*//////////////////////////////////////////*/
+
+.container2 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    border: #0b6b41;
+    height: 435px;
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table-fixed {
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
+}
+
+.table-fixed tbody{
+    display: block;
+    height: 450px;
+    width: 475px;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #d4e8b7;
+}
+
+.table-fixed tr {
+    display: block;
+}
+
+.table-fixed td {
+    padding-left: 20px;
+    height: 20px;
+}
+
+.table-fixed th {
+    background-color: #0b6b41;
+    color:aliceblue;
+}
+
+.table-fixed tbody tr:hover {
+    background-color:rgb(36, 153, 71);
+    color: #ffffff;
+    cursor:pointer;
+}
+
+.create-add-worker-button button {
+    cursor: pointer;
+}
+
+.container2.active {
+    transform: scale(1);
+}
+
+.container3 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    border: #0b6b41;
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+}
+
+.table-fixed1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
+    width: 500px;
+}
+
+.table-fixed1 tbody{
+    display: block;
+    height: 400px;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #d4e8b7;
+}
+
+.table-fixed1 tr {
+    display: block;
+}
+
+.table-fixed1 td {
+    text-align: center;
+    height: 25px;
+}
+
+.table-fixed1 th {
+    background-color: #0b6b41;
+    color:aliceblue;
+}
+
+.table-fixed1 thead {
+    background-color: #0b6b41;
+}
+
+.table-fixed1 tbody tr:hover {
+    background-color:rgb(36, 153, 71);
+    color: #ffffff;
+    cursor:pointer;
+}
+
+.create-add-vehicle-button button {
+    cursor: pointer;
+}
+
+.container3.active {
+    transform: scale(1);
+}
+
+.container4 {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20px;
+    border: #0b6b41;
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+}
+
+.table-fixed2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
+    width: 500px;
+}
+
+.table-fixed2 tbody{
+    display: block;
+    height: 430px;
+    overflow-y: scroll;
+    text-align: center;
+    background-color: #d4e8b7;
+}
+
+.table-fixed2 tr {
+    display: block;
+}
+
+.table-fixed2 td {
+    text-align: center;
+    height: 35px;
+}
+
+.table-fixed2 th {
+    background-color: #0b6b41;
+    color:aliceblue;
+}
+
+.table-fixed2 thead {
+    background-color: #0b6b41;
+}
+
+.table-fixed2 tbody tr:hover {
+    background-color:rgb(36, 153, 71);
+    color: #ffffff;
+    cursor:pointer;
+}
+
+.create-add-MCP-button button {
+    cursor: pointer;
+}
+
+.container4.active {
+    transform: scale(1);
+}
+
+.selected {
+    background-color: #373c4f;
+    color: #FFF;
+}

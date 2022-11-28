@@ -61,7 +61,7 @@
                 <div class="event-date""></div>
         </div>
         <div class="events">
-            <div class="event">
+            <!-- <div class="event">
                 <i class="fa fa-circle"></i>
                 <h3 class="event-title">Event 1</h3>
             </div>
@@ -72,7 +72,7 @@
             <div class="event">
                 <i class="fa fa-circle"></i>
                 <h3 class="event-title">Event 3</h3>
-            </div>
+            </div> -->
         </div>
         <div class="add-task-area">
             <button class="add-btn">
@@ -126,7 +126,527 @@
         <div class="close-box">
             <i class="fa fa-times" onclick=closePopup()></i>
         </div>
-        <div class="info-up"></div>
+        <div class="info-up">
+            <!--New-->
+            <div class="container2" id="container2">
+                <div class="content"><table class="table-fixed">
+                    <thead><tr>
+                        <th width="90px">ID</th>
+                        <th width="208.5px">Name</th>
+                        <th width="90px">Role</th>
+                        <th width="87px">State</th>
+                    </tr></thead>
+                    <tbody id="myTable1"></tbody>
+                </table></div>
+                <input type="button" id="tst" value="OK" onclick="fnselect()" />
+            </div>
+            <script>
+                var WorkerList = [
+                    {
+                        "ID": "JNT001",
+                        "Name": "Thế Phi Cường",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT003",
+                        "Name": "Vưu Nghĩa Dũng",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT002",
+                        "Name": "Thạch Minh Khôi",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT112",
+                        "Name": "Nhâm Tuấn Hải",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT342",
+                        "Name": "Đỗ Thiện Minh",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT130",
+                        "Name": "Ngạc Việt Phương",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT452",
+                        "Name": "Ngọ Ðình Quảng",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT855",
+                        "Name": "Ung Chiến Thắng",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT999",
+                        "Name": "Xung Mạnh Ðình",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT004",
+                        "Name": "Thi Trọng Khánh",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT142",
+                        "Name": "Mẫn Cao Kỳ",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT734",
+                        "Name": "Giàng Ðức Minh",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT232",
+                        "Name": "Phùng Thiện Ngôn",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT464",
+                        "Name": "Điêu Duy Quang",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT7462",
+                        "Name": "Cát Ðình Trung",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT822",
+                        "Name": "Tiếp Hữu Vượng",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT546",
+                        "Name": "Thành Trung Dũng",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT832",
+                        "Name": "Quách Hữu Hiệp",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT133",
+                        "Name": "Tôn Thất Thành Long",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT875",
+                        "Name": "Đào Quốc Trường",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT654",
+                        "Name": "Đào Quốc Trường",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT363",
+                        "Name": "Kông Ngọc Khôi",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "CLT738",
+                        "Name": "Liễu Thiên Mạnh",
+                        "Role": "Collector",
+                        "State": "Free"
+                    },
+                    {
+                        "ID": "JNT360",
+                        "Name": "Mạc Hoàng Thái",
+                        "Role": "Janitor",
+                        "State": "Free"
+                    }
+                ]
+                buildTable(WorkerList)
+                function buildTable(data) {
+                    var table = document.getElementById('myTable1')
+                    for (var i = 0; i < data.length; i++){
+                        var row = `<tr>
+                                            <td width="80px">${data[i].ID}</td>
+                                            <td width="200px">${data[i].Name}</td>
+                                            <td width="80px">${data[i].Role}</td>
+                                            <td width="60px">${data[i].State}</td>
+                                   </tr>`
+                        table.innerHTML += row
+                    }
+                }
+            </script>
+            <div class="container3" id="container3">
+                <div class="content1"><table class="table-fixed1">
+                    <thead><tr>
+                        <th width="79px">ID</th>
+                        <th width="93px">Weight (Tons)</th>
+                        <th width="80px">Capacity (Tons)</th>
+                        <th width="150px">Fuel Consumption (Liters)</th>
+                        <th width="80px">State</th>
+                    </tr></thead>
+                    <tbody id="myTable2"></tbody>
+                </table></div>
+            </div>
+            <script>
+                var VehicleList = [
+                    {
+                        "ID": "VHC131",
+                        "Weight": 6,
+                        "Capacity": 3,
+                        "FuelConsumption": 330,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC630",
+                        "Weight": 3,
+                        "Capacity": "1,5",
+                        "FuelConsumption": 180,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC004",
+                        "Weight": 3,
+                        "Capacity": "1,5",
+                        "FuelConsumption": 180,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC252",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC005",
+                        "Weight": 3,
+                        "Capacity": "1,5",
+                        "FuelConsumption": 180,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC144",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC633",
+                        "Weight": 2,
+                        "Capacity": 1,
+                        "FuelConsumption": 130,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC078",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC958",
+                        "Weight": 3,
+                        "Capacity": "1,5",
+                        "FuelConsumption": 180,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC035",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC063",
+                        "Weight": 5,
+                        "Capacity": "2,5",
+                        "FuelConsumption": 280,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC065",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC244",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC387",
+                        "Weight": 1,
+                        "Capacity": "0,5",
+                        "FuelConsumption": 80,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC466",
+                        "Weight": 6,
+                        "Capacity": 3,
+                        "FuelConsumption": 330,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC333",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC857",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC255",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC956",
+                        "Weight": 8,
+                        "Capacity": 4,
+                        "FuelConsumption": 430,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC422",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC043",
+                        "Weight": 3,
+                        "Capacity": "1,5",
+                        "FuelConsumption": 180,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC067",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC242",
+                        "Weight": 2,
+                        "Capacity": 1,
+                        "FuelConsumption": 130,
+                        "State": "Available"
+                    },
+                    {
+                        "ID": "VHC111",
+                        "Weight": 4,
+                        "Capacity": 2,
+                        "FuelConsumption": 230,
+                        "State": "Available"
+                    }
+                ]
+                buildTable(VehicleList)
+                function buildTable(data){
+                    var table = document.getElementById('myTable2')
+                    for (var i = 0; i < data.length; i++){
+                        var row = `<tr>
+                                            <td width="80px">${data[i].ID}</td>
+                                            <td width="95px">${data[i].Weight}</td>
+                                            <td width="80px">${data[i].Capacity}</td>
+                                            <td width="145px">${data[i].FuelConsumption}</td>
+                                            <td width="80px">${data[i].State}</td>
+                                      </tr>`
+                        table.innerHTML += row
+                    }
+                }
+            </script>
+            <div class="container4" id="container4">
+                <div class="content2"><table class="table-fixed2">
+                    <thead><tr>
+                        <th width="80px">ID</th>
+                        <th width="340px">Address</th>
+                        <th>State</th>
+                    </tr></thead>
+                    <tbody id="myTable3"></tbody>
+                </table></div>
+            </div>
+            <script>
+                var MCPList = [
+                    {
+                        "ID": "MCP131",
+                        "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP630",
+                        "Address": "298 Nguyen Trong Tuyen Street Ward 1,Ho Chi Minh City,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP004",
+                        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP252",
+                        "Address": "202 Truong Dinh St. Tuong Mai Ward,Ho Chi Minh City,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP005",
+                        "Address": "149D Doi Can,Hanoi,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP144",
+                        "Address": "584 Nguyen Van Cu Gia Lam Townlet,Vinh,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP633",
+                        "Address": "J5 (19/27) Hoang Hoa Tham St. Ward 3,Binh Phuoc,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP078",
+                        "Address": "70-72 Tran Phu Street Da Nang City,Ho Chi Minh City,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP958",
+                        "Address": "339 Nguyen Van Luong Ward 12 Dist.6,Ho Chi Minh City,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP035",
+                        "Address": "24 B3 Mai Dich Street Group 217 Cau Giay District,Hanoi,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP063",
+                        "Address": "92 Pho Quang Ward 2,Hanoi,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP065",
+                        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP244",
+                        "Address": "Chau Khe Industrial Zone Tu Son District,Hanoi,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP387",
+                        "Address": "3Lane 76 An Duong Street Tay Ho District,Hanoi,Vietnam",
+                        "State": "20%"
+                    },
+                    {
+                        "ID": "MCP466",
+                        "Address": "20/33 Le Thanh Tong Street,Thanh Hoa,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP333",
+                        "Address": "220/42/16 Nguyen Xi St. Ward 26,Ho Chi Minh City,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP857",
+                        "Address": "586 Ba Trieu StreetThanh Hoa city,Thanh Hoa,Vietnam",
+                        "State": "20%"
+                    },
+                    {
+                        "ID": "MCP255",
+                        "Address": "Nguyen Tri Phuong Extended St. Lot 27A-B B2.6 Resident Area 4,Danang,Vietnam",
+                        "State": "50%"
+                    },
+                    {
+                        "ID": "MCP956",
+                        "Address": "260 Tran Khat Chan St. Thanh Luong Ward,Hanoi,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP422",
+                        "Address": "410 Su Van Hanh St. Ward 9 Dist. 10,Ho Chi Minh City,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP043",
+                        "Address": "701 Le Hong Phong Ward 10,Ho Chi Minh City,Vietnam",
+                        "State": "20%"
+                    },
+                    {
+                        "ID": "MCP067",
+                        "Address": "44 Street 1A Binh Tri Dong B Ward,Ho Chi Minh City,Vietnam",
+                        "State": "75%"
+                    },
+                    {
+                        "ID": "MCP242",
+                        "Address": "344 Tran PHuu Str.,Quang Ninh,Vietnam",
+                        "State": "Full loaded"
+                    },
+                    {
+                        "ID": "MCP111",
+                        "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
+                        "State": "20%"
+                    }
+                ]
+                buildTable(MCPList)
+                function buildTable(data){
+                    var table = document.getElementById('myTable3')
+                    for (var i = 0; i < data.length; i++){
+                        var row = `<tr>
+                                            <td width="80px">${data[i].ID}</td>
+                                            <td width="330px">${data[i].Address}</td>
+                                            <td width="70px">${data[i].State}</td>
+                                      </tr>`
+                        table.innerHTML += row
+                    }
+                }
+            </script>
+            <!--New-->
+        </div>
     </div>
 </div>
 </div>

@@ -259,3 +259,72 @@ function closePopup(){
     removeElementsByClass('newlyadd');
     document.querySelector('.add-btn').removeAttribute("disabled");
 }
+
+//////////////////////////////////////////////////////
+
+const addworkerButton = document.querySelectorAll('.add-worker-btn')
+addworkerButton.forEach(button => {
+    button.addEventListener('click', () => {
+        openWorkerList(container2);
+    })
+})
+
+function openWorkerList(container2) {
+    if (container2 == null) return
+    container2.classList.add('active')
+    if (container3 == null) return
+    container3.classList.remove('active')
+    if (container4 == null) return
+    container4.classList.remove('active')
+}
+
+const addvehicleButton = document.querySelectorAll('.add-vehicle-btn')
+addvehicleButton.forEach(button => {
+    button.addEventListener('click', () => {
+        openVehicleList(container3)
+    })
+})
+
+function openVehicleList(container3) {
+    if (container3 == null) return
+    container3.classList.add('active')
+    if (container2 == null) return
+    container2.classList.remove('active')
+    if (container4 == null) return
+    container4.classList.remove('active')
+}
+
+const addMCPButton = document.querySelectorAll('.choose-MCP-btn')
+addMCPButton.forEach(button => {
+    button.addEventListener('click', () => {
+        openMCPList(container4)
+    })
+})
+
+function openMCPList(container4) {
+    if (container4 == null) return
+    container4.classList.add('active')
+    if (container2 == null) return
+    container2.classList.remove('active')
+    if (container3 == null) return
+    container3.classList.remove('active')
+}
+
+var table = document.querySelector(".table-fixed");
+var selected = table.getElementsByClassName('selected');
+table.onclick = highlight;
+
+function highlight(e) {
+    if (selected[0]) selected[0].className = '';
+    e.target.parentNode.className = 'selected';
+}
+
+function fnselect() {
+    let element = document.querySelectorAll('.selected');
+    if (element[0]!== undefined) { //it must be selected
+        console.log(element[0].children);
+        /*
+        console.log(element[0].children[1].innerHTML);
+        alert(element[0].children[0].firstChild.data); */
+    }
+}
