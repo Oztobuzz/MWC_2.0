@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>UWC 2.0</title>
+<link rel="stylesheet" type="text/css" href="Login.css">
+</head>
+<body> 
+    <div class="span">
+        <h2>Welcome to UWC 2.0</h2>
+    </div>
+    <div class="login">
+        <h1>Member Login</h1>
+        <br>
+        <p>Username</p>
+        <br>
+        <input type="text" id="username" placeholder="Enter Username">
+        <br>
+        <p>Password</p>
+        <br>
+        <input type="password" id="password" placeholder="Enter Password">
+        <br>
+        <button onclick="auth()">Login</button>
+    </div>
+    <script>
+        function auth() {
+            /*var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;*/
+            if (document.getElementById("username").value == "Gia Linh Tran" && document.getElementById("password").value == "00990022") {
+                window.location.assign("main.html");
+            }
+            else {
+                alert("Invalid Information");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
