@@ -5,22 +5,26 @@
 <link rel="stylesheet" type="text/css" href="Login.css">
 </head>
 <body> 
+    <section>
     <div class="span">
         <h2>Welcome to UWC 2.0</h2>
     </div>
-    <div class="login">
-        <h1>Member Login</h1>
-        <br>
-        <p>Username</p>
-        <br>
-        <input type="text" id="username" placeholder="Enter Username">
-        <br>
-        <p>Password</p>
-        <br>
-        <input type="password" id="password" placeholder="Enter Password">
-        <br>
-        <button onclick="auth()">Login</button>
+    <div class="second-place">
+        <div class="login">
+            <h1>Member Login</h1>
+            <br>
+            <p>Username</p>
+            <br>
+            <input type="text" id="username" placeholder="Enter Username">
+            <br>
+            <p>Password</p>
+            <br>
+            <input type="password" id="password" placeholder="Enter Password">
+            <br>
+            <button onclick="auth()">Login</button>
+        </div>
     </div>
+    </section>
     <script>
         function auth() {
             /*var username = document.getElementById("username").value;
