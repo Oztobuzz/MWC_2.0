@@ -142,6 +142,12 @@ function openPopup(){
 function closePopup(){
     document.getElementById('popup').classList.remove('open-popup');
     document.querySelector('body').classList.remove('stop-scrolling');
+    if (container2 == null) return
+    container2.classList.remove('active')
+    if (container3 == null) return
+    container3.classList.remove('active')
+    if (container4 == null) return
+    container4.classList.remove('active')
 }
 
 function addPopup() {
