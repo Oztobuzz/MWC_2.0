@@ -58,21 +58,10 @@
     <div class="assign-box">
         <div class="frame f1">
             <div class="today-date">
-                <div class="event-date""></div>
+                <div class="event-date"></div>
         </div>
         <div class="events">
-            <!-- <div class="event">
-                <i class="fa fa-circle"></i>
-                <h3 class="event-title">Event 1</h3>
-            </div>
-            <div class="event">
-                <i class="fa fa-circle"></i>
-                <h3 class="event-title">Event 2</h3>
-            </div>
-            <div class="event">
-                <i class="fa fa-circle"></i>
-                <h3 class="event-title">Event 3</h3>
-            </div> -->
+            
         </div>
         <div class="add-task-area">
             <button class="add-btn">
@@ -84,6 +73,9 @@
     <div class="frame f2">
         <div class="empty-div"></div>
         <div class="assign-task">
+            <div class="task-info">
+                <!-- js -->
+            </div>
             <div class="popup-asg-info" id="popup-edit-task">
                 <div class="choose-type">
                     <label for="workers">Choose type:</label>
@@ -95,18 +87,27 @@
 
                 <div class="worker-ID">
                     <p>Choose a worker:</p>
-                    <button class="add-worker-btn unable-color">Add worker</button>
+                    <button class="add-worker-btn unable-color active" id="worker-btn">Add worker</button>
+                    <div class="worker-ID-info unactive" id="worker-info">
+                        
+                    </div>
                 </div>
 
                 <div class="vehicle-ID">
                     <p>Choose a vehicle:</p>
-                    <button class="add-vehicle-btn unable-color">Add vehicle</button>
+                    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Add vehicle</button>
+                    <div class="vehicle-ID-info unactive" id="vehicle-info">
+                        
+                    </div>
                 </div>
 
                 <div class="choose-MCP">
                     <div class="choose-MCP-in">
                         <p>Choose MCPs:</p>
-                        <button class="choose-MCP-btn unable-color">Choose MCPs</button>
+                        <button class="choose-MCP-btn unable-color active" id="MCP-btn">Choose MCPs</button>
+                        <div class="choose-MCP-info unactive" id="MCP-info">
+                        
+                        </div>
                     </div>
                 </div>
 
@@ -138,7 +139,6 @@
                     </tr></thead>
                     <tbody id="myTable1"></tbody>
                 </table></div>
-                <input type="button" id="tst" value="OK" onclick="fnselect()" />
             </div>
             <script>
                 var WorkerList = [
