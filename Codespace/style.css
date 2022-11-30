@@ -397,6 +397,10 @@ body {
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     cursor: pointer;
+    background-color: #04AA6D;
+    border: none;
+
+    /* color: white; */
 }
 
 .empty-div {
@@ -410,7 +414,7 @@ body {
 .assign-task {
     width: 100%;
     height: 80%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgb(0, 0, 0);
@@ -419,9 +423,6 @@ body {
 
 .confirm-task-area {
     height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     /* border: 1px solid rgb(255, 0, 0); */
 }
 
@@ -446,7 +447,171 @@ body {
     align-items: center;
     justify-content: center;
 }
-/*----------------New----------------*/
+
+.assign-task .choose-type {
+    height: 5%;
+    display: inline;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+select {
+    cursor: pointer;
+}
+
+.assign-task .worker-ID {
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.add-worker-btn {
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.add-vehicle-btn {
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.assign-task .vehicle-ID {
+    display:flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 10%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.choose-MCP {
+    display:flex;
+    gap: 0 20px;
+    width: 100%;
+    height: 45%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.choose-MCP-in{
+    display: flex;
+    align-items: center;;
+    gap: 0 20px;
+    width: 100%;
+    height: 20%;
+}
+
+.choose-MCP-btn {
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.MCP-final {
+    text-align: center;
+}
+
+.make-route-btn {
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin: 4px 2px 0;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.identify-MCP-btn {
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    border-radius: 12px;
+    margin: 4px 2px 0 15px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #04AA6D;
+}
+
+.popup-asg-info{
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#popup-confirm-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-edit-task{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.open-subpopup{
+    visibility: visible;
+}
+
+.unable-color{
+    background-color: #04AA6D;
+}
+
+.disable-color{
+    background-color: gray;
+}
+
+/*//////////////////////////////////////////*/
+
 .container2 {
     position: fixed;
     display: flex;
@@ -621,7 +786,6 @@ table {
 .container4.active {
     transform: scale(1);
 }
-/*--------------------New-------------------------*/
 
 .selected {
     background-color: #373c4f;

@@ -5,12 +5,21 @@ const calendar = document.querySelector(".calendar"),
 (next = document.querySelector(".next")),
     (todayBtn = document.querySelector(".today-btn")),
     (gotoBtn = document.querySelector(".goto-btn")),
-    (dateInput = document.querySelector(".date-input"));
+    (dateInput = document.querySelector(".date-input")),
+    eventAvail = document.querySelector(".events") ;
 
 let today = new Date();
 let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
+
+class Event{
+    constructor(name,date){
+       this.name = name;
+       this.date = date; 
+    }
+}
+let events = [];
 
 const months = [
     "January",
@@ -134,21 +143,12 @@ function gotoDate() {
 
 
 // Popup
-
+let dayN = "";
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
 }
-function closePopup(){
-    document.getElementById('popup').classList.remove('open-popup');
-    document.querySelector('body').classList.remove('stop-scrolling');
-    if (container2 == null) return
-    container2.classList.remove('active')
-    if (container3 == null) return
-    container3.classList.remove('active')
-    if (container4 == null) return
-    container4.classList.remove('active')
-}
+
 
 function addPopup() {
     document.querySelectorAll(".day").forEach(element => {
@@ -157,12 +157,23 @@ function addPopup() {
             element.addEventListener("click", ()=>{
                 let str = element.innerHTML;
                 let tmp = str.length;
-                let dayN = "";
+                dayN = "";
                 for(var i = 0; i < tmp; i++){
                     if(str[i] >= '0' && str[i] <= 9) dayN += str[i];
                 }
                 dayN += " " + document.querySelector(".date").innerHTML;
                 document.querySelector(".event-date").innerHTML = dayN;
+                for(let i = 0; i < events.length; i ++)
+                {
+                    if(events[i].date === dayN)
+                    {
+                        const el = document.createElement(`div`);
+                        el.classList.add("event","newlyadd");
+                        // let NumT = document.querySelectorAll(".event");
+                        el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${events[i].name}</h3></div>`;
+                        eventAvail.append(el);
+                    }
+                }
                 openPopup();
             });
 
@@ -179,9 +190,85 @@ document.querySelectorAll(".change-month").forEach(element => {
 document.querySelectorAll(".go-btn").forEach(element => {
     element.addEventListener("click", addPopup);
 })
-/*------------------------New------------------------------*/
 
-const addworkerButton = document.querySelectorAll('[add-worker-button]')
+function openPopup2(){
+    document.getElementById('popup-edit-task').classList.add('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.add('open-subpopup');
+}
+
+document.querySelector(".add-btn").addEventListener("click", ()=>{
+    openPopup2();
+    console.log(dayN);
+    document.querySelector(".add-btn").toggleAttribute("disabled");
+})
+
+document.querySelector(".confirm-btn").addEventListener("click", ()=>{
+    const event = new Event(`Event ${document.querySelectorAll(".event").length + 1}`, dayN);
+    events.push(event);
+    const el = document.createElement(`div`);
+    el.classList.add("event","newlyadd");
+    el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
+    eventAvail.append(el);
+    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    document.querySelector(".add-btn").toggleAttribute("disabled");
+})
+
+document.querySelector('.identify-MCP-btn').disabled = true;
+
+function unableToggle(el, cl1, cl2){
+    el.classList.toggle(cl1);
+    el.classList.toggle(cl2);
+}
+
+document.getElementById('workers').addEventListener("change", ()=>{
+    if(document.getElementById('workers').value === "Janitor") {
+        let tmpa = document.querySelector('.identify-MCP-btn')
+        let tmpb = document.querySelector('.add-vehicle-btn')
+        let tmpc = document.querySelector('.make-route-btn')
+        tmpa.disabled = false;
+        tmpb.disabled = true;
+        tmpc.disable = true;
+        unableToggle(tmpa, "disable-color", "unable-color");
+        unableToggle(tmpc, "unable-color", "disable-color");
+        unableToggle(tmpb, "unable-color", "disable-color");
+    }
+    else{
+        let tmpa = document.querySelector('.identify-MCP-btn')
+        let tmpb = document.querySelector('.add-vehicle-btn')
+        let tmpc = document.querySelector('.make-route-btn')
+        tmpa.disabled = true;
+        tmpb.disabled = false;
+        tmpc.disable = false;
+        unableToggle(tmpa, "unable-color", "disable-color");
+        unableToggle(tmpc, "disable-color", "unable-color");
+        unableToggle(tmpb, "disable-color", "unable-color");
+    }
+})
+function removeElementsByClass(className){
+    const elements = document.getElementsByClassName(className);
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+function closePopup(){
+    document.getElementById('popup').classList.remove('open-popup');
+    document.querySelector('body').classList.remove('stop-scrolling');
+    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    removeElementsByClass('newlyadd');
+    document.querySelector('.add-btn').removeAttribute("disabled");
+    if (container2 == null) return
+    container2.classList.remove('active')
+    if (container3 == null) return
+    container3.classList.remove('active')
+    if (container4 == null) return
+    container4.classList.remove('active')
+}
+
+//////////////////////////////////////////////////////
+
+const addworkerButton = document.querySelectorAll('[data-worker-list-target]')
 addworkerButton.forEach(button => {
     button.addEventListener('click', () => {
         openWorkerList(container2);
@@ -197,7 +284,7 @@ function openWorkerList(container2) {
     container4.classList.remove('active')
 }
 
-const addvehicleButton = document.querySelectorAll('[add-vehicle-button]')
+const addvehicleButton = document.querySelectorAll('[data-vehicle-list-target]')
 addvehicleButton.forEach(button => {
     button.addEventListener('click', () => {
         openVehicleList(container3)
@@ -213,7 +300,7 @@ function openVehicleList(container3) {
     container4.classList.remove('active')
 }
 
-const addMCPButton = document.querySelectorAll('[add-MCP-button]')
+const addMCPButton = document.querySelectorAll('[data-MCP-list-target]')
 addMCPButton.forEach(button => {
     button.addEventListener('click', () => {
         openMCPList(container4)
@@ -228,7 +315,6 @@ function openMCPList(container4) {
     if (container3 == null) return
     container3.classList.remove('active')
 }
-/*--------------------New-----------------------------*/
 
 var table = document.querySelector(".table-fixed");
 var selected = table.getElementsByClassName('selected');
