@@ -164,7 +164,6 @@ function openPopup(){
     document.querySelector('body').classList.add('stop-scrolling');
 }
 
-
 function addPopup() {
     document.querySelectorAll(".day").forEach(element => {
         if (element.classList.value !== "day prev-date"
@@ -204,16 +203,19 @@ document.querySelectorAll(".go-btn").forEach(element => {
     element.addEventListener("click", addPopup);
 })
 
+// Subpopup
 function openPopup2() {
     document.getElementById('popup-edit-task').classList.add('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.add('open-subpopup');
 }
 
+// add task
 document.querySelector(".add-btn").addEventListener("click", () => {
     openPopup2();
     document.querySelector(".add-btn").toggleAttribute("disabled");
 })
 
+// assign default
 document.querySelector('.identify-MCP-btn').disabled = true;
 
 function unableToggle(el, cl1, cl2) {
@@ -221,6 +223,7 @@ function unableToggle(el, cl1, cl2) {
     el.classList.toggle(cl2);
 }
 
+// change type
 document.getElementById('workers').addEventListener("change", () => {
     if (document.getElementById('workers').value === "Janitor") {
         let tmpa = document.querySelector('.identify-MCP-btn')
@@ -245,31 +248,511 @@ document.getElementById('workers').addEventListener("change", () => {
     }
 })
 
-function removeElementsByClass(className) {
-    const elements = document.getElementsByClassName(className);
-    while (elements.length > 0) {
-        elements[0].parentNode.removeChild(elements[0]);
+// hard code data
+var WorkerList = [
+    {
+        "ID": "JNT001",
+        "Name": "Thế Phi Cường",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT003",
+        "Name": "Vưu Nghĩa Dũng",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT002",
+        "Name": "Thạch Minh Khôi",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT112",
+        "Name": "Nhâm Tuấn Hải",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT342",
+        "Name": "Đỗ Thiện Minh",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT130",
+        "Name": "Ngạc Việt Phương",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT452",
+        "Name": "Ngọ Ðình Quảng",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT855",
+        "Name": "Ung Chiến Thắng",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT999",
+        "Name": "Xung Mạnh Ðình",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT004",
+        "Name": "Thi Trọng Khánh",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT142",
+        "Name": "Mẫn Cao Kỳ",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT734",
+        "Name": "Giàng Ðức Minh",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT232",
+        "Name": "Phùng Thiện Ngôn",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT464",
+        "Name": "Điêu Duy Quang",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT7462",
+        "Name": "Cát Ðình Trung",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT822",
+        "Name": "Tiếp Hữu Vượng",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT546",
+        "Name": "Thành Trung Dũng",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT832",
+        "Name": "Quách Hữu Hiệp",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT133",
+        "Name": "Tôn Thất Thành Long",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT875",
+        "Name": "Đào Quốc Trường",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT654",
+        "Name": "Đào Quốc Trường",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT363",
+        "Name": "Kông Ngọc Khôi",
+        "Role": "Janitor",
+        "State": "Free"
+    },
+    {
+        "ID": "CLT738",
+        "Name": "Liễu Thiên Mạnh",
+        "Role": "Collector",
+        "State": "Free"
+    },
+    {
+        "ID": "JNT360",
+        "Name": "Mạc Hoàng Thái",
+        "Role": "Janitor",
+        "State": "Free"
+    }
+]
+var VehicleList = [
+    {
+        "ID": "VHC131",
+        "Weight": 6,
+        "Capacity": 3,
+        "FuelConsumption": 330,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC630",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC004",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC252",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC005",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC144",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC633",
+        "Weight": 2,
+        "Capacity": 1,
+        "FuelConsumption": 130,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC078",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC958",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC035",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC063",
+        "Weight": 5,
+        "Capacity": "2,5",
+        "FuelConsumption": 280,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC065",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC244",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC387",
+        "Weight": 1,
+        "Capacity": "0,5",
+        "FuelConsumption": 80,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC466",
+        "Weight": 6,
+        "Capacity": 3,
+        "FuelConsumption": 330,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC333",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC857",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC255",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC956",
+        "Weight": 8,
+        "Capacity": 4,
+        "FuelConsumption": 430,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC422",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC043",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC067",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC242",
+        "Weight": 2,
+        "Capacity": 1,
+        "FuelConsumption": 130,
+        "State": "Available"
+    },
+    {
+        "ID": "VHC111",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Available"
+    }
+]
+var MCPList = [
+    {
+        "ID": "MCP131",
+        "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP630",
+        "Address": "298 Nguyen Trong Tuyen Street Ward 1,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP004",
+        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP252",
+        "Address": "202 Truong Dinh St. Tuong Mai Ward,Ho Chi Minh City,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP005",
+        "Address": "149D Doi Can,Hanoi,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP144",
+        "Address": "584 Nguyen Van Cu Gia Lam Townlet,Vinh,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP633",
+        "Address": "J5 (19/27) Hoang Hoa Tham St. Ward 3,Binh Phuoc,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP078",
+        "Address": "70-72 Tran Phu Street Da Nang City,Ho Chi Minh City,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP958",
+        "Address": "339 Nguyen Van Luong Ward 12 Dist.6,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP035",
+        "Address": "24 B3 Mai Dich Street Group 217 Cau Giay District,Hanoi,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP063",
+        "Address": "92 Pho Quang Ward 2,Hanoi,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP065",
+        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP244",
+        "Address": "Chau Khe Industrial Zone Tu Son District,Hanoi,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP387",
+        "Address": "3Lane 76 An Duong Street Tay Ho District,Hanoi,Vietnam",
+        "State": "20%"
+    },
+    {
+        "ID": "MCP466",
+        "Address": "20/33 Le Thanh Tong Street,Thanh Hoa,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP333",
+        "Address": "220/42/16 Nguyen Xi St. Ward 26,Ho Chi Minh City,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP857",
+        "Address": "586 Ba Trieu StreetThanh Hoa city,Thanh Hoa,Vietnam",
+        "State": "20%"
+    },
+    {
+        "ID": "MCP255",
+        "Address": "Nguyen Tri Phuong Extended St. Lot 27A-B B2.6 Resident Area 4,Danang,Vietnam",
+        "State": "50%"
+    },
+    {
+        "ID": "MCP956",
+        "Address": "260 Tran Khat Chan St. Thanh Luong Ward,Hanoi,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP422",
+        "Address": "410 Su Van Hanh St. Ward 9 Dist. 10,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP043",
+        "Address": "701 Le Hong Phong Ward 10,Ho Chi Minh City,Vietnam",
+        "State": "20%"
+    },
+    {
+        "ID": "MCP067",
+        "Address": "44 Street 1A Binh Tri Dong B Ward,Ho Chi Minh City,Vietnam",
+        "State": "75%"
+    },
+    {
+        "ID": "MCP242",
+        "Address": "344 Tran PHuu Str.,Quang Ninh,Vietnam",
+        "State": "Full loaded"
+    },
+    {
+        "ID": "MCP111",
+        "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
+        "State": "20%"
+    }
+]
+
+// Worker data table
+function buildWorkerTable(data) {
+    var table = document.getElementById('myTable1');
+    table.innerHTML = "";
+    let Wtype = document.getElementById("workers");
+    console.log(Wtype.value);
+    for (var i = 0; i < data.length; i++){
+        if(data[i].Role == Wtype.value){
+            var row = `<tr>
+                                <td width="80px">${data[i].ID}</td>
+                                <td width="200px">${data[i].Name}</td>
+                                <td width="80px">${data[i].Role}</td>
+                                <td width="60px">${data[i].State}</td>
+                    </tr>`
+            table.innerHTML += row
+        }
+    }
+}
+document.getElementById('worker-btn').addEventListener('click', () => {
+    buildWorkerTable(WorkerList);                        
+    openWorkerList(container2);
+})
+
+// Vehicle data table
+function buildVehicleTable(data){
+    var table = document.getElementById('myTable2')
+    for (var i = 0; i < data.length; i++){
+        var row = `<tr>
+                            <td width="80px">${data[i].ID}</td>
+                            <td width="95px">${data[i].Weight}</td>
+                            <td width="80px">${data[i].Capacity}</td>
+                            <td width="145px">${data[i].FuelConsumption}</td>
+                            <td width="80px">${data[i].State}</td>
+                      </tr>`
+        table.innerHTML += row
+    }
+}
+document.getElementById('vehicle-btn').addEventListener('click', () => {
+    buildVehicleTable(VehicleList);
+    openVehicleList(container3);
+})
+
+// MCPs data table
+function buildMCPTable(data){
+    var table = document.getElementById('myTable3')
+    for (var i = 0; i < data.length; i++){
+        var row = `<tr>
+                            <td width="80px">${data[i].ID}</td>
+                            <td width="330px">${data[i].Address}</td>
+                            <td width="70px">${data[i].State}</td>
+                      </tr>`
+        table.innerHTML += row
     }
 }
 
-function closePopup() {
-    document.getElementById('popup').classList.remove('open-popup');
-    document.querySelector('body').classList.remove('stop-scrolling');
-    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
-    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
-    removeElementsByClass('newlyadd');
-    document.querySelector('.add-btn').removeAttribute("disabled");
-}
-
-//////////////////////////////////////////////////////
-
-const addworkerButton = document.querySelectorAll('.add-worker-btn')
-addworkerButton.forEach(button => {
-    button.addEventListener('click', () => {
-        openWorkerList(container2);
+function MCP_button() {document.querySelectorAll('.MCP-btn').forEach(element =>{
+    element.addEventListener('click', () => {
+        buildMCPTable(MCPList);
+        openMCPList(container4);
     })
-})
+})}
 
+MCP_button();
+
+// open the data table
 function openWorkerList(container2) {
     if (container2 == null) return
     container2.classList.add('active')
@@ -278,13 +761,6 @@ function openWorkerList(container2) {
     if (container4 == null) return
     container4.classList.remove('active')
 }
-
-const addvehicleButton = document.querySelectorAll('.add-vehicle-btn')
-addvehicleButton.forEach(button => {
-    button.addEventListener('click', () => {
-        openVehicleList(container3)
-    })
-})
 
 function openVehicleList(container3) {
     if (container3 == null) return
@@ -295,13 +771,6 @@ function openVehicleList(container3) {
     container4.classList.remove('active')
 }
 
-const addMCPButton = document.querySelectorAll('.choose-MCP-btn')
-addMCPButton.forEach(button => {
-    button.addEventListener('click', () => {
-        openMCPList(container4)
-    })
-})
-
 function openMCPList(container4) {
     if (container4 == null) return
     container4.classList.add('active')
@@ -311,13 +780,12 @@ function openMCPList(container4) {
     container3.classList.remove('active')
 }
 
-console.log(document.querySelector(".table-fixed"))
 
 /* choose btn for table worker */
 
-var table = document.querySelector(".table-fixed");
-var selected = table.getElementsByClassName('selected');
-table.onclick = highlight;
+var Wtable = document.querySelector(".table-fixed");
+var selected = Wtable.getElementsByClassName('selected');
+Wtable.onclick = highlight;
 
 let tmp_worker_id = new String, tmp_worker_name = new String;
 
@@ -329,19 +797,28 @@ function highlight(e) {
         tmp_worker_id = element[0].children[0].firstChild.data;
         tmp_worker_name = element[0].children[1].innerHTML;
     }
-    refresh_worker();
-    document.getElementById("worker-btn").classList.remove("active");
-    document.getElementById("worker-btn").classList.add("unactive");
-    document.getElementById("worker-info").classList.remove("unactive");
-    document.getElementById("worker-info").classList.add("active");
+    // refresh_worker();
+
+    document.getElementById("worker-btn").innerText = tmp_worker_id + " - " + tmp_worker_name;
+    // document.getElementById("worker-btn").classList.remove("active");
+    // document.getElementById("worker-btn").classList.add("unactive");
+    // document.getElementById("worker-info").classList.remove("unactive");
+    // document.getElementById("worker-info").classList.add("active");
 }
+
+// function refresh_worker() {
+//     document.querySelector(".worker-ID-info").innerHTML = `<div class="add-worker-btn unable-color">${tmp_worker_id + " - " + tmp_worker_name}</div>`;
+// }
+document.getElementById('W-OK-btn').addEventListener("click", () => {
+    document.querySelector(".container2").classList.remove("active");
+})
+
 
 /* choose btn for table vehicle */
 
-
-var table1 = document.querySelector(".table-fixed1");
-var selected1 = table1.getElementsByClassName('selected1');
-table1.onclick = highlight1;
+var Vtable = document.querySelector(".table-fixed1");
+var selected1 = Vtable.getElementsByClassName('selected1');
+Vtable.onclick = highlight1;
 
 let tmp_vehicle_id = new String;
 
@@ -352,18 +829,30 @@ function highlight1(e) {
     if (element[0] !== undefined) { //it must be selected
         tmp_vehicle_id = element[0].children[0].firstChild.data;
     }
-    refresh_vehicle();
-    document.getElementById("vehicle-btn").classList.remove("active");
-    document.getElementById("vehicle-btn").classList.add("unactive");
-    document.getElementById("vehicle-info").classList.remove("unactive");
-    document.getElementById("vehicle-info").classList.add("active");
+
+    document.getElementById("vehicle-btn").innerText = tmp_vehicle_id;
+    // refresh_vehicle();
+    // document.getElementById("vehicle-btn").classList.remove("active");
+    // document.getElementById("vehicle-btn").classList.add("unactive");
+    // document.getElementById("vehicle-info").classList.remove("unactive");
+    // document.getElementById("vehicle-info").classList.add("active");
 }
+
+// function refresh_vehicle() {
+//     document.querySelector(".vehicle-ID-info").innerHTML = `<div class="add-vehicle-btn unable-color">${tmp_vehicle_id}</div>`;
+// }
+document.getElementById('V-OK-btn').addEventListener("click", () => {
+    document.querySelector(".container3").classList.remove("active");
+})
 
 /* choose btn for table MCP */
 
-var table2 = document.querySelector(".table-fixed2");
-var selected2 = table2.getElementsByClassName('selected2');
-table2.onclick = highlight2;
+var MCPtable = document.querySelector(".table-fixed2");
+var selected2 = MCPtable.getElementsByClassName('selected2');
+// selected2.forEach(element => {
+//     element.onclick = highlight2;
+// })
+MCPtable.onclick = highlight2;
 
 let tmp_MCP_id = [];
 let tmp_MCP_address = [];
@@ -381,41 +870,50 @@ function highlight2(e) {
                 tmp_MCP_id[0] = element[0].children[0].firstChild.data;
                 tmp_MCP_address[0] = element[0].children[1].innerText;
         } else {
-            tmp_MCP_id.push(element[0].children[0].firstChild.data);
-            tmp_MCP_address.push(element[0].children[1].innerText);
+            if(tmp_MCP_id.includes(element[0].children[0].firstChild.data) && tmp_MCP_id.length > 1) {
+                tmp_MCP_id = tmp_MCP_id.filter(item => item !== element[0].children[0].firstChild.data);
+                tmp_MCP_address = tmp_MCP_address.filter(item => item !== element[0].children[1].innerText);
+            }
+            else if(tmp_MCP_id.includes(element[0].children[0].firstChild.data)) {
+
+            }
+            else {
+                console.log(2);
+                tmp_MCP_id.push(element[0].children[0].firstChild.data);
+                tmp_MCP_address.push(element[0].children[1].innerText);
+            }
         }
     }
-    refresh_MCP();
-    document.getElementById("MCP-btn").classList.remove("active");
-    document.getElementById("MCP-btn").classList.add("unactive");
-    document.getElementById("MCP-info").classList.remove("unactive");
-    document.getElementById("MCP-info").classList.add("active");
-}
 
-// refresh assign frame again
-
-function refresh_worker() {
-    document.querySelector(".worker-ID-info").innerHTML = `<div class="add-worker-btn unable-color">${tmp_worker_id + " - " + tmp_worker_name}</div>`;
-}
-
-function refresh_vehicle() {
-    document.querySelector(".vehicle-ID-info").innerHTML = `<div class="add-vehicle-btn unable-color">${tmp_vehicle_id}</div>`;
-}
-
-function refresh_MCP() {
     let tmp_inner_MCP = "";
-    for (let i = 0; i < tmp_MCP_id.length; i++) {
-        tmp_inner_MCP += `<div class="choose-MCP-btn unable-color">${tmp_MCP_id[i]}</div>`;
+    for (let i = 0; i < tmp_MCP_address.length; i++) {
+        tmp_inner_MCP += `<div class="choose-MCP-btn unable-color MCP-btn address-after-asg" >${tmp_MCP_address[i]}</div>`;
     }
-    document.querySelector(".choose-MCP-info").innerHTML = tmp_inner_MCP;
+    document.querySelector(".choose-MCP-in-2").innerHTML = tmp_inner_MCP;
+    MCP_button();
+    // refresh_MCP();
+    // document.getElementById("MCP-btn").classList.remove("active");
+    // document.getElementById("MCP-btn").classList.add("unactive");
+    // document.getElementById("MCP-info").classList.remove("unactive");
+    // document.getElementById("MCP-info").classList.add("active");
 }
+document.getElementById('MCP-OK-btn').addEventListener("click", () => {
+    document.querySelector(".container4").classList.remove("active");
+})
+
+// function refresh_MCP() {
+//     let tmp_inner_MCP = "";
+//     for (let i = 0; i < tmp_MCP_id.length; i++) {
+//         tmp_inner_MCP += `<div class="choose-MCP-btn unable-color">${tmp_MCP_id[i]}</div>`;
+//     }
+//     document.querySelector(".choose-MCP-info").innerHTML = tmp_inner_MCP;
+// }
 
 /* show choosen task info */
 function show_task_info() {
     let tmp_name = "";
     document.querySelectorAll(".events").forEach(element => {
         element.addEventListener("click", () => {
-            console.log(tmp_MCP_id)
             tmp_name = element.innerText;
             let tmp_inner = "";
             for (let i = 0; i < eventArr.length; i++) {
@@ -440,8 +938,10 @@ function show_task_info() {
                                         <p>Vehicle ID: </p>
                                         <div class="vehicle-task-ID">
                                         ${eventArr[i].vehicle_id}
-                                        </div>`
+                                        </div>`;
+                        // document.querySelector(".assign-task").childNodes
                         document.querySelector(".task-info").innerHTML = tmp_inner;
+                        document.querySelector(".task-info").classList.toggle("block-display");
                         break;
                     } 
             } 
@@ -463,26 +963,39 @@ document.querySelector(".confirm-btn").addEventListener("click", () => {
     const el = document.createElement(`div`);
     el.classList.add("event","newlyadd");
     el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
+    console.log(el);
     eventAvail.append(el);
 
-    document.getElementById("worker-btn").classList.remove("unactive");
-    document.getElementById("worker-btn").classList.add("active");
-    document.getElementById("worker-info").classList.remove("active");
-    document.getElementById("worker-info").classList.add("unactive");
+    document.getElementById("worker-btn").innerText = "Add worker";
 
-    document.getElementById("vehicle-btn").classList.remove("unactive");
-    document.getElementById("vehicle-btn").classList.add("active");
-    document.getElementById("vehicle-info").classList.remove("active");
-    document.getElementById("vehicle-info").classList.add("unactive");
+    document.getElementById("vehicle-btn").innerHTML = "Add vehicle";
 
-    document.getElementById("MCP-btn").classList.remove("unactive");
-    document.getElementById("MCP-btn").classList.add("active");
-    document.getElementById("MCP-info").classList.remove("active");
-    document.getElementById("MCP-info").classList.add("unactive");
+    document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Choose MCPs</button>`;
 
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
     document.querySelector(".add-btn").toggleAttribute("disabled");
 })
 
+
+
+
+
+// close popup
+function removeElementsByClass(className) {
+    const elements = document.getElementsByClassName(className);
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+function closePopup() {
+    document.getElementById('popup').classList.remove('open-popup');
+    document.querySelector('body').classList.remove('stop-scrolling');
+    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    removeElementsByClass('newlyadd');
+    document.querySelector('.add-btn').removeAttribute("disabled");
+    
+}
 

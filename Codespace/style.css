@@ -421,6 +421,14 @@ body {
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
+.task-info{
+    display: none;
+}
+
+.block-display{
+    display: block;
+}
+
 .confirm-task-area {
     height: 10%;
     /* border: 1px solid rgb(255, 0, 0); */
@@ -513,24 +521,45 @@ body {
 
 .choose-MCP-in{
     display: flex;
-    align-items: center;;
+    align-items:flex-start;
     gap: 0 20px;
     width: 100%;
+    height: 90%;
+}
+
+.choose-MCP-in-1{
     height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.choose-MCP-in-2{
+    flex: 0.9;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 0 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .choose-MCP-btn {
     border: none;
     color: white;
     padding: 10px;
-    text-align: center;
     text-decoration: none;
     display: flex;
+    align-items: center;
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 12px;
     cursor: pointer;
-    width: 100px;
+    /* width: 100%; */
+}
+
+.address-after-asg{
+    width: 90%;  
 }
 
 .MCP-final {
@@ -613,6 +642,8 @@ body {
 .container2 {
     position: fixed;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
     justify-content: center;
     margin-top: -20px;
@@ -634,7 +665,6 @@ table {
 
 .table-fixed tbody{
     display: block;
-    height: 450px;
     width: 475px;
     overflow-y: scroll;
     text-align: center;
@@ -661,6 +691,19 @@ table {
     cursor:pointer;
 }
 
+.container2 button{
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #04AA6D;
+}
+
 .create-add-worker-button button {
     cursor: pointer;
 }
@@ -672,12 +715,27 @@ table {
 .container3 {
     position: fixed;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
     justify-content: center;
     margin-top: -20px;
     border: #0b6b41;
     transform: scale(0);
     transition: 200ms ease-in-out;
+}
+
+.container3 button{
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #04AA6D;
 }
 
 .table-fixed1 {
@@ -730,12 +788,27 @@ table {
 .container4 {
     position: fixed;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     align-items: center;
     justify-content: center;
     margin-top: -20px;
     border: #0b6b41;
     transform: scale(0);
     transition: 200ms ease-in-out;
+}
+
+.container4 button{
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #04AA6D;
 }
 
 .table-fixed2 {
