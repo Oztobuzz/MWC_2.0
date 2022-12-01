@@ -13,7 +13,7 @@ body {
 
 .container {
     width: 100%;
-    height: 10%;
+    height: 15%;
 
     gap: 0;
 
@@ -34,8 +34,15 @@ body {
 }
 
 .container ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 180px;
     padding: 12px;
+}
+
+.container ul li:first-child {
+    width: 270px;
 }
 
 .container ul li a {
@@ -56,7 +63,7 @@ body {
     position: relative;
     width: 1200px;
     min-height: 850px;
-    margin: 30px auto;
+    margin: 40px auto 0 auto;
     padding: 2px;
     color: #fff;
     display: flex;
@@ -421,9 +428,9 @@ body {
     border-bottom: 1px solid rgb(0, 0, 0);
 }
 
-.task-info{
+/* .task-info{
     display: none;
-}
+} */
 
 .block-display{
     display: block;
@@ -598,6 +605,20 @@ body {
     border: none;
     display: flex;
     align-items: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #04AA6D;
+}
+
+.Task-OK-btn {
+    width: 30%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     font-size: 1.2rem;
     padding: 5px 10px 5px 10px;

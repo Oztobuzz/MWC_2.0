@@ -162,6 +162,7 @@ let dayN = "";
 function openPopup(){
     document.getElementById('popup').classList.add('open-popup');
     document.querySelector('body').classList.add('stop-scrolling');
+    show_task_info();  // new 
 }
 
 function addPopup() {
@@ -224,7 +225,7 @@ function unableToggle(el, cl1, cl2) {
 }
 
 // change type
-document.getElementById('workers').addEventListener("change", () => {
+function changeType(){document.getElementById('workers').addEventListener("change", () => {
     if (document.getElementById('workers').value === "Janitor") {
         let tmpa = document.querySelector('.identify-MCP-btn')
         let tmpb = document.querySelector('.add-vehicle-btn')
@@ -246,9 +247,11 @@ document.getElementById('workers').addEventListener("change", () => {
         unableToggle(tmpc, "disable-color", "unable-color");
         unableToggle(tmpb, "disable-color", "unable-color");
     }
-})
+})}
 
-// hard code data
+changeType(); // change to function : new
+
+// hard code data : new
 var WorkerList = [
     {
         "ID": "JNT001",
@@ -688,12 +691,12 @@ var MCPList = [
     }
 ]
 
-// Worker data table
+// Worker data table : new
 function buildWorkerTable(data) {
     var table = document.getElementById('myTable1');
     table.innerHTML = "";
     let Wtype = document.getElementById("workers");
-    console.log(Wtype.value);
+    // console.log(Wtype.value);
     for (var i = 0; i < data.length; i++){
         if(data[i].Role == Wtype.value){
             var row = `<tr>
@@ -706,12 +709,15 @@ function buildWorkerTable(data) {
         }
     }
 }
-document.getElementById('worker-btn').addEventListener('click', () => {
+
+function openWTable() {document.getElementById('worker-btn').addEventListener('click', () => {
     buildWorkerTable(WorkerList);                        
     openWorkerList(container2);
-})
+})}
 
-// Vehicle data table
+openWTable();
+
+// Vehicle data table : new
 function buildVehicleTable(data){
     var table = document.getElementById('myTable2')
     for (var i = 0; i < data.length; i++){
@@ -725,12 +731,15 @@ function buildVehicleTable(data){
         table.innerHTML += row
     }
 }
-document.getElementById('vehicle-btn').addEventListener('click', () => {
+
+function openVTable(){document.getElementById('vehicle-btn').addEventListener('click', () => {
     buildVehicleTable(VehicleList);
     openVehicleList(container3);
-})
+})}
 
-// MCPs data table
+openVTable();
+
+// MCPs data table : new
 function buildMCPTable(data){
     var table = document.getElementById('myTable3')
     for (var i = 0; i < data.length; i++){
@@ -752,7 +761,7 @@ function MCP_button() {document.querySelectorAll('.MCP-btn').forEach(element =>{
 
 MCP_button();
 
-// open the data table
+// open the data table 
 function openWorkerList(container2) {
     if (container2 == null) return
     container2.classList.add('active')
@@ -781,7 +790,7 @@ function openMCPList(container4) {
 }
 
 
-/* choose btn for table worker */
+/* choose btn for table worker : new */ 
 
 var Wtable = document.querySelector(".table-fixed");
 var selected = Wtable.getElementsByClassName('selected');
@@ -797,24 +806,15 @@ function highlight(e) {
         tmp_worker_id = element[0].children[0].firstChild.data;
         tmp_worker_name = element[0].children[1].innerHTML;
     }
-    // refresh_worker();
-
     document.getElementById("worker-btn").innerText = tmp_worker_id + " - " + tmp_worker_name;
-    // document.getElementById("worker-btn").classList.remove("active");
-    // document.getElementById("worker-btn").classList.add("unactive");
-    // document.getElementById("worker-info").classList.remove("unactive");
-    // document.getElementById("worker-info").classList.add("active");
 }
 
-// function refresh_worker() {
-//     document.querySelector(".worker-ID-info").innerHTML = `<div class="add-worker-btn unable-color">${tmp_worker_id + " - " + tmp_worker_name}</div>`;
-// }
 document.getElementById('W-OK-btn').addEventListener("click", () => {
     document.querySelector(".container2").classList.remove("active");
 })
 
 
-/* choose btn for table vehicle */
+/* choose btn for table vehicle : new */
 
 var Vtable = document.querySelector(".table-fixed1");
 var selected1 = Vtable.getElementsByClassName('selected1');
@@ -831,27 +831,16 @@ function highlight1(e) {
     }
 
     document.getElementById("vehicle-btn").innerText = tmp_vehicle_id;
-    // refresh_vehicle();
-    // document.getElementById("vehicle-btn").classList.remove("active");
-    // document.getElementById("vehicle-btn").classList.add("unactive");
-    // document.getElementById("vehicle-info").classList.remove("unactive");
-    // document.getElementById("vehicle-info").classList.add("active");
 }
-
-// function refresh_vehicle() {
-//     document.querySelector(".vehicle-ID-info").innerHTML = `<div class="add-vehicle-btn unable-color">${tmp_vehicle_id}</div>`;
-// }
 document.getElementById('V-OK-btn').addEventListener("click", () => {
     document.querySelector(".container3").classList.remove("active");
 })
 
-/* choose btn for table MCP */
+/* choose btn for table MCP : new */
 
 var MCPtable = document.querySelector(".table-fixed2");
 var selected2 = MCPtable.getElementsByClassName('selected2');
-// selected2.forEach(element => {
-//     element.onclick = highlight2;
-// })
+
 MCPtable.onclick = highlight2;
 
 let tmp_MCP_id = [];
@@ -891,81 +880,28 @@ function highlight2(e) {
     }
     document.querySelector(".choose-MCP-in-2").innerHTML = tmp_inner_MCP;
     MCP_button();
-    // refresh_MCP();
-    // document.getElementById("MCP-btn").classList.remove("active");
-    // document.getElementById("MCP-btn").classList.add("unactive");
-    // document.getElementById("MCP-info").classList.remove("unactive");
-    // document.getElementById("MCP-info").classList.add("active");
 }
 document.getElementById('MCP-OK-btn').addEventListener("click", () => {
     document.querySelector(".container4").classList.remove("active");
 })
 
-// function refresh_MCP() {
-//     let tmp_inner_MCP = "";
-//     for (let i = 0; i < tmp_MCP_id.length; i++) {
-//         tmp_inner_MCP += `<div class="choose-MCP-btn unable-color">${tmp_MCP_id[i]}</div>`;
-//     }
-//     document.querySelector(".choose-MCP-info").innerHTML = tmp_inner_MCP;
-// }
 
-/* show choosen task info */
-function show_task_info() {
-    let tmp_name = "";
-    document.querySelectorAll(".events").forEach(element => {
-        element.addEventListener("click", () => {
-            tmp_name = element.innerText;
-            let tmp_inner = "";
-            for (let i = 0; i < eventArr.length; i++) {
-                if (eventArr[i].name === tmp_name &&
-                    eventArr[i].date === dayN) 
-                    {
-                        tmp_inner =    `<p>Type of worker: </p>
-                                        <div class="type-of-worker">
-                                        ${eventArr[i].type}
-                                        </div>
-                                        <br>
-                                        <p>Worker ID: </p>
-                                        <div class="worker-task-ID">
-                                        ${eventArr[i].worker_id}
-                                        </div>
-                                        <br>
-                                        <p>Worker name: </p>
-                                        <div class="worker-task-name">
-                                        ${eventArr[i].worker_name}
-                                        </div>
-                                        <br>
-                                        <p>Vehicle ID: </p>
-                                        <div class="vehicle-task-ID">
-                                        ${eventArr[i].vehicle_id}
-                                        </div>`;
-                        // document.querySelector(".assign-task").childNodes
-                        document.querySelector(".task-info").innerHTML = tmp_inner;
-                        document.querySelector(".task-info").classList.toggle("block-display");
-                        break;
-                    } 
-            } 
-        });
-    })
-}
-
-show_task_info();
-
-// input data
-document.querySelector(".confirm-btn").addEventListener("click", () => {
+// new input data 
+function ConfirmButton(){
+    document.querySelector(".confirm-btn").addEventListener("click", () => {
     var e = document.getElementById("workers");
     var text = e.options[e.selectedIndex].text;
 
     const event = new Event(`Task ${document.querySelectorAll(".event").length + 1}`, dayN);
     event.input_type(text, tmp_worker_id, tmp_worker_name, tmp_vehicle_id, tmp_MCP_id, tmp_MCP_address);
-    console.log(event)
+    // console.log(event)
     eventArr.push(event);
     const el = document.createElement(`div`);
     el.classList.add("event","newlyadd");
     el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
-    console.log(el);
     eventAvail.append(el);
-
+    
+    // new 
     document.getElementById("worker-btn").innerText = "Add worker";
 
     document.getElementById("vehicle-btn").innerHTML = "Add vehicle";
@@ -975,10 +911,117 @@ document.querySelector(".confirm-btn").addEventListener("click", () => {
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
     document.querySelector(".add-btn").toggleAttribute("disabled");
-})
+    tmp_MCP_id = [];
+    tmp_MCP_address = [];
+    tmp_vehicle_id = "";
+    tmp_worker_id = "";
+    tmp_worker_name = "";
 
+    show_task_info();
+    MCP_button();
+})}
 
+ConfirmButton();
 
+// Reset the event of buttons : new
+function ReEventButton(){
+    changeType();
+    openWTable();
+    openVTable();
+    MCP_button();
+    ConfirmButton();
+}
+
+// new elements : new
+const defaultAssignLayout = 
+`<div class="popup-asg-info" id="popup-edit-task">
+<div class="choose-type">
+    <label for="workers">Choose type:</label>
+    <select name="workers" id="workers">
+        <option value="Collector">Collector</option>
+        <option value="Janitor">Janitor</option>
+    </select>
+</div>
+
+<div class="worker-ID">
+    <p>Choose a worker:</p>
+    <button class="add-worker-btn unable-color active" id="worker-btn">Add worker</button>
+</div>
+
+<div class="vehicle-ID">
+    <p>Choose a vehicle:</p>
+    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Add vehicle</button>
+</div>
+
+<div class="choose-MCP">
+    <div class="choose-MCP-in">
+        <div class="choose-MCP-in-1">
+            <p>Choose MCPs:</p>
+        </div>
+        <div class="choose-MCP-in-2">
+            <button class="choose-MCP-btn unable-color active MCP-btn">Choose MCPs</button>
+        </div>
+    </div>
+</div>
+
+<div class="MCP-final">
+    <button class="make-route-btn unable-color">Make route</button>
+    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Identify MCP</button>
+</div>
+</div>`;
+const defaultConfirmButton = document.querySelector(".confirm-btn");
+
+/* show choosen task info */
+function show_task_info() {
+    let tmp_name = "";
+    // console.log("enter show task function");
+    // console.log(document.querySelectorAll(".event"));
+    document.querySelectorAll(".event").forEach(tt => {
+        // console.log(tt);
+        tt.addEventListener("click", () => {
+            tmp_name = tt.innerText;
+            let tmp_inner = "";
+            for (let i = 0; i < eventArr.length; i++) {
+                if (eventArr[i].name === tmp_name && eventArr[i].date === dayN) {
+                    tmp_inner =    `<p>Type of worker: </p>
+                                    <div class="type-of-worker">
+                                    ${eventArr[i].type}
+                                    </div>
+                                    <br>
+                                    <p>Worker ID: </p>
+                                    <div class="worker-task-ID">
+                                    ${eventArr[i].worker_id}
+                                    </div>
+                                    <br>
+                                    <p>Worker name: </p>
+                                    <div class="worker-task-name">
+                                    ${eventArr[i].worker_name}
+                                    </div>
+                                    <br>
+                                    <p>Vehicle ID: </p>
+                                    <div class="vehicle-task-ID">
+                                    ${eventArr[i].vehicle_id}
+                                    </div>`;
+
+                    // replace the layout: new
+                    document.querySelector(".assign-task").innerHTML = `<div class="task-info">${tmp_inner}</div>`;
+                    document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
+                    document.querySelector("#popup-confirm-btn").classList.add("open-subpopup");
+
+                    // set performance for Task OK button : new
+                    document.querySelector(".Task-OK-btn").addEventListener("click", ()=>{
+                        document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
+                        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Confirm</button>`;
+                        document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
+                        ReEventButton();
+                        show_task_info();
+                    })
+                    break;
+                } 
+            } 
+        });
+    })
+}
 
 
 // close popup
@@ -989,13 +1032,22 @@ function removeElementsByClass(className) {
     }
 }
 
+// new performance for close box : new
 function closePopup() {
+    if(document.querySelector(".Task-OK-btn") !== null) {
+        document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
+        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Confirm</button>`;
+        document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
+        ReEventButton();
+        show_task_info();
+    }
+    else{
+        document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+        document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    }
+    removeElementsByClass('newlyadd');
+    document.querySelector('.add-btn').removeAttribute("disabled"); 
     document.getElementById('popup').classList.remove('open-popup');
     document.querySelector('body').classList.remove('stop-scrolling');
-    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
-    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
-    removeElementsByClass('newlyadd');
-    document.querySelector('.add-btn').removeAttribute("disabled");
-    
 }
 
