@@ -682,11 +682,13 @@ table {
     margin-top: 0;
     margin-bottom: 0;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
+    width: 600px;
 }
 
 .table-fixed tbody{
     display: block;
-    width: 475px;
+    width: 600px;
+    max-height: 400px;
     overflow-y: scroll;
     text-align: center;
     background-color: #d4e8b7;
@@ -697,13 +699,16 @@ table {
 }
 
 .table-fixed td {
-    padding-left: 20px;
+    padding: 5px;
     height: 20px;
+    text-align: center;
 }
 
 .table-fixed th {
     background-color: #0b6b41;
     color:aliceblue;
+    padding: 5px;
+    text-align: center;
 }
 
 .table-fixed tbody tr:hover {
@@ -763,7 +768,7 @@ table {
     margin-top: 0;
     margin-bottom: 0;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
-    width: 500px;
+    width: 600px;
 }
 
 .table-fixed1 tbody{
@@ -781,11 +786,15 @@ table {
 .table-fixed1 td {
     text-align: center;
     height: 25px;
+    padding: 2px;
 }
 
 .table-fixed1 th {
     background-color: #0b6b41;
     color:aliceblue;
+    text-align: center;
+    padding: 5px;
+
 }
 
 .table-fixed1 thead {
@@ -836,7 +845,7 @@ table {
     margin-top: 0;
     margin-bottom: 0;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .4);
-    width: 500px;
+    width: 600px;
 }
 
 .table-fixed2 tbody{
@@ -854,11 +863,14 @@ table {
 .table-fixed2 td {
     text-align: center;
     height: 35px;
+    padding: 5px 2px;
 }
 
 .table-fixed2 th {
     background-color: #0b6b41;
     color:aliceblue;
+    text-align: center;
+    padding: 5px 2px;
 }
 
 .table-fixed2 thead {
@@ -903,12 +915,14 @@ table {
     margin-top: 20px;
     margin-left: 20px;
     font-size: 16px;
+    overflow-y: auto;
 }
 
 .type-of-worker,
 .worker-task-ID,
 .vehicle-task-ID,
-.worker-task-name {
+.worker-task-name,
+.MCP-task-address {
     border-radius: 12px;
     background-color: #04AA6D;
     padding: 10px;

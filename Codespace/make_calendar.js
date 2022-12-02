@@ -182,7 +182,6 @@ function addPopup() {
                     if (eventArr[i].date === dayN) {
                         const el = document.createElement(`div`);
                         el.classList.add("event","newlyadd");
-                        // let NumT = document.querySelectorAll(".event");
                         el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${eventArr[i].name}</h3></div>`;
                         eventAvail.append(el);
                     }
@@ -226,7 +225,7 @@ function unableToggle(el, cl1, cl2) {
 
 // change type
 function changeType(){document.getElementById('workers').addEventListener("change", () => {
-    if (document.getElementById('workers').value === "Janitor") {
+    if (document.getElementById('workers').value === "Người dọn rác") {
         let tmpa = document.querySelector('.identify-MCP-btn')
         let tmpb = document.querySelector('.add-vehicle-btn')
         let tmpc = document.querySelector('.make-route-btn')
@@ -236,6 +235,7 @@ function changeType(){document.getElementById('workers').addEventListener("chang
         unableToggle(tmpa, "disable-color", "unable-color");
         unableToggle(tmpc, "unable-color", "disable-color");
         unableToggle(tmpb, "unable-color", "disable-color");
+        
     } else {
         let tmpa = document.querySelector('.identify-MCP-btn')
         let tmpb = document.querySelector('.add-vehicle-btn')
@@ -247,6 +247,16 @@ function changeType(){document.getElementById('workers').addEventListener("chang
         unableToggle(tmpc, "disable-color", "unable-color");
         unableToggle(tmpb, "disable-color", "unable-color");
     }
+    tmp_MCP_id = [];
+    tmp_MCP_address = [];
+    tmp_vehicle_id = "";
+    tmp_worker_id = "";
+    tmp_worker_name = "";
+    document.getElementById("worker-btn").innerText = "Thêm nhân viên";
+    document.getElementById("vehicle-btn").innerHTML = "Thêm phương tiện";
+    document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>`;
+    show_task_info();
+    MCP_button();
 })}
 
 changeType(); // change to function : new
@@ -256,146 +266,146 @@ var WorkerList = [
     {
         "ID": "JNT001",
         "Name": "Thế Phi Cường",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT003",
         "Name": "Vưu Nghĩa Dũng",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT002",
         "Name": "Thạch Minh Khôi",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT112",
         "Name": "Nhâm Tuấn Hải",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT342",
         "Name": "Đỗ Thiện Minh",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT130",
         "Name": "Ngạc Việt Phương",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT452",
         "Name": "Ngọ Ðình Quảng",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT855",
         "Name": "Ung Chiến Thắng",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT999",
         "Name": "Xung Mạnh Ðình",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT004",
         "Name": "Thi Trọng Khánh",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT142",
         "Name": "Mẫn Cao Kỳ",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT734",
         "Name": "Giàng Ðức Minh",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT232",
         "Name": "Phùng Thiện Ngôn",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT464",
         "Name": "Điêu Duy Quang",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT7462",
         "Name": "Cát Ðình Trung",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT822",
         "Name": "Tiếp Hữu Vượng",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT546",
         "Name": "Thành Trung Dũng",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT832",
         "Name": "Quách Hữu Hiệp",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT133",
         "Name": "Tôn Thất Thành Long",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT875",
         "Name": "Đào Quốc Trường",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT654",
         "Name": "Đào Quốc Trường",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT363",
         "Name": "Kông Ngọc Khôi",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "CLT738",
         "Name": "Liễu Thiên Mạnh",
-        "Role": "Collector",
-        "State": "Free"
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
         "ID": "JNT360",
         "Name": "Mạc Hoàng Thái",
-        "Role": "Janitor",
-        "State": "Free"
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     }
 ]
 var VehicleList = [
@@ -404,168 +414,168 @@ var VehicleList = [
         "Weight": 6,
         "Capacity": 3,
         "FuelConsumption": 330,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC630",
         "Weight": 3,
         "Capacity": "1,5",
         "FuelConsumption": 180,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC004",
         "Weight": 3,
         "Capacity": "1,5",
         "FuelConsumption": 180,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC252",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC005",
         "Weight": 3,
         "Capacity": "1,5",
         "FuelConsumption": 180,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC144",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC633",
         "Weight": 2,
         "Capacity": 1,
         "FuelConsumption": 130,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC078",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC958",
         "Weight": 3,
         "Capacity": "1,5",
         "FuelConsumption": 180,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC035",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC063",
         "Weight": 5,
         "Capacity": "2,5",
         "FuelConsumption": 280,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC065",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC244",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC387",
         "Weight": 1,
         "Capacity": "0,5",
         "FuelConsumption": 80,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC466",
         "Weight": 6,
         "Capacity": 3,
         "FuelConsumption": 330,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC333",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC857",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC255",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC956",
         "Weight": 8,
         "Capacity": 4,
         "FuelConsumption": 430,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC422",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC043",
         "Weight": 3,
         "Capacity": "1,5",
         "FuelConsumption": 180,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC067",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC242",
         "Weight": 2,
         "Capacity": 1,
         "FuelConsumption": 130,
-        "State": "Available"
+        "State": "Chưa phân công"
     },
     {
         "ID": "VHC111",
         "Weight": 4,
         "Capacity": 2,
         "FuelConsumption": 230,
-        "State": "Available"
+        "State": "Chưa phân công"
     }
 ]
 var MCPList = [
@@ -696,14 +706,14 @@ function buildWorkerTable(data) {
     var table = document.getElementById('myTable1');
     table.innerHTML = "";
     let Wtype = document.getElementById("workers");
-    // console.log(Wtype.value);
+    console.log(Wtype.value);
     for (var i = 0; i < data.length; i++){
         if(data[i].Role == Wtype.value){
             var row = `<tr>
-                                <td width="80px">${data[i].ID}</td>
-                                <td width="200px">${data[i].Name}</td>
-                                <td width="80px">${data[i].Role}</td>
-                                <td width="60px">${data[i].State}</td>
+                                <td width="90px">${data[i].ID}</td>
+                                <td width="250px">${data[i].Name}</td>
+                                <td width="140px">${data[i].Role}</td>
+                                <td width="210px">${data[i].State}</td>
                     </tr>`
             table.innerHTML += row
         }
@@ -723,10 +733,10 @@ function buildVehicleTable(data){
     for (var i = 0; i < data.length; i++){
         var row = `<tr>
                             <td width="80px">${data[i].ID}</td>
-                            <td width="95px">${data[i].Weight}</td>
-                            <td width="80px">${data[i].Capacity}</td>
-                            <td width="145px">${data[i].FuelConsumption}</td>
-                            <td width="80px">${data[i].State}</td>
+                            <td width="100px">${data[i].Weight}</td>
+                            <td width="110px">${data[i].Capacity}</td>
+                            <td width="120px">${data[i].FuelConsumption}</td>
+                            <td width="160px">${data[i].State}</td>
                       </tr>`
         table.innerHTML += row
     }
@@ -745,8 +755,8 @@ function buildMCPTable(data){
     for (var i = 0; i < data.length; i++){
         var row = `<tr>
                             <td width="80px">${data[i].ID}</td>
-                            <td width="330px">${data[i].Address}</td>
-                            <td width="70px">${data[i].State}</td>
+                            <td width="360px">${data[i].Address}</td>
+                            <td width="130px">${data[i].State}</td>
                       </tr>`
         table.innerHTML += row
     }
@@ -853,8 +863,8 @@ function highlight2(e) {
     if (element[0] !== undefined) { //it must be selected
         var e = document.getElementById("workers");
         var text = e.options[e.selectedIndex].text;
-
-        if (text === "Janitor" && 
+        console.log(text);
+        if (text === "Người dọn rác" && 
             tmp_MCP_id.length === 1) {
                 tmp_MCP_id[0] = element[0].children[0].firstChild.data;
                 tmp_MCP_address[0] = element[0].children[1].innerText;
@@ -902,11 +912,11 @@ function ConfirmButton(){
     eventAvail.append(el);
     
     // new 
-    document.getElementById("worker-btn").innerText = "Add worker";
+    document.getElementById("worker-btn").innerText = "Thêm nhân viên";
 
-    document.getElementById("vehicle-btn").innerHTML = "Add vehicle";
+    document.getElementById("vehicle-btn").innerHTML = "Thêm phương tiện";
 
-    document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Choose MCPs</button>`;
+    document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>`;
 
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
@@ -936,37 +946,37 @@ function ReEventButton(){
 const defaultAssignLayout = 
 `<div class="popup-asg-info" id="popup-edit-task">
 <div class="choose-type">
-    <label for="workers">Choose type:</label>
+    <label for="workers">Chọn chức vụ:</label>
     <select name="workers" id="workers">
-        <option value="Collector">Collector</option>
-        <option value="Janitor">Janitor</option>
+        <option value="Người thu rác">Người thu rác</option>
+        <option value="Người dọn rác">Người dọn rác</option>
     </select>
 </div>
 
 <div class="worker-ID">
-    <p>Choose a worker:</p>
-    <button class="add-worker-btn unable-color active" id="worker-btn">Add worker</button>
+    <p>Chọn nhân viên:</p>
+    <button class="add-worker-btn unable-color active" id="worker-btn">Thêm nhân viên</button>
 </div>
 
 <div class="vehicle-ID">
-    <p>Choose a vehicle:</p>
-    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Add vehicle</button>
+    <p>Chọn phương tiện:</p>
+    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Thêm phương tiện</button>
 </div>
 
 <div class="choose-MCP">
     <div class="choose-MCP-in">
         <div class="choose-MCP-in-1">
-            <p>Choose MCPs:</p>
+            <p>Chọn MCPs:</p>
         </div>
         <div class="choose-MCP-in-2">
-            <button class="choose-MCP-btn unable-color active MCP-btn">Choose MCPs</button>
+            <button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>
         </div>
     </div>
 </div>
 
 <div class="MCP-final">
-    <button class="make-route-btn unable-color">Make route</button>
-    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Identify MCP</button>
+    <button class="make-route-btn unable-color">Tạo đường đi</button>
+    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Xác định MCP</button>
 </div>
 </div>`;
 const defaultConfirmButton = document.querySelector(".confirm-btn");
@@ -983,26 +993,22 @@ function show_task_info() {
             let tmp_inner = "";
             for (let i = 0; i < eventArr.length; i++) {
                 if (eventArr[i].name === tmp_name && eventArr[i].date === dayN) {
-                    tmp_inner =    `<p>Type of worker: </p>
-                                    <div class="type-of-worker">
-                                    ${eventArr[i].type}
-                                    </div>
+                    tmp_inner =    `<p>Chức vụ: </p>
+                                    <div class="type-of-worker">${eventArr[i].type}</div>
                                     <br>
-                                    <p>Worker ID: </p>
-                                    <div class="worker-task-ID">
-                                    ${eventArr[i].worker_id}
-                                    </div>
-                                    <br>
-                                    <p>Worker name: </p>
-                                    <div class="worker-task-name">
-                                    ${eventArr[i].worker_name}
-                                    </div>
-                                    <br>
-                                    <p>Vehicle ID: </p>
-                                    <div class="vehicle-task-ID">
-                                    ${eventArr[i].vehicle_id}
-                                    </div>`;
-
+                                    <p>Tên nhân viên: </p>
+                                    <div class="worker-task-name">${eventArr[i].worker_id + " - " + eventArr[i].worker_name}</div>`;
+                    if(eventArr[i].type === "Người thu rác"){
+                    tmp_inner +=     `<br>
+                                    <p>ID phương tiện: </p>
+                                    <div class="vehicle-task-ID">${eventArr[i].vehicle_id}</div>`;
+                    }
+                    tmp_inner +=    `<br>
+                                    <p>Danh sách MCP: </p>`;
+                    // console.log(eventArr[i].MCP_address);
+                    for(let j = 0; j < eventArr[i].MCP_address.length; j++){
+                        tmp_inner += `<div class="MCP-task-address">${eventArr[i].MCP_address[j]}</div>`;
+                    }
                     // replace the layout: new
                     document.querySelector(".assign-task").innerHTML = `<div class="task-info">${tmp_inner}</div>`;
                     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
@@ -1011,7 +1017,7 @@ function show_task_info() {
                     // set performance for Task OK button : new
                     document.querySelector(".Task-OK-btn").addEventListener("click", ()=>{
                         document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
-                        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Confirm</button>`;
+                        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
                         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
                         ReEventButton();
                         show_task_info();
@@ -1036,7 +1042,7 @@ function removeElementsByClass(className) {
 function closePopup() {
     if(document.querySelector(".Task-OK-btn") !== null) {
         document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
-        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Confirm</button>`;
+        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
         ReEventButton();
         show_task_info();
