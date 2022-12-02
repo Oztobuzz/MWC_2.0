@@ -111,9 +111,7 @@
             <div class="chatting-frame">
                 <div class="my-msg">
                     <div>
-                        <div class="content-msg">
-                            Hi :D
-                        </div>
+                        <div id="printhere" class="content-msg"></div>
                     </div>
                 </div>
                 <div class="friend-msg">
@@ -125,8 +123,14 @@
                 </div>
             </div>
             <div class="input-chat">
-                <input id="Chat-here" type="text" placeholder="Aa">
-                <i class="fa fa-paper-plane" onclick="myFunction"></i>
+                <input type="text" placeholder="Aa" id="msg">
+                <button class="btn" onclick="getInputValue()">Send</i></button>
+                <script>
+                    function getInputValue(){
+                        var inputVal = document.getElementById("msg").value;
+                        document.getElementById("printhere").innerHTML = inputVal;
+                    }
+                </script>
             </div>
         </div>
     </div>
