@@ -203,6 +203,7 @@ body {
 .friend-msg> div{
     background-color: #c0c0c0;
     width: max-content;
+    max-width: 80%;
     height: max-content;
     border-radius: 15px;
     padding: 6px;
@@ -224,9 +225,11 @@ body {
     justify-content: flex-end;
     background-color: #373c4f;
     width: max-content;
+    max-width: 80%;
     height: max-content;
     border-radius: 15px;
     padding: 8px;
+
 }
 
 .content-msg{
