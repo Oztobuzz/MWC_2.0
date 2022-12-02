@@ -1040,17 +1040,22 @@ function removeElementsByClass(className) {
 
 // new performance for close box : new
 function closePopup() {
-    if(document.querySelector(".Task-OK-btn") !== null) {
-        document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
+    // if(document.querySelector(".Task-OK-btn") !== null) {
+    //     document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
+    //     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
+    //     document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
+    //     ReEventButton();
+    //     show_task_info();
+    // }
+    // else{
+    //     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+    //     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+    // }
+    document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
         document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
         ReEventButton();
         show_task_info();
-    }
-    else{
-        document.getElementById('popup-edit-task').classList.remove('open-subpopup');
-        document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
-    }
     removeElementsByClass('newlyadd');
     document.querySelector('.add-btn').removeAttribute("disabled"); 
     document.getElementById('popup').classList.remove('open-popup');
