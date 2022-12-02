@@ -254,7 +254,8 @@ body {
     overflow-x: hidden;
 }
 
-.fa-paper-plane{
-    margin-left: 10px;
+.btn{
     cursor: pointer;
+    font: bold;
+    color: white;
 }
