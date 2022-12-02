@@ -140,6 +140,15 @@
                             </div>
                         `)
                     }
+                    
+                    obj.msg.addEventListener("keypress", function(event) {
+                        if(obj.msg.value.length > 0 && event.key === "Enter") {
+                            obj.msg.value = document.getElementById("msg").value;
+                            document.getElementById("printhere").innerHTML = obj.msg.value;
+                            displayMyMSG();
+                            obj.msg.value = "";
+                        }                        
+                    })
 
                     obj.send.addEventListener("click", () => {
                         if(obj.msg.value.length > 0) {
