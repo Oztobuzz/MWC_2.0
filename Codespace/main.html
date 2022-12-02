@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
@@ -29,13 +29,13 @@
                 <i class="fa fa-angle-right next change-month"></i>
             </div>
             <div class="weekdays">
-                <div>Sunday</div>
-                <div>Monday</div>
-                <div>Tuesday</div>
-                <div>Wednesday</div>
-                <div>Thursday</div>
-                <div>Friday</div>
-                <div>Saturday</div>
+                <div>Chủ nhật</div>
+                <div>Thứ hai</div>
+                <div>Thứ ba</div>
+                <div>Thứ tư</div>
+                <div>Thứ năm</div>
+                <div>Thứ sáu</div>
+                <div>Thứ bảy</div>
             </div>
             <div class="days">
                 <!-- js -->
@@ -43,9 +43,9 @@
             <div class="goto-today">
                 <div class="goto">
                     <input type="text" placeholder="mm/yyyy" class="date-input">
-                    <button class="goto-btn go-btn">Go</button>
+                    <button class="goto-btn go-btn">Đi</button>
                 </div>
-                <button class="today-btn go-btn">Today</button>
+                <button class="today-btn go-btn">Hôm nay</button>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="add-task-area">
             <button class="add-btn">
-                <p>Add task</p>
+                <p>Thêm nhiệm vụ</p>
                 <i class="fa fa-plus close"></i>
             </button>
         </div>
@@ -73,43 +73,43 @@
         <div class="assign-task">
             <div class="popup-asg-info" id="popup-edit-task">
                 <div class="choose-type">
-                    <label for="workers">Choose type:</label>
+                    <label for="workers">Chọn chức vụ:</label>
                     <select name="workers" id="workers">
-                        <option value="Collector">Collector</option>
-                        <option value="Janitor">Janitor</option>
+                        <option value="Collector">Người thu rác</option>
+                        <option value="Janitor">Người gom rác</option>
                     </select>
                 </div>
 
                 <div class="worker-ID">
-                    <p>Choose a worker:</p>
-                    <button class="add-worker-btn unable-color active" id="worker-btn">Add worker</button>
+                    <p>Chọn nhân viên:</p>
+                    <button class="add-worker-btn unable-color active" id="worker-btn">Thêm nhân viên</button>
                 </div>
 
                 <div class="vehicle-ID">
-                    <p>Choose a vehicle:</p>
-                    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Add vehicle</button>
+                    <p>Chọn phương tiện:</p>
+                    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Thêm phương tiện</button>
                 </div>
 
                 <div class="choose-MCP">
                     <div class="choose-MCP-in">
                         <div class="choose-MCP-in-1">
-                            <p>Choose MCPs:</p>
+                            <p>Chọn MCPs:</p>
                         </div>
                         <div class="choose-MCP-in-2">
-                            <button class="choose-MCP-btn unable-color active MCP-btn">Choose MCPs</button>
+                            <button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="MCP-final">
-                    <button class="make-route-btn unable-color">Make route</button>
-                    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Identify MCP</button>
+                    <button class="make-route-btn unable-color">Tạo đường đi</button>
+                    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Xác định MCP</button>
                 </div>
             </div>
         </div>
         <div class="confirm-task-area">
             <div class="popup-asg-info" id="popup-confirm-btn">
-                <button class="confirm-btn">Confirm</button>
+                <button class="confirm-btn">Xác nhận</button>
             </div>
         </div>
     </div>
@@ -124,9 +124,9 @@
                     <table class="table-fixed">
                         <thead><tr>
                             <th width="90px">ID</th>
-                            <th width="208.5px">Name</th>
-                            <th width="90px">Role</th>
-                            <th width="87px">State</th>
+                            <th width="208.5px">Họ và tên</th>
+                            <th width="90px">Chức vụ</th>
+                            <th width="87px">Trạng thái</th>
                         </tr></thead>
                         <tbody id="myTable1"></tbody>
                     </table>
@@ -138,10 +138,10 @@
                     <table class="table-fixed1">
                         <thead><tr>
                             <th width="79px">ID</th>
-                            <th width="93px">Weight (Tons)</th>
-                            <th width="80px">Capacity (Tons)</th>
-                            <th width="150px">Fuel Consumption (Liters)</th>
-                            <th width="80px">State</th>
+                            <th width="93px">Khối lượng (Tấn)</th>
+                            <th width="80px">Sức chứa (Tấn)</th>
+                            <th width="150px">Tiêu hao nhiên liệu (Liters)</th>
+                            <th width="80px">Trạng thái</th>
                         </tr></thead>
                         <tbody id="myTable2"></tbody>
                     </table>
@@ -153,7 +153,7 @@
                     <table class="table-fixed2">
                         <thead><tr>
                             <th width="80px">ID</th>
-                            <th width="340px">Address</th>
+                            <th width="340px">Địa chỉ</th>
                             <th>State</th>
                         </tr></thead>
                         <tbody id="myTable3"></tbody>
