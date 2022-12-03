@@ -463,6 +463,18 @@ body {
     justify-content: center;
 }
 
+/* show route */
+.route {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-content: center;
+}
+
+.able {
+    visibility: hidden;
+}
+
 .assign-task .choose-type {
     height: 5%;
     display: inline;

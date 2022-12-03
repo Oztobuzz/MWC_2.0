@@ -13,11 +13,23 @@ let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
 
+
+//create array for image
+let imgArray = new String();
+let img_janitor = "./image/1.png";
+
+imgArray[0] = "./image/1MCP.png";
+imgArray[1] = "./image/2MCP.png";
+imgArray[2] = "./image/3MCP.png";
+imgArray[3] = "./image/4MCP.png";
+imgArray[4] = "./image/5MCP.png";
+imgArray[5] = "./image/6MCP.png";
+
 class Event{
     constructor(name, date) {
        this.name = name;
        this.date = date;
-       this.type_of_worker = "";
+       this.type = "";
        this.worker_id = "";
        this.worker_name = "";
        this.vehicle_id = "";
@@ -173,7 +185,7 @@ function addPopup() {
                 let str = element.innerHTML;
                 let tmp = str.length;
                 dayN = "";
-                for (var i = 0; i < tmp; i++) {
+                for (let i = 0; i < tmp; i++) {
                     if (str[i] >= '0' && str[i] <= 9) dayN += str[i];
                 }
                 dayN += " " + document.querySelector(".date").innerHTML;
@@ -224,7 +236,7 @@ function unableToggle(el, cl1, cl2) {
 }
 
 // change type
-function changeType(){document.getElementById('workers').addEventListener("change", () => {
+function changeType() {document.getElementById('workers').addEventListener("change", () => {
     if (document.getElementById('workers').value === "Người dọn rác") {
         let tmpa = document.querySelector('.identify-MCP-btn')
         let tmpb = document.querySelector('.add-vehicle-btn')
@@ -235,6 +247,10 @@ function changeType(){document.getElementById('workers').addEventListener("chang
         unableToggle(tmpa, "disable-color", "unable-color");
         unableToggle(tmpc, "unable-color", "disable-color");
         unableToggle(tmpb, "unable-color", "disable-color");
+
+        if (!document.querySelector(".route").classList.contains("able")) {
+            document.querySelector(".route").classList.add("able");
+        }
         
     } else {
         let tmpa = document.querySelector('.identify-MCP-btn')
@@ -246,6 +262,10 @@ function changeType(){document.getElementById('workers').addEventListener("chang
         unableToggle(tmpa, "unable-color", "disable-color");
         unableToggle(tmpc, "disable-color", "unable-color");
         unableToggle(tmpb, "disable-color", "unable-color");
+
+        if (!document.querySelector(".route").classList.contains("able")) {
+            document.querySelector(".route").classList.add("able");
+        }
     }
     tmp_MCP_id = [];
     tmp_MCP_address = [];
@@ -262,454 +282,454 @@ function changeType(){document.getElementById('workers').addEventListener("chang
 changeType(); // change to function : new
 
 // hard code data : new
-var WorkerList = [
+let WorkerList = [
     {
-      "ID": "JNT001",
-      "Name": "Thế Phi Cường",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT001",
+        "Name": "Thế Phi Cường",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT003",
-      "Name": "Vưu Nghĩa Dũng",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT003",
+        "Name": "Vưu Nghĩa Dũng",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT002",
-      "Name": "Thạch Minh Khôi",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT002",
+        "Name": "Thạch Minh Khôi",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT112",
-      "Name": "Nhâm Tuấn Hải",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT112",
+        "Name": "Nhâm Tuấn Hải",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT342",
-      "Name": "Đỗ Thiện Minh",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT342",
+        "Name": "Đỗ Thiện Minh",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT130",
-      "Name": "Ngạc Việt Phương",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT130",
+        "Name": "Ngạc Việt Phương",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT452",
-      "Name": "Ngọ Ðình Quảng",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT452",
+        "Name": "Ngọ Ðình Quảng",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT855",
-      "Name": "Ung Chiến Thắng",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT855",
+        "Name": "Ung Chiến Thắng",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT999",
-      "Name": "Xung Mạnh Ðình",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT999",
+        "Name": "Xung Mạnh Ðình",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT004",
-      "Name": "Thi Trọng Khánh",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT004",
+        "Name": "Thi Trọng Khánh",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT142",
-      "Name": "Mẫn Cao Kỳ",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT142",
+        "Name": "Mẫn Cao Kỳ",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT734",
-      "Name": "Giàng Ðức Minh",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT734",
+        "Name": "Giàng Ðức Minh",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT232",
-      "Name": "Phùng Thiện Ngôn",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT232",
+        "Name": "Phùng Thiện Ngôn",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT464",
-      "Name": "Điêu Duy Quang",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT464",
+        "Name": "Điêu Duy Quang",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT7462",
-      "Name": "Cát Ðình Trung",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT7462",
+        "Name": "Cát Ðình Trung",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT822",
-      "Name": "Tiếp Hữu Vượng",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT822",
+        "Name": "Tiếp Hữu Vượng",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT546",
-      "Name": "Thành Trung Dũng",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT546",
+        "Name": "Thành Trung Dũng",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT832",
-      "Name": "Quách Hữu Hiệp",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT832",
+        "Name": "Quách Hữu Hiệp",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT133",
-      "Name": "Tôn Thất Thành Long",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT133",
+        "Name": "Tôn Thất Thành Long",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT875",
-      "Name": "Đào Quốc Trường",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT875",
+        "Name": "Đào Quốc Trường",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT654",
-      "Name": "Đào Cương",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT654",
+        "Name": "Đào Quốc Trường",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT363",
-      "Name": "Kông Ngọc Khôi",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT363",
+        "Name": "Kông Ngọc Khôi",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "CLT738",
-      "Name": "Liễu Thiên Mạnh",
-      "Role": "Người thu rác",
-      "State": "Chưa phân công"
+        "ID": "CLT738",
+        "Name": "Liễu Thiên Mạnh",
+        "Role": "Người thu rác",
+        "State": "Chưa phân công"
     },
     {
-      "ID": "JNT360",
-      "Name": "Mạc Hoàng Thái",
-      "Role": "Người dọn rác",
-      "State": "Chưa phân công"
+        "ID": "JNT360",
+        "Name": "Mạc Hoàng Thái",
+        "Role": "Người dọn rác",
+        "State": "Chưa phân công"
     }
-  ]
-var VehicleList = [
+]
+let VehicleList = [
     {
-      "ID": "VHC131",
-      "Weight": 6,
-      "Capacity": 3,
-      "FuelConsumption": 330,
-      "State": "Chưa phân công"
+        "ID": "VHC131",
+        "Weight": 6,
+        "Capacity": 3,
+        "FuelConsumption": 330,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC630",
-      "Weight": 3,
-      "Capacity": "1,5",
-      "FuelConsumption": 180,
-      "State": "Chưa phân công"
+        "ID": "VHC630",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC004",
-      "Weight": 3,
-      "Capacity": "1,5",
-      "FuelConsumption": 180,
-      "State": "Chưa phân công"
+        "ID": "VHC004",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC252",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC252",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC005",
-      "Weight": 3,
-      "Capacity": "1,5",
-      "FuelConsumption": 180,
-      "State": "Chưa phân công"
+        "ID": "VHC005",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC144",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC144",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC633",
-      "Weight": 2,
-      "Capacity": 1,
-      "FuelConsumption": 130,
-      "State": "Chưa phân công"
+        "ID": "VHC633",
+        "Weight": 2,
+        "Capacity": 1,
+        "FuelConsumption": 130,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC078",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC078",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC958",
-      "Weight": 3,
-      "Capacity": "1,5",
-      "FuelConsumption": 180,
-      "State": "Chưa phân công"
+        "ID": "VHC958",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC035",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC035",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC063",
-      "Weight": 5,
-      "Capacity": "2,5",
-      "FuelConsumption": 280,
-      "State": "Chưa phân công"
+        "ID": "VHC063",
+        "Weight": 5,
+        "Capacity": "2,5",
+        "FuelConsumption": 280,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC065",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC065",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC244",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC244",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC387",
-      "Weight": 1,
-      "Capacity": "0,5",
-      "FuelConsumption": 80,
-      "State": "Chưa phân công"
+        "ID": "VHC387",
+        "Weight": 1,
+        "Capacity": "0,5",
+        "FuelConsumption": 80,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC466",
-      "Weight": 6,
-      "Capacity": 3,
-      "FuelConsumption": 330,
-      "State": "Chưa phân công"
+        "ID": "VHC466",
+        "Weight": 6,
+        "Capacity": 3,
+        "FuelConsumption": 330,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC333",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC333",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC857",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC857",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC255",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC255",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC956",
-      "Weight": 8,
-      "Capacity": 4,
-      "FuelConsumption": 430,
-      "State": "Chưa phân công"
+        "ID": "VHC956",
+        "Weight": 8,
+        "Capacity": 4,
+        "FuelConsumption": 430,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC422",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC422",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC043",
-      "Weight": 3,
-      "Capacity": "1,5",
-      "FuelConsumption": 180,
-      "State": "Chưa phân công"
+        "ID": "VHC043",
+        "Weight": 3,
+        "Capacity": "1,5",
+        "FuelConsumption": 180,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC067",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC067",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC242",
-      "Weight": 2,
-      "Capacity": 1,
-      "Fuel Consumption": 130,
-      "State": "Chưa phân công"
+        "ID": "VHC242",
+        "Weight": 2,
+        "Capacity": 1,
+        "FuelConsumption": 130,
+        "State": "Chưa phân công"
     },
     {
-      "ID": "VHC111",
-      "Weight": 4,
-      "Capacity": 2,
-      "FuelConsumption": 230,
-      "State": "Chưa phân công"
+        "ID": "VHC111",
+        "Weight": 4,
+        "Capacity": 2,
+        "FuelConsumption": 230,
+        "State": "Chưa phân công"
     }
-  ]
-var MCPList = [
+]
+let MCPList = [
     {
-      "ID": "MCP131",
-      "Address": "3E2 Thanh Xuân Villas, Phường 05, Quận 6, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP131",
+        "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP630",
-      "Address": "97 Lê Lợi, Phường Cô Giang, Quận 1, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP630",
+        "Address": "298 Nguyen Trong Tuyen Street Ward 1,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP004",
-      "Address": "158A Lê Lợi, Phường 12, Quận Bình Thạnh, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP004",
+        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP252",
-      "Address": "17 Ngô Quyền, Phường 06, Quận 6, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP252",
+        "Address": "202 Truong Dinh St. Tuong Mai Ward,Ho Chi Minh City,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP005",
-      "Address": "50 Phú Tài, Phường Thới An, Quận 12, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP005",
+        "Address": "149D Doi Can,Hanoi,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP144",
-      "Address": "2 Phó Đức Chinh, Phường Tân Tạo A, Quận Bình Tân, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP144",
+        "Address": "584 Nguyen Van Cu Gia Lam Townlet,Vinh,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP633",
-      "Address": "377/13 Trần Bình Trọng, Phường 09, Quận 8, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP633",
+        "Address": "J5 (19/27) Hoang Hoa Tham St. Ward 3,Binh Phuoc,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP078",
-      "Address": "102 Nguyễn Phúc Nguyên, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP078",
+        "Address": "70-72 Tran Phu Street Da Nang City,Ho Chi Minh City,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP958",
-      "Address": "105 Hoàng Diệu, Phường 13, Quận Tân Bình, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP958",
+        "Address": "339 Nguyen Van Luong Ward 12 Dist.6,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP035",
-      "Address": "87 Nguyễn Huệ, Phường 05, Quận 4, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP035",
+        "Address": "24 B3 Mai Dich Street Group 217 Cau Giay District,Hanoi,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP063",
-      "Address": "258 Nguyễn Tri Phương, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP063",
+        "Address": "92 Pho Quang Ward 2,Hanoi,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP065",
-      "Address": "224 Lê Văn Sỹ, Phường An Lạc A, Quận Bình Tân, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP065",
+        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP244",
-      "Address": "551 Hoàng Văn Thụ, Phường 11, Quận Tân Bình, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP244",
+        "Address": "Chau Khe Industrial Zone Tu Son District,Hanoi,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP387",
-      "Address": "172C Bùi Thị Xuân, Phường 12, Quận 6, Hồ Chí Minh",
-      "State": "20%"
+        "ID": "MCP387",
+        "Address": "3Lane 76 An Duong Street Tay Ho District,Hanoi,Vietnam",
+        "State": "20%"
     },
     {
-      "ID": "MCP466",
-      "Address": "9 Trần Hưng Đạo, Xã Tân Kiên, Huyện Bình Chánh, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP466",
+        "Address": "20/33 Le Thanh Tong Street,Thanh Hoa,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP333",
-      "Address": "27C Lý Thường Kiệt, Phường 01, Quận Phú Nhuận, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP333",
+        "Address": "220/42/16 Nguyen Xi St. Ward 26,Ho Chi Minh City,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP857",
-      "Address": "194 Trương Vĩnh Ký, Phường 08, Quận 6, Hồ Chí Minh",
-      "State": "20%"
+        "ID": "MCP857",
+        "Address": "586 Ba Trieu StreetThanh Hoa city,Thanh Hoa,Vietnam",
+        "State": "20%"
     },
     {
-      "ID": "MCP255",
-      "Address": "190 Lý Tự Trọng, Phường 10, Quận 3, Hồ Chí Minh",
-      "State": "50%"
+        "ID": "MCP255",
+        "Address": "Nguyen Tri Phuong Extended St. Lot 27A-B B2.6 Resident Area 4,Danang,Vietnam",
+        "State": "50%"
     },
     {
-      "ID": "MCP956",
-      "Address": "1/18 Sư Vạn Hạnh, Phường Bình Hưng Hoà B, Quận Bình Tân, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP956",
+        "Address": "260 Tran Khat Chan St. Thanh Luong Ward,Hanoi,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP422",
-      "Address": "43 Mạc Thị Bưởi, Xã Phú Xuân, Huyện Nhà Bè, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP422",
+        "Address": "410 Su Van Hanh St. Ward 9 Dist. 10,Ho Chi Minh City,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP043",
-      "Address": "175 Lê Đại Hành, Xã Phước Lộc, Huyện Nhà Bè, Hồ Chí Minh",
-      "State": "20%"
+        "ID": "MCP043",
+        "Address": "701 Le Hong Phong Ward 10,Ho Chi Minh City,Vietnam",
+        "State": "20%"
     },
     {
-      "ID": "MCP067",
-      "Address": "12 Trần Phú, Phường Bình Thọ, Quận Thủ Đức, Hồ Chí Minh",
-      "State": "75%"
+        "ID": "MCP067",
+        "Address": "44 Street 1A Binh Tri Dong B Ward,Ho Chi Minh City,Vietnam",
+        "State": "75%"
     },
     {
-      "ID": "MCP242",
-      "Address": "16A Lê Duẫn, Phường Sơn Kỳ, Quận Tân Phú, Hồ Chí Minh",
-      "State": "100%"
+        "ID": "MCP242",
+        "Address": "344 Tran PHuu Str.,Quang Ninh,Vietnam",
+        "State": "Full loaded"
     },
     {
-      "ID": "MCP111",
-      "Address": "9A Nguyễn Thị Nhỏ, Xã Thái Mỹ, Huyện Củ Chi, Hồ Chí Minh",
-      "State": "20%"
+        "ID": "MCP111",
+        "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
+        "State": "20%"
     }
-  ]
+]
 
 // Worker data table : new
 function buildWorkerTable(data) {
-    var table = document.getElementById('myTable1');
+    let table = document.getElementById('myTable1');
     table.innerHTML = "";
     let Wtype = document.getElementById("workers");
     console.log(Wtype.value);
-    for (var i = 0; i < data.length; i++){
-        if(data[i].Role == Wtype.value){
-            var row = `<tr>
+    for (let i = 0; i < data.length; i++) {
+        if(data[i].Role === Wtype.value){
+            let row = `<tr>
                                 <td width="90px">${data[i].ID}</td>
                                 <td width="250px">${data[i].Name}</td>
                                 <td width="140px">${data[i].Role}</td>
@@ -728,7 +748,7 @@ function openWTable() {document.getElementById('worker-btn').addEventListener('c
 openWTable();
 
 // Vehicle data table : new
-function buildVehicleTable(data){
+function buildVehicleTable(data) {
     var table = document.getElementById('myTable2')
     for (var i = 0; i < data.length; i++){
         var row = `<tr>
@@ -742,7 +762,7 @@ function buildVehicleTable(data){
     }
 }
 
-function openVTable(){document.getElementById('vehicle-btn').addEventListener('click', () => {
+function openVTable() {document.getElementById('vehicle-btn').addEventListener('click', () => {
     buildVehicleTable(VehicleList);
     openVehicleList(container3);
 })}
@@ -750,19 +770,19 @@ function openVTable(){document.getElementById('vehicle-btn').addEventListener('c
 openVTable();
 
 // MCPs data table : new
-function buildMCPTable(data){
-    var table = document.getElementById('myTable3')
-    for (var i = 0; i < data.length; i++){
-        var row = `<tr>
+function buildMCPTable(data) {
+    const table = document.getElementById('myTable3');
+    for (let i = 0; i < data.length; i++){
+        let row = `<tr>
                             <td width="80px">${data[i].ID}</td>
                             <td width="360px">${data[i].Address}</td>
                             <td width="130px">${data[i].State}</td>
-                      </tr>`
+                      </tr>`;
         table.innerHTML += row
     }
 }
 
-function MCP_button() {document.querySelectorAll('.MCP-btn').forEach(element =>{
+function MCP_button() {document.querySelectorAll('.MCP-btn').forEach(element => {
     element.addEventListener('click', () => {
         buildMCPTable(MCPList);
         openMCPList(container4);
@@ -800,10 +820,10 @@ function openMCPList(container4) {
 }
 
 
-/* choose btn for table worker : new */ 
+/* choose btn for table worker : new */
 
-var Wtable = document.querySelector(".table-fixed");
-var selected = Wtable.getElementsByClassName('selected');
+const Wtable = document.querySelector(".table-fixed");
+const selected = Wtable.getElementsByClassName('selected');
 Wtable.onclick = highlight;
 
 let tmp_worker_id = new String, tmp_worker_name = new String;
@@ -823,11 +843,9 @@ document.getElementById('W-OK-btn').addEventListener("click", () => {
     document.querySelector(".container2").classList.remove("active");
 })
 
-
 /* choose btn for table vehicle : new */
-
-var Vtable = document.querySelector(".table-fixed1");
-var selected1 = Vtable.getElementsByClassName('selected1');
+const Vtable = document.querySelector(".table-fixed1");
+const selected1 = Vtable.getElementsByClassName('selected1');
 Vtable.onclick = highlight1;
 
 let tmp_vehicle_id = new String;
@@ -848,8 +866,8 @@ document.getElementById('V-OK-btn').addEventListener("click", () => {
 
 /* choose btn for table MCP : new */
 
-var MCPtable = document.querySelector(".table-fixed2");
-var selected2 = MCPtable.getElementsByClassName('selected2');
+const MCPtable = document.querySelector(".table-fixed2");
+const selected2 = MCPtable.getElementsByClassName('selected2');
 
 MCPtable.onclick = highlight2;
 
@@ -861,19 +879,19 @@ function highlight2(e) {
     e.target.parentNode.className = 'selected2';
     let element = document.querySelectorAll('.selected2');
     if (element[0] !== undefined) { //it must be selected
-        var e = document.getElementById("workers");
-        var text = e.options[e.selectedIndex].text;
+        let e = document.getElementById("workers");
+        let text = e.options[e.selectedIndex].text;
         console.log(text);
         if (text === "Người dọn rác" && 
             tmp_MCP_id.length === 1) {
                 tmp_MCP_id[0] = element[0].children[0].firstChild.data;
                 tmp_MCP_address[0] = element[0].children[1].innerText;
         } else {
-            if(tmp_MCP_id.includes(element[0].children[0].firstChild.data) && tmp_MCP_id.length > 1) {
+            if (tmp_MCP_id.includes(element[0].children[0].firstChild.data) && tmp_MCP_id.length > 1) {
                 tmp_MCP_id = tmp_MCP_id.filter(item => item !== element[0].children[0].firstChild.data);
                 tmp_MCP_address = tmp_MCP_address.filter(item => item !== element[0].children[1].innerText);
             }
-            else if(tmp_MCP_id.includes(element[0].children[0].firstChild.data)) {
+            else if (tmp_MCP_id.includes(element[0].children[0].firstChild.data)) {
 
             }
             else {
@@ -883,12 +901,19 @@ function highlight2(e) {
             }
         }
     }
-
     let tmp_inner_MCP = "";
     for (let i = 0; i < tmp_MCP_address.length; i++) {
         tmp_inner_MCP += `<div class="choose-MCP-btn unable-color MCP-btn address-after-asg" >${tmp_MCP_address[i]}</div>`;
     }
     document.querySelector(".choose-MCP-in-2").innerHTML = tmp_inner_MCP;
+    document.querySelector(".make-route-btn").addEventListener("click", () => {
+        document.querySelector(".route").classList.remove("able");
+        document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(tmp_MCP_id.length - 1) % 6]}" width="100%">`
+    });
+    document.querySelector(".identify-MCP-btn").addEventListener("click", () => {
+        document.querySelector(".route").classList.remove("able");
+        document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
+    })
     MCP_button();
 }
 document.getElementById('MCP-OK-btn').addEventListener("click", () => {
@@ -899,12 +924,12 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 // new input data 
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
-    var e = document.getElementById("workers");
-    var text = e.options[e.selectedIndex].text;
+    let e = document.getElementById("workers");
+    let text = e.options[e.selectedIndex].text;
 
     const event = new Event(`Task ${document.querySelectorAll(".event").length + 1}`, dayN);
     event.input_type(text, tmp_worker_id, tmp_worker_name, tmp_vehicle_id, tmp_MCP_id, tmp_MCP_address);
-    // console.log(event)
+    //console.log(event)
     eventArr.push(event);
     const el = document.createElement(`div`);
     el.classList.add("event","newlyadd");
@@ -921,6 +946,10 @@ function ConfirmButton(){
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
     document.querySelector(".add-btn").toggleAttribute("disabled");
+    if (!document.querySelector(".route").classList.contains("able")) {
+        document.querySelector(".route").classList.add("able");
+    }
+
     tmp_MCP_id = [];
     tmp_MCP_address = [];
     tmp_vehicle_id = "";
@@ -934,7 +963,7 @@ function ConfirmButton(){
 ConfirmButton();
 
 // Reset the event of buttons : new
-function ReEventButton(){
+function ReEventButton() {
     changeType();
     openWTable();
     openVTable();
@@ -998,30 +1027,41 @@ function show_task_info() {
                                     <br>
                                     <p>Tên nhân viên: </p>
                                     <div class="worker-task-name">${eventArr[i].worker_id + " - " + eventArr[i].worker_name}</div>`;
-                    if(eventArr[i].type === "Người thu rác"){
-                    tmp_inner +=     `<br>
+                    if (eventArr[i].type === "Người thu rác") {
+                    tmp_inner +=   `<br>
                                     <p>ID phương tiện: </p>
                                     <div class="vehicle-task-ID">${eventArr[i].vehicle_id}</div>`;
                     }
-                    tmp_inner +=    `<br>
+                    tmp_inner +=   `<br>
                                     <p>Danh sách MCP: </p>`;
                     // console.log(eventArr[i].MCP_address);
-                    for(let j = 0; j < eventArr[i].MCP_address.length; j++){
+                    for (let j = 0; j < eventArr[i].MCP_address.length; j++){
                         tmp_inner += `<div class="MCP-task-address">${eventArr[i].MCP_address[j]}</div>`;
                     }
+
                     // replace the layout: new
                     document.querySelector(".assign-task").innerHTML = `<div class="task-info">${tmp_inner}</div>`;
                     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
                     document.querySelector("#popup-confirm-btn").classList.add("open-subpopup");
+                    document.querySelector(".route").classList.remove("able");
+
+                    if (eventArr[i].type === "Người dọn rác") {
+                        document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
+                    }
+                    else {
+                        document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(eventArr[i].MCP_ID.length - 1) % 6]}" width="100%">`
+                    }
 
                     // set performance for Task OK button : new
                     document.querySelector(".Task-OK-btn").addEventListener("click", ()=>{
                         document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
                         document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
                         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
+                        document.querySelector(".route").classList.add("able");
                         ReEventButton();
                         show_task_info();
                     })
+
                     break;
                 } 
             } 
@@ -1060,5 +1100,7 @@ function closePopup() {
     document.querySelector('.add-btn').removeAttribute("disabled"); 
     document.getElementById('popup').classList.remove('open-popup');
     document.querySelector('body').classList.remove('stop-scrolling');
+    if (!document.querySelector(".route").classList.contains("able")) {
+        document.querySelector(".route").classList.add("able");
+    }
 }
-
