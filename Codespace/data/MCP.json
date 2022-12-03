@@ -1,122 +1,122 @@
 [
   {
     "ID": "MCP131",
-    "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
+    "Address": "3E2 Thanh Xuân Villas, Phường 05, Quận 6, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP630",
-    "Address": "298 Nguyen Trong Tuyen Street Ward 1,Ho Chi Minh City,Vietnam",
-    "State": "Full loaded"
+    "Address": "97 Lê Lợi, Phường Cô Giang, Quận 1, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP004",
-    "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+    "Address": "158A Lê Lợi, Phường 12, Quận Bình Thạnh, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP252",
-    "Address": "202 Truong Dinh St. Tuong Mai Ward,Ho Chi Minh City,Vietnam",
+    "Address": "17 Ngô Quyền, Phường 06, Quận 6, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP005",
-    "Address": "149D Doi Can,Hanoi,Vietnam",
-    "State": "Full loaded"
+    "Address": "50 Phú Tài, Phường Thới An, Quận 12, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP144",
-    "Address": "584 Nguyen Van Cu Gia Lam Townlet,Vinh,Vietnam",
+    "Address": "2 Phó Đức Chinh, Phường Tân Tạo A, Quận Bình Tân, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP633",
-    "Address": "J5 (19/27) Hoang Hoa Tham St. Ward 3,Binh Phuoc,Vietnam",
-    "State": "Full loaded"
+    "Address": "377/13 Trần Bình Trọng, Phường 09, Quận 8, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP078",
-    "Address": "70-72 Tran Phu Street Da Nang City,Ho Chi Minh City,Vietnam",
+    "Address": "102 Nguyễn Phúc Nguyên, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP958",
-    "Address": "339 Nguyen Van Luong Ward 12 Dist.6,Ho Chi Minh City,Vietnam",
-    "State": "Full loaded"
+    "Address": "105 Hoàng Diệu, Phường 13, Quận Tân Bình, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP035",
-    "Address": "24 B3 Mai Dich Street Group 217 Cau Giay District,Hanoi,Vietnam",
+    "Address": "87 Nguyễn Huệ, Phường 05, Quận 4, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP063",
-    "Address": "92 Pho Quang Ward 2,Hanoi,Vietnam",
+    "Address": "258 Nguyễn Tri Phương, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP065",
-    "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
+    "Address": "224 Lê Văn Sỹ, Phường An Lạc A, Quận Bình Tân, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP244",
-    "Address": "Chau Khe Industrial Zone Tu Son District,Hanoi,Vietnam",
+    "Address": "551 Hoàng Văn Thụ, Phường 11, Quận Tân Bình, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP387",
-    "Address": "3Lane 76 An Duong Street Tay Ho District,Hanoi,Vietnam",
+    "Address": "172C Bùi Thị Xuân, Phường 12, Quận 6, Hồ Chí Minh",
     "State": "20%"
   },
   {
     "ID": "MCP466",
-    "Address": "20/33 Le Thanh Tong Street,Thanh Hoa,Vietnam",
-    "State": "Full loaded"
+    "Address": "9 Trần Hưng Đạo, Xã Tân Kiên, Huyện Bình Chánh, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP333",
-    "Address": "220/42/16 Nguyen Xi St. Ward 26,Ho Chi Minh City,Vietnam",
+    "Address": "27C Lý Thường Kiệt, Phường 01, Quận Phú Nhuận, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP857",
-    "Address": "586 Ba Trieu StreetThanh Hoa city,Thanh Hoa,Vietnam",
+    "Address": "194 Trương Vĩnh Ký, Phường 08, Quận 6, Hồ Chí Minh",
     "State": "20%"
   },
   {
     "ID": "MCP255",
-    "Address": "Nguyen Tri Phuong Extended St. Lot 27A-B B2.6 Resident Area 4,Danang,Vietnam",
+    "Address": "190 Lý Tự Trọng, Phường 10, Quận 3, Hồ Chí Minh",
     "State": "50%"
   },
   {
     "ID": "MCP956",
-    "Address": "260 Tran Khat Chan St. Thanh Luong Ward,Hanoi,Vietnam",
+    "Address": "1/18 Sư Vạn Hạnh, Phường Bình Hưng Hoà B, Quận Bình Tân, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP422",
-    "Address": "410 Su Van Hanh St. Ward 9 Dist. 10,Ho Chi Minh City,Vietnam",
-    "State": "Full loaded"
+    "Address": "43 Mạc Thị Bưởi, Xã Phú Xuân, Huyện Nhà Bè, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP043",
-    "Address": "701 Le Hong Phong Ward 10,Ho Chi Minh City,Vietnam",
+    "Address": "175 Lê Đại Hành, Xã Phước Lộc, Huyện Nhà Bè, Hồ Chí Minh",
     "State": "20%"
   },
   {
     "ID": "MCP067",
-    "Address": "44 Street 1A Binh Tri Dong B Ward,Ho Chi Minh City,Vietnam",
+    "Address": "12 Trần Phú, Phường Bình Thọ, Quận Thủ Đức, Hồ Chí Minh",
     "State": "75%"
   },
   {
     "ID": "MCP242",
-    "Address": "344 Tran PHuu Str.,Quang Ninh,Vietnam",
-    "State": "Full loaded"
+    "Address": "16A Lê Duẫn, Phường Sơn Kỳ, Quận Tân Phú, Hồ Chí Minh",
+    "State": "100%"
   },
   {
     "ID": "MCP111",
-    "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
+    "Address": "9A Nguyễn Thị Nhỏ, Xã Thái Mỹ, Huyện Củ Chi, Hồ Chí Minh",
     "State": "20%"
   }
 ]
