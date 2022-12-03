@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="stylesheet" href="overview.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="root">
+        <div class="navHeader">
+            <ul>
+                <li><a href="#"><i class="fa fa-tachometer"></i>DASHBOARD</a></li>
+                <li><a href="overview.html"><i class="fa fa-male"></i>OVERVIEW</a></li> 
+                <li><a href="#"><i class="fa fa-phone"></i>CONTACT</a></li>
+                <li><a href="Login.html"><i class="fa fa-sign-out"></i>LOGOUT</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <h1 id="intro">Chào mừng mọi người đến với bảng thông tin, ở đây mọi người có thể xem và tìm kiếm thông tin
+                của tất cả nhân viên, phương tiện và MCP trong hệ thống.  
+            </h1>
+            <div class="navOverview">
+                <li class="overviewChosen"><a href="#">CÔNG NHÂN</a></li>
+                <li><a href="/Vehicle/overview vehicle.html">PHƯƠNG TIỆN</a></li>
+                <li><a href="/MCP/overview mcp.html">MCP</a></li>
+            </div>
+            <div class="App">
+                <input type="search" class = "searchBox" placeholder="Tìm nhân viên theo tên">
+                <div class="cardList">
+                    <div class="header">
+                        <h2>Họ và tên</h2>
+                        <div id = "roleWorker">
+                        <h2>Công việc</h2> 
+                        <select name="role" id="roleSelect" > 
+                            <option selected disabled></option>          
+                            <option value="all">Tất cả</option>
+                            <option value="Người thu rác">Người thu rác</option>
+                            <option value="Người dọn rác">Người dọn rác</option>
+                        </select>
+                        </div>
+                        <h2>Trạng thái</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="overview.js"></script>
+</body>
+</html>
