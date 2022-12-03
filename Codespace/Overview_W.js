@@ -9,9 +9,10 @@ let users = [];
 
 async function fetching(){
     return fetch("https://raw.githubusercontent.com/Oztobuzz/MWC_2.0/main/Codespace/data/worker.json")
-    .then((response) =>{ 
-      return response.json();
-      })
+    .then((response) =>{
+        // console.log(response.json());
+        return response.json();
+    })
     .then((user)=>{
         return user;
     })
@@ -25,7 +26,8 @@ async function didmount(){
         const card =  document.createElement('div');
         card.classList.add("card");
         card.innerHTML = 
-        `<p>${user.Name}</p>
+        `<p>${user.ID}</p>
+        <p>${user.Name}</p>
         <p>${user.Role}</p>
         <p>${user.State}</p>`
         cardList.append(card);
@@ -58,7 +60,8 @@ function renderCardList(filteredUsers){
         const card =  document.createElement('div');
         card.classList.add("card");
         card.innerHTML = 
-        `<p>${user.Name}</p>
+        `<p>${user.ID}</p>
+        <p>${user.Name}</p>
         <p>${user.Role}</p>
         <p>${user.State}</p>`
         cardList.append(card);
@@ -82,3 +85,6 @@ roleSelect.addEventListener("change", (event)=>{
     else{filteredUsers = filterOnCondition(condition, "Role");}
     renderCardList(filteredUsers);
 })
+
+// console.log(users);
+
