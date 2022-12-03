@@ -264,442 +264,442 @@ changeType(); // change to function : new
 // hard code data : new
 var WorkerList = [
     {
-        "ID": "JNT001",
-        "Name": "Thế Phi Cường",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT001",
+      "Name": "Thế Phi Cường",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT003",
-        "Name": "Vưu Nghĩa Dũng",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT003",
+      "Name": "Vưu Nghĩa Dũng",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT002",
-        "Name": "Thạch Minh Khôi",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT002",
+      "Name": "Thạch Minh Khôi",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT112",
-        "Name": "Nhâm Tuấn Hải",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT112",
+      "Name": "Nhâm Tuấn Hải",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT342",
-        "Name": "Đỗ Thiện Minh",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT342",
+      "Name": "Đỗ Thiện Minh",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT130",
-        "Name": "Ngạc Việt Phương",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT130",
+      "Name": "Ngạc Việt Phương",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT452",
-        "Name": "Ngọ Ðình Quảng",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT452",
+      "Name": "Ngọ Ðình Quảng",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT855",
-        "Name": "Ung Chiến Thắng",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT855",
+      "Name": "Ung Chiến Thắng",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT999",
-        "Name": "Xung Mạnh Ðình",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT999",
+      "Name": "Xung Mạnh Ðình",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT004",
-        "Name": "Thi Trọng Khánh",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT004",
+      "Name": "Thi Trọng Khánh",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT142",
-        "Name": "Mẫn Cao Kỳ",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT142",
+      "Name": "Mẫn Cao Kỳ",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT734",
-        "Name": "Giàng Ðức Minh",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT734",
+      "Name": "Giàng Ðức Minh",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT232",
-        "Name": "Phùng Thiện Ngôn",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT232",
+      "Name": "Phùng Thiện Ngôn",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT464",
-        "Name": "Điêu Duy Quang",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT464",
+      "Name": "Điêu Duy Quang",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT7462",
-        "Name": "Cát Ðình Trung",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT7462",
+      "Name": "Cát Ðình Trung",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT822",
-        "Name": "Tiếp Hữu Vượng",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT822",
+      "Name": "Tiếp Hữu Vượng",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT546",
-        "Name": "Thành Trung Dũng",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT546",
+      "Name": "Thành Trung Dũng",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT832",
-        "Name": "Quách Hữu Hiệp",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT832",
+      "Name": "Quách Hữu Hiệp",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT133",
-        "Name": "Tôn Thất Thành Long",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT133",
+      "Name": "Tôn Thất Thành Long",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT875",
-        "Name": "Đào Quốc Trường",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT875",
+      "Name": "Đào Quốc Trường",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT654",
-        "Name": "Đào Quốc Trường",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT654",
+      "Name": "Đào Cương",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT363",
-        "Name": "Kông Ngọc Khôi",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT363",
+      "Name": "Kông Ngọc Khôi",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "CLT738",
-        "Name": "Liễu Thiên Mạnh",
-        "Role": "Người thu rác",
-        "State": "Chưa phân công"
+      "ID": "CLT738",
+      "Name": "Liễu Thiên Mạnh",
+      "Role": "Người thu rác",
+      "State": "Chưa phân công"
     },
     {
-        "ID": "JNT360",
-        "Name": "Mạc Hoàng Thái",
-        "Role": "Người dọn rác",
-        "State": "Chưa phân công"
+      "ID": "JNT360",
+      "Name": "Mạc Hoàng Thái",
+      "Role": "Người dọn rác",
+      "State": "Chưa phân công"
     }
-]
+  ]
 var VehicleList = [
     {
-        "ID": "VHC131",
-        "Weight": 6,
-        "Capacity": 3,
-        "FuelConsumption": 330,
-        "State": "Chưa phân công"
+      "ID": "VHC131",
+      "Weight": 6,
+      "Capacity": 3,
+      "FuelConsumption": 330,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC630",
-        "Weight": 3,
-        "Capacity": "1,5",
-        "FuelConsumption": 180,
-        "State": "Chưa phân công"
+      "ID": "VHC630",
+      "Weight": 3,
+      "Capacity": "1,5",
+      "FuelConsumption": 180,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC004",
-        "Weight": 3,
-        "Capacity": "1,5",
-        "FuelConsumption": 180,
-        "State": "Chưa phân công"
+      "ID": "VHC004",
+      "Weight": 3,
+      "Capacity": "1,5",
+      "FuelConsumption": 180,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC252",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC252",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC005",
-        "Weight": 3,
-        "Capacity": "1,5",
-        "FuelConsumption": 180,
-        "State": "Chưa phân công"
+      "ID": "VHC005",
+      "Weight": 3,
+      "Capacity": "1,5",
+      "FuelConsumption": 180,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC144",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC144",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC633",
-        "Weight": 2,
-        "Capacity": 1,
-        "FuelConsumption": 130,
-        "State": "Chưa phân công"
+      "ID": "VHC633",
+      "Weight": 2,
+      "Capacity": 1,
+      "FuelConsumption": 130,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC078",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC078",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC958",
-        "Weight": 3,
-        "Capacity": "1,5",
-        "FuelConsumption": 180,
-        "State": "Chưa phân công"
+      "ID": "VHC958",
+      "Weight": 3,
+      "Capacity": "1,5",
+      "FuelConsumption": 180,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC035",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC035",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC063",
-        "Weight": 5,
-        "Capacity": "2,5",
-        "FuelConsumption": 280,
-        "State": "Chưa phân công"
+      "ID": "VHC063",
+      "Weight": 5,
+      "Capacity": "2,5",
+      "FuelConsumption": 280,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC065",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC065",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC244",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC244",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC387",
-        "Weight": 1,
-        "Capacity": "0,5",
-        "FuelConsumption": 80,
-        "State": "Chưa phân công"
+      "ID": "VHC387",
+      "Weight": 1,
+      "Capacity": "0,5",
+      "FuelConsumption": 80,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC466",
-        "Weight": 6,
-        "Capacity": 3,
-        "FuelConsumption": 330,
-        "State": "Chưa phân công"
+      "ID": "VHC466",
+      "Weight": 6,
+      "Capacity": 3,
+      "FuelConsumption": 330,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC333",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC333",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC857",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC857",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC255",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC255",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC956",
-        "Weight": 8,
-        "Capacity": 4,
-        "FuelConsumption": 430,
-        "State": "Chưa phân công"
+      "ID": "VHC956",
+      "Weight": 8,
+      "Capacity": 4,
+      "FuelConsumption": 430,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC422",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC422",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC043",
-        "Weight": 3,
-        "Capacity": "1,5",
-        "FuelConsumption": 180,
-        "State": "Chưa phân công"
+      "ID": "VHC043",
+      "Weight": 3,
+      "Capacity": "1,5",
+      "FuelConsumption": 180,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC067",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC067",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC242",
-        "Weight": 2,
-        "Capacity": 1,
-        "FuelConsumption": 130,
-        "State": "Chưa phân công"
+      "ID": "VHC242",
+      "Weight": 2,
+      "Capacity": 1,
+      "Fuel Consumption": 130,
+      "State": "Chưa phân công"
     },
     {
-        "ID": "VHC111",
-        "Weight": 4,
-        "Capacity": 2,
-        "FuelConsumption": 230,
-        "State": "Chưa phân công"
+      "ID": "VHC111",
+      "Weight": 4,
+      "Capacity": 2,
+      "FuelConsumption": 230,
+      "State": "Chưa phân công"
     }
-]
+  ]
 var MCPList = [
     {
-        "ID": "MCP131",
-        "Address": "926/4/22 Nguyen Kiem St. Ward 3,Ho Chi Minh City,Vietnam",
-        "State": "50%"
+      "ID": "MCP131",
+      "Address": "3E2 Thanh Xuân Villas, Phường 05, Quận 6, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP630",
-        "Address": "298 Nguyen Trong Tuyen Street Ward 1,Ho Chi Minh City,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP630",
+      "Address": "97 Lê Lợi, Phường Cô Giang, Quận 1, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP004",
-        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
-        "State": "50%"
+      "ID": "MCP004",
+      "Address": "158A Lê Lợi, Phường 12, Quận Bình Thạnh, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP252",
-        "Address": "202 Truong Dinh St. Tuong Mai Ward,Ho Chi Minh City,Vietnam",
-        "State": "50%"
+      "ID": "MCP252",
+      "Address": "17 Ngô Quyền, Phường 06, Quận 6, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP005",
-        "Address": "149D Doi Can,Hanoi,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP005",
+      "Address": "50 Phú Tài, Phường Thới An, Quận 12, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP144",
-        "Address": "584 Nguyen Van Cu Gia Lam Townlet,Vinh,Vietnam",
-        "State": "50%"
+      "ID": "MCP144",
+      "Address": "2 Phó Đức Chinh, Phường Tân Tạo A, Quận Bình Tân, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP633",
-        "Address": "J5 (19/27) Hoang Hoa Tham St. Ward 3,Binh Phuoc,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP633",
+      "Address": "377/13 Trần Bình Trọng, Phường 09, Quận 8, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP078",
-        "Address": "70-72 Tran Phu Street Da Nang City,Ho Chi Minh City,Vietnam",
-        "State": "75%"
+      "ID": "MCP078",
+      "Address": "102 Nguyễn Phúc Nguyên, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP958",
-        "Address": "339 Nguyen Van Luong Ward 12 Dist.6,Ho Chi Minh City,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP958",
+      "Address": "105 Hoàng Diệu, Phường 13, Quận Tân Bình, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP035",
-        "Address": "24 B3 Mai Dich Street Group 217 Cau Giay District,Hanoi,Vietnam",
-        "State": "50%"
+      "ID": "MCP035",
+      "Address": "87 Nguyễn Huệ, Phường 05, Quận 4, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP063",
-        "Address": "92 Pho Quang Ward 2,Hanoi,Vietnam",
-        "State": "50%"
+      "ID": "MCP063",
+      "Address": "258 Nguyễn Tri Phương, Phường Bình Khánh, Quận 2, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP065",
-        "Address": "678 Truong Chinh St. Ward 15,Ho Chi Minh City,Vietnam",
-        "State": "75%"
+      "ID": "MCP065",
+      "Address": "224 Lê Văn Sỹ, Phường An Lạc A, Quận Bình Tân, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP244",
-        "Address": "Chau Khe Industrial Zone Tu Son District,Hanoi,Vietnam",
-        "State": "75%"
+      "ID": "MCP244",
+      "Address": "551 Hoàng Văn Thụ, Phường 11, Quận Tân Bình, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP387",
-        "Address": "3Lane 76 An Duong Street Tay Ho District,Hanoi,Vietnam",
-        "State": "20%"
+      "ID": "MCP387",
+      "Address": "172C Bùi Thị Xuân, Phường 12, Quận 6, Hồ Chí Minh",
+      "State": "20%"
     },
     {
-        "ID": "MCP466",
-        "Address": "20/33 Le Thanh Tong Street,Thanh Hoa,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP466",
+      "Address": "9 Trần Hưng Đạo, Xã Tân Kiên, Huyện Bình Chánh, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP333",
-        "Address": "220/42/16 Nguyen Xi St. Ward 26,Ho Chi Minh City,Vietnam",
-        "State": "75%"
+      "ID": "MCP333",
+      "Address": "27C Lý Thường Kiệt, Phường 01, Quận Phú Nhuận, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP857",
-        "Address": "586 Ba Trieu StreetThanh Hoa city,Thanh Hoa,Vietnam",
-        "State": "20%"
+      "ID": "MCP857",
+      "Address": "194 Trương Vĩnh Ký, Phường 08, Quận 6, Hồ Chí Minh",
+      "State": "20%"
     },
     {
-        "ID": "MCP255",
-        "Address": "Nguyen Tri Phuong Extended St. Lot 27A-B B2.6 Resident Area 4,Danang,Vietnam",
-        "State": "50%"
+      "ID": "MCP255",
+      "Address": "190 Lý Tự Trọng, Phường 10, Quận 3, Hồ Chí Minh",
+      "State": "50%"
     },
     {
-        "ID": "MCP956",
-        "Address": "260 Tran Khat Chan St. Thanh Luong Ward,Hanoi,Vietnam",
-        "State": "75%"
+      "ID": "MCP956",
+      "Address": "1/18 Sư Vạn Hạnh, Phường Bình Hưng Hoà B, Quận Bình Tân, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP422",
-        "Address": "410 Su Van Hanh St. Ward 9 Dist. 10,Ho Chi Minh City,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP422",
+      "Address": "43 Mạc Thị Bưởi, Xã Phú Xuân, Huyện Nhà Bè, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP043",
-        "Address": "701 Le Hong Phong Ward 10,Ho Chi Minh City,Vietnam",
-        "State": "20%"
+      "ID": "MCP043",
+      "Address": "175 Lê Đại Hành, Xã Phước Lộc, Huyện Nhà Bè, Hồ Chí Minh",
+      "State": "20%"
     },
     {
-        "ID": "MCP067",
-        "Address": "44 Street 1A Binh Tri Dong B Ward,Ho Chi Minh City,Vietnam",
-        "State": "75%"
+      "ID": "MCP067",
+      "Address": "12 Trần Phú, Phường Bình Thọ, Quận Thủ Đức, Hồ Chí Minh",
+      "State": "75%"
     },
     {
-        "ID": "MCP242",
-        "Address": "344 Tran PHuu Str.,Quang Ninh,Vietnam",
-        "State": "Full loaded"
+      "ID": "MCP242",
+      "Address": "16A Lê Duẫn, Phường Sơn Kỳ, Quận Tân Phú, Hồ Chí Minh",
+      "State": "100%"
     },
     {
-        "ID": "MCP111",
-        "Address": "165/2 Street 3/2 Ward 11 District 10,Ho Chi Minh City,Vietnam",
-        "State": "20%"
+      "ID": "MCP111",
+      "Address": "9A Nguyễn Thị Nhỏ, Xã Thái Mỹ, Huyện Củ Chi, Hồ Chí Minh",
+      "State": "20%"
     }
-]
+  ]
 
 // Worker data table : new
 function buildWorkerTable(data) {
