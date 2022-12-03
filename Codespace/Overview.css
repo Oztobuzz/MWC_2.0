@@ -3,7 +3,8 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-  }
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 .cardList{
   background-color: whitesmoke;
   padding: 0px 50px;
@@ -93,6 +94,10 @@ body{
 
 }
 
+#intro{
+  padding: 0 10px;
+}
+
 .navOverview{
   display: flex;
   justify-content:space-between;
@@ -125,7 +130,6 @@ body{
 
   gap: 0;
 
-  padding: 0;
 }
 
 .navHeader{
@@ -139,6 +143,8 @@ body{
 .navHeader ul {
   display: inline-flex;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navHeader ul li {
@@ -149,6 +155,10 @@ body{
 .navHeader ul li a {
   text-decoration: none;
   color: #fff;
+}
+
+.navHeader ul li:first-child {
+  width: 270px;
 }
 
 .navHeader ul li:hover {
