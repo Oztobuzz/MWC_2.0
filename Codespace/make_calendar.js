@@ -216,8 +216,22 @@ document.querySelectorAll(".go-btn").forEach(element => {
 
 // Subpopup
 function openPopup2() {
-    document.getElementById('popup-edit-task').classList.add('open-subpopup');
-    document.getElementById('popup-confirm-btn').classList.add('open-subpopup');
+    if(document.getElementById('popup-edit-task') !== null){
+        document.getElementById('popup-edit-task').classList.add('open-subpopup');
+        document.getElementById('popup-confirm-btn').classList.add('open-subpopup');
+    }
+    else{
+        document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
+        document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
+        document.getElementById('popup-edit-task').classList.add('open-subpopup');
+        document.querySelector("#popup-confirm-btn").classList.add("open-subpopup");
+        // new /////////////
+        document.querySelector(".route").classList.add("able");
+        ///////////////////////
+
+        ReEventButton();
+        show_task_info();
+    }
 }
 
 // add task
@@ -1044,11 +1058,10 @@ function show_task_info() {
                     }
 
                     // replace the layout: new
+                    document.querySelector(".add-btn").removeAttribute("disabled");
                     document.querySelector(".assign-task").innerHTML = `<div class="task-info">${tmp_inner}</div>`;
                     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
                     document.querySelector("#popup-confirm-btn").classList.add("open-subpopup");
-                    document.querySelector(".route").classList.remove("able");
-
                     // new ///////////////////
                     document.querySelector(".route").classList.remove("able");
 
