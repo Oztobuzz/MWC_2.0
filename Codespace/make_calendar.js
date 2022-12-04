@@ -740,15 +740,19 @@ function buildWorkerTable(data) {
     table.innerHTML = "";
     let Wtype = document.getElementById("workers");
     console.log(Wtype.value);
+    let Filter = [];
+    for (let i = 0; i < eventArr.length; i++){
+        Filter.push(eventArr[i].worker_id);
+    }
     for (let i = 0; i < data.length; i++) {
-        if(data[i].Role === Wtype.value){
+        if(data[i].Role === Wtype.value && !Filter.includes(data[i].ID)){
             let row = `<tr>
                                 <td width="90px">${data[i].ID}</td>
                                 <td width="250px">${data[i].Name}</td>
                                 <td width="140px">${data[i].Role}</td>
                                 <td width="210px">${data[i].State}</td>
-                    </tr>`
-            table.innerHTML += row
+                    </tr>`;
+            table.innerHTML += row;
         }
     }
 }
@@ -762,16 +766,23 @@ openWTable();
 
 // Vehicle data table 
 function buildVehicleTable(data){
-    var table = document.getElementById('myTable2')
-    for (var i = 0; i < data.length; i++){
-        var row = `<tr>
-                            <td width="80px">${data[i].ID}</td>
-                            <td width="100px">${data[i].Weight}</td>
-                            <td width="110px">${data[i].Capacity}</td>
-                            <td width="120px">${data[i].FuelConsumption}</td>
-                            <td width="160px">${data[i].State}</td>
-                      </tr>`
-        table.innerHTML += row
+    let table = document.getElementById('myTable2');
+    table.innerHTML = "";
+    let Filter2 = [];
+    for (let i = 0; i < eventArr.length; i++){
+        Filter2.push(eventArr[i].vehicle_id);
+    }
+    for (let i = 0; i < data.length; i++){
+        if(!Filter2.includes(data[i].ID)) {
+            let row = `<tr>
+                                <td width="80px">${data[i].ID}</td>
+                                <td width="100px">${data[i].Weight}</td>
+                                <td width="110px">${data[i].Capacity}</td>
+                                <td width="120px">${data[i].FuelConsumption}</td>
+                                <td width="160px">${data[i].State}</td>
+                        </tr>`;
+            table.innerHTML += row;
+        }
     }
 }
 
@@ -784,7 +795,8 @@ openVTable();
 
 // MCPs data table 
 function buildMCPTable(data){
-    var table = document.getElementById('myTable3')
+    var table = document.getElementById('myTable3');
+    table.innerHTML = "";
     for (var i = 0; i < data.length; i++){
         var row = `<tr>
                             <td width="80px">${data[i].ID}</td>
@@ -941,41 +953,47 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 // new input data 
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
-    let e = document.getElementById("workers");
-    let text = e.options[e.selectedIndex].text;
+        console.log(tmp_worker_id);
+        if(tmp_worker_id.length != 0){
+            let e = document.getElementById("workers");
+            let text = e.options[e.selectedIndex].text;
 
-    const event = new Event(`Task ${document.querySelectorAll(".event").length + 1}`, dayN);
-    event.input_type(text, tmp_worker_id, tmp_worker_name, tmp_vehicle_id, tmp_MCP_id, tmp_MCP_address);
-    //console.log(event)
-    eventArr.push(event);
-    const el = document.createElement(`div`);
-    el.classList.add("event","newlyadd");
-    el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
-    eventAvail.append(el);
-    
-    // new 
-    document.getElementById("worker-btn").innerText = "Thêm nhân viên";
+            const event = new Event(`Task ${document.querySelectorAll(".event").length + 1}`, dayN);
+            event.input_type(text, tmp_worker_id, tmp_worker_name, tmp_vehicle_id, tmp_MCP_id, tmp_MCP_address);
+            //console.log(event)
+            eventArr.push(event);
+            const el = document.createElement(`div`);
+            el.classList.add("event","newlyadd");
+            el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
+            eventAvail.append(el);
+            
+            // new 
+            document.getElementById("worker-btn").innerText = "Thêm nhân viên";
 
-    document.getElementById("vehicle-btn").innerHTML = "Thêm phương tiện";
+            document.getElementById("vehicle-btn").innerHTML = "Thêm phương tiện";
 
-    document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>`;
+            document.querySelector(".choose-MCP-in-2").innerHTML = `<button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>`;
 
-    document.getElementById('popup-edit-task').classList.remove('open-subpopup');
-    document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
-    document.querySelector(".add-btn").toggleAttribute("disabled");
-    // new  ////////////////////////////
-    if (!document.querySelector(".route").classList.contains("able")) {
-      document.querySelector(".route").classList.add("able");
+            document.getElementById('popup-edit-task').classList.remove('open-subpopup');
+            document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
+            document.querySelector(".add-btn").toggleAttribute("disabled");
+            // new  ////////////////////////////
+            if (!document.querySelector(".route").classList.contains("able")) {
+            document.querySelector(".route").classList.add("able");
+            }
+            //////////////////////////////////
+            tmp_MCP_id = [];
+            tmp_MCP_address = [];
+            tmp_vehicle_id = "";
+            tmp_worker_id = "";
+            tmp_worker_name = "";
+
+            show_task_info();
+            MCP_button();
+
+            console.log(eventArr);
     }
-    //////////////////////////////////
-    tmp_MCP_id = [];
-    tmp_MCP_address = [];
-    tmp_vehicle_id = "";
-    tmp_worker_id = "";
-    tmp_worker_name = "";
 
-    show_task_info();
-    MCP_button();
 })}
 
 ConfirmButton();
