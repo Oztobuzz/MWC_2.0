@@ -13,11 +13,24 @@ let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
 
+
+//create array for image  : new
+let imgArray = new String();
+let img_janitor = "./image/1.png";
+
+imgArray[0] = "./image/1MCP.png";
+imgArray[1] = "./image/2MCP.png";
+imgArray[2] = "./image/3MCP.png";
+imgArray[3] = "./image/4MCP.png";
+imgArray[4] = "./image/5MCP.png";
+imgArray[5] = "./image/6MCP.png";
+
+
 class Event{
     constructor(name, date) {
        this.name = name;
        this.date = date;
-       this.type_of_worker = "";
+       this.type = "";
        this.worker_id = "";
        this.worker_name = "";
        this.vehicle_id = "";
@@ -173,7 +186,7 @@ function addPopup() {
                 let str = element.innerHTML;
                 let tmp = str.length;
                 dayN = "";
-                for (var i = 0; i < tmp; i++) {
+                for (let i = 0; i < tmp; i++) {
                     if (str[i] >= '0' && str[i] <= 9) dayN += str[i];
                 }
                 dayN += " " + document.querySelector(".date").innerHTML;
@@ -235,6 +248,11 @@ function changeType(){document.getElementById('workers').addEventListener("chang
         unableToggle(tmpa, "disable-color", "unable-color");
         unableToggle(tmpc, "unable-color", "disable-color");
         unableToggle(tmpb, "unable-color", "disable-color");
+
+        // new
+        if (!document.querySelector(".route").classList.contains("able")) {
+          document.querySelector(".route").classList.add("able");
+        }
         
     } else {
         let tmpa = document.querySelector('.identify-MCP-btn')
@@ -259,10 +277,10 @@ function changeType(){document.getElementById('workers').addEventListener("chang
     MCP_button();
 })}
 
-changeType(); // change to function : new
+changeType(); // change to function
 
-// hard code data : new
-var WorkerList = [
+// hard code data
+let WorkerList = [
     {
       "ID": "JNT001",
       "Name": "Thế Phi Cường",
@@ -408,7 +426,7 @@ var WorkerList = [
       "State": "Chưa phân công"
     }
   ]
-var VehicleList = [
+let VehicleList = [
     {
       "ID": "VHC131",
       "Weight": 6,
@@ -578,7 +596,7 @@ var VehicleList = [
       "State": "Chưa phân công"
     }
   ]
-var MCPList = [
+let MCPList = [
     {
       "ID": "MCP131",
       "Address": "3E2 Thanh Xuân Villas, Phường 05, Quận 6, Hồ Chí Minh",
@@ -701,7 +719,7 @@ var MCPList = [
     }
   ]
 
-// Worker data table : new
+// Worker data table 
 function buildWorkerTable(data) {
     var table = document.getElementById('myTable1');
     table.innerHTML = "";
@@ -727,7 +745,7 @@ function openWTable() {document.getElementById('worker-btn').addEventListener('c
 
 openWTable();
 
-// Vehicle data table : new
+// Vehicle data table 
 function buildVehicleTable(data){
     var table = document.getElementById('myTable2')
     for (var i = 0; i < data.length; i++){
@@ -749,7 +767,7 @@ function openVTable(){document.getElementById('vehicle-btn').addEventListener('c
 
 openVTable();
 
-// MCPs data table : new
+// MCPs data table 
 function buildMCPTable(data){
     var table = document.getElementById('myTable3')
     for (var i = 0; i < data.length; i++){
@@ -757,8 +775,8 @@ function buildMCPTable(data){
                             <td width="80px">${data[i].ID}</td>
                             <td width="360px">${data[i].Address}</td>
                             <td width="130px">${data[i].State}</td>
-                      </tr>`
-        table.innerHTML += row
+                      </tr>`;
+        table.innerHTML += row;
     }
 }
 
@@ -800,7 +818,7 @@ function openMCPList(container4) {
 }
 
 
-/* choose btn for table worker : new */ 
+/* choose btn for table worker  */ 
 
 var Wtable = document.querySelector(".table-fixed");
 var selected = Wtable.getElementsByClassName('selected');
@@ -824,7 +842,7 @@ document.getElementById('W-OK-btn').addEventListener("click", () => {
 })
 
 
-/* choose btn for table vehicle : new */
+/* choose btn for table vehicle */
 
 var Vtable = document.querySelector(".table-fixed1");
 var selected1 = Vtable.getElementsByClassName('selected1');
@@ -846,7 +864,7 @@ document.getElementById('V-OK-btn').addEventListener("click", () => {
     document.querySelector(".container3").classList.remove("active");
 })
 
-/* choose btn for table MCP : new */
+/* choose btn for table MCP */
 
 var MCPtable = document.querySelector(".table-fixed2");
 var selected2 = MCPtable.getElementsByClassName('selected2');
@@ -889,6 +907,16 @@ function highlight2(e) {
         tmp_inner_MCP += `<div class="choose-MCP-btn unable-color MCP-btn address-after-asg" >${tmp_MCP_address[i]}</div>`;
     }
     document.querySelector(".choose-MCP-in-2").innerHTML = tmp_inner_MCP;
+    // new  //////////////////////////
+    document.querySelector(".make-route-btn").addEventListener("click", () => {
+      document.querySelector(".route").classList.remove("able");
+      document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(tmp_MCP_id.length - 1) % 6]}" width="100%">`
+    });
+    document.querySelector(".identify-MCP-btn").addEventListener("click", () => {
+      document.querySelector(".route").classList.remove("able");
+      document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
+    })
+    ////////////////////////////
     MCP_button();
 }
 document.getElementById('MCP-OK-btn').addEventListener("click", () => {
@@ -921,6 +949,11 @@ function ConfirmButton(){
     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
     document.querySelector(".add-btn").toggleAttribute("disabled");
+    // new  ////////////////////////////
+    if (!document.querySelector(".route").classList.contains("able")) {
+      document.querySelector(".route").classList.add("able");
+    }
+    //////////////////////////////////
     tmp_MCP_id = [];
     tmp_MCP_address = [];
     tmp_vehicle_id = "";
@@ -933,7 +966,7 @@ function ConfirmButton(){
 
 ConfirmButton();
 
-// Reset the event of buttons : new
+// Reset the event of buttons 
 function ReEventButton(){
     changeType();
     openWTable();
@@ -942,7 +975,7 @@ function ReEventButton(){
     ConfirmButton();
 }
 
-// new elements : new
+// new elements 
 const defaultAssignLayout = 
 `<div class="popup-asg-info" id="popup-edit-task">
 <div class="choose-type">
@@ -1014,11 +1047,26 @@ function show_task_info() {
                     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
                     document.querySelector("#popup-confirm-btn").classList.add("open-subpopup");
 
+                    // new ///////////////////
+                    document.querySelector(".route").classList.remove("able");
+
+                    if (eventArr[i].type === "Người dọn rác") {
+                        document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
+                    }
+                    else {
+                        document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(eventArr[i].MCP_ID.length - 1) % 6]}" width="100%">`
+                    }
+                    ///////////////////////////////////////
+
                     // set performance for Task OK button : new
                     document.querySelector(".Task-OK-btn").addEventListener("click", ()=>{
                         document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
                         document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
                         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
+                        // new /////////////
+                        document.querySelector(".route").classList.add("able");
+                        ///////////////////////
+
                         ReEventButton();
                         show_task_info();
                     })
@@ -1038,7 +1086,7 @@ function removeElementsByClass(className) {
     }
 }
 
-// new performance for close box : new
+// new performance for close box 
 function closePopup() {
     // if(document.querySelector(".Task-OK-btn") !== null) {
     //     document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
@@ -1060,5 +1108,9 @@ function closePopup() {
     document.querySelector('.add-btn').removeAttribute("disabled"); 
     document.getElementById('popup').classList.remove('open-popup');
     document.querySelector('body').classList.remove('stop-scrolling');
+    // new //////////////////
+    if (!document.querySelector(".route").classList.contains("able")) {
+      document.querySelector(".route").classList.add("able");
+    }
 }
 
