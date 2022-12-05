@@ -950,7 +950,7 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 })
 
 
-// new input data 
+// add complete task
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
         console.log(tmp_worker_id);
@@ -967,6 +967,20 @@ function ConfirmButton(){
             el.innerHTML =`<i class="fa fa-circle"></i><h3 class="event-title">${event.name}</h3></div>`;
             eventAvail.append(el);
             
+            for(let k = 0; k < WorkerList.length; k++){
+                if(WorkerList[k].ID === tmp_worker_id){
+                    WorkerList[k].State = "Đã phân công";
+                    break;
+                }
+            }
+            console.log(WorkerList);
+            for(let k = 0; k < VehicleList.length; k++){
+                if(VehicleList[k].ID === tmp_vehicle_id){
+                    VehicleList[k].State = "Đã phân công";
+                    break;
+                }
+            }
+            console.log(VehicleList);
             // new 
             document.getElementById("worker-btn").innerText = "Thêm nhân viên";
 
