@@ -258,7 +258,7 @@ body {
 }
 
 .calendar .goto-today button {
-    width: 80px;
+    width: 100px;
     height: 40px;
     padding: 5px 10px;
     border: 1px solid var(--primary-clr);
