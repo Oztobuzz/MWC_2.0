@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
     background-color:whitesmoke;
     width: 100%;
     margin: 0;
     padding: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
+  }
 .cardList{
   background-color: whitesmoke;
   padding: 0px 50px;
@@ -14,6 +14,7 @@ body{
 
 .header{
   display:flex;  
+
 }
 
 .card{
@@ -43,6 +44,7 @@ body{
   padding: 0px 30px;
   font-weight: 900;
   color: black;
+  font-family: 'Montserrat';
 }
 .header #roleWorker{
   width: 300px;
@@ -77,7 +79,8 @@ body{
   width: 500px;
 }
 .card:hover{
-  scale: 102%;
+  /* scale: 102%; */
+  background-color:rgb(220, 220, 220);
 }
 
 .searchBox{
@@ -94,10 +97,6 @@ body{
 
 }
 
-#intro{
-  padding: 0 10px;
-}
-
 .navOverview{
   display: flex;
   justify-content:space-between;
@@ -111,12 +110,14 @@ body{
   text-align: center;
   padding: 10px 0px;
   border-radius: 10px;
+  transition: all 0.1s ease-in-out;
 }
 .navOverview li a{
   color: black;
   font-weight:900;
   font-size: large;
   text-decoration: none;
+  font-family: 'Montserrat';
 }
 
 .navOverview li:hover{
@@ -130,6 +131,7 @@ body{
 
   gap: 0;
 
+  padding: 0;
 }
 
 .navHeader{
@@ -143,8 +145,6 @@ body{
 .navHeader ul {
   display: inline-flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .navHeader ul li {
@@ -155,10 +155,6 @@ body{
 .navHeader ul li a {
   text-decoration: none;
   color: #fff;
-}
-
-.navHeader ul li:first-child {
-  width: 270px;
 }
 
 .navHeader ul li:hover {
