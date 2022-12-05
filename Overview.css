@@ -15,7 +15,6 @@ body{
 
 .header{
   display:flex;  
-
 }
 
 .card{
@@ -80,8 +79,7 @@ body{
   width: 500px;
 }
 .card:hover{
-  /* scale: 102%; */
-  background-color:rgb(220, 220, 220);
+  color: rgb(210,201,210)
 }
 
 .searchBox{
@@ -96,6 +94,10 @@ body{
   color:black;
   text-align: center;
 
+}
+
+#intro{
+  padding: 0 10px;
 }
 
 .navOverview{
@@ -132,7 +134,6 @@ body{
 
   gap: 0;
 
-  padding: 0;
 }
 
 .navHeader{
@@ -146,6 +147,8 @@ body{
 .navHeader ul {
   display: inline-flex;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navHeader ul li {
@@ -156,6 +159,10 @@ body{
 .navHeader ul li a {
   text-decoration: none;
   color: #fff;
+}
+
+.navHeader ul li:first-child {
+  width: 270px;
 }
 
 .navHeader ul li:hover {
