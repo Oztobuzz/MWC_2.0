@@ -758,6 +758,7 @@ function buildWorkerTable(data) {
 }
 
 function openWTable() {document.getElementById('worker-btn').addEventListener('click', () => {
+    document.querySelector(".route").classList.add("able");
     buildWorkerTable(WorkerList);                        
     openWorkerList(container2);
 })}
@@ -787,6 +788,7 @@ function buildVehicleTable(data){
 }
 
 function openVTable() {document.getElementById('vehicle-btn').addEventListener('click', () => {
+    document.querySelector(".route").classList.add("able");
     buildVehicleTable(VehicleList);
     openVehicleList(container3);
 })}
@@ -809,6 +811,7 @@ function buildMCPTable(data){
 
 function MCP_button() {document.querySelectorAll('.MCP-btn').forEach(element => {
     element.addEventListener('click', () => {
+        document.querySelector(".route").classList.add("able");
         buildMCPTable(MCPList);
         openMCPList(container4);
     })
@@ -844,6 +847,11 @@ function openMCPList(container4) {
     container3.classList.remove('active')
 }
 
+function closeTableList(){
+    container2.classList.remove('active');
+    container3.classList.remove('active');
+    container4.classList.remove('active');
+}
 
 /* choose btn for table worker */ 
 
@@ -852,6 +860,7 @@ const selected = Wtable.getElementsByClassName('selected');
 Wtable.onclick = highlight;
 
 let tmp_worker_id = new String, tmp_worker_name = new String;
+let tmp_worker_type = "";
 
 function highlight(e) {
     if (selected[0]) selected[0].className = '';
@@ -862,6 +871,7 @@ function highlight(e) {
         tmp_worker_name = element[0].children[1].innerHTML;
     }
     document.getElementById("worker-btn").innerText = tmp_worker_id + " - " + tmp_worker_name;
+    tmp_worker_type = document.getElementById("workers").value;
 }
 
 document.getElementById('W-OK-btn').addEventListener("click", () => {
@@ -933,16 +943,18 @@ function highlight2(e) {
         tmp_inner_MCP += `<div class="choose-MCP-btn unable-color MCP-btn address-after-asg" >${tmp_MCP_address[i]}</div>`;
     }
     document.querySelector(".choose-MCP-in-2").innerHTML = tmp_inner_MCP;
-    // new  //////////////////////////
+
     document.querySelector(".make-route-btn").addEventListener("click", () => {
-      document.querySelector(".route").classList.remove("able");
-      document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(tmp_MCP_id.length - 1) % 6]}" width="100%">`
+        closeTableList();
+        document.querySelector(".route").classList.remove("able");
+        document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(tmp_MCP_id.length - 1) % 6]}" width="100%">`
     });
     document.querySelector(".identify-MCP-btn").addEventListener("click", () => {
-      document.querySelector(".route").classList.remove("able");
-      document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
+        closeTableList();
+        document.querySelector(".route").classList.remove("able");
+        document.querySelector(".route").innerHTML = `<img class="img1" src="${img_janitor}" width="100%">`
     })
-    ////////////////////////////
+
     MCP_button();
 }
 document.getElementById('MCP-OK-btn').addEventListener("click", () => {
@@ -954,7 +966,8 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
         console.log(tmp_worker_id);
-        if(tmp_worker_id.length != 0 && tmp_vehicle_id.length != 0 && tmp_MCP_id.length != 0){
+        if((tmp_worker_type == "Người thu rác" && tmp_worker_id.length != 0 && tmp_vehicle_id.length != 0 && tmp_MCP_id.length != 0) || 
+            (tmp_worker_type == "Người dọn rác" && tmp_worker_id.length != 0 && tmp_MCP_id.length != 0)){
             let e = document.getElementById("workers");
             let text = e.options[e.selectedIndex].text;
 
@@ -993,7 +1006,7 @@ function ConfirmButton(){
             document.querySelector(".add-btn").toggleAttribute("disabled");
             // new  ////////////////////////////
             if (!document.querySelector(".route").classList.contains("able")) {
-            document.querySelector(".route").classList.add("able");
+                document.querySelector(".route").classList.add("able");
             }
             //////////////////////////////////
             tmp_MCP_id = [];
@@ -1001,6 +1014,7 @@ function ConfirmButton(){
             tmp_vehicle_id = "";
             tmp_worker_id = "";
             tmp_worker_name = "";
+            tmp_worker_type = "";
 
             show_task_info();
             MCP_button();
@@ -1063,8 +1077,6 @@ const defaultConfirmButton = document.querySelector(".confirm-btn");
 /* show choosen task info */
 function show_task_info() {
     let tmp_name = "";
-    // console.log("enter show task function");
-    // console.log(document.querySelectorAll(".event"));
     document.querySelectorAll(".event").forEach(tt => {
         // console.log(tt);
         tt.addEventListener("click", () => {
@@ -1089,7 +1101,7 @@ function show_task_info() {
                         tmp_inner += `<div class="MCP-task-address">${eventArr[i].MCP_address[j]}</div>`;
                     }
 
-                    // replace the layout: new
+                    // replace the layout
                     document.querySelector(".add-btn").removeAttribute("disabled");
                     document.querySelector(".assign-task").innerHTML = `<div class="task-info">${tmp_inner}</div>`;
                     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="Task-OK-btn"><div>OK</div></button>`;
@@ -1104,8 +1116,8 @@ function show_task_info() {
                         document.querySelector(".route").innerHTML = `<img class="img1" src="${imgArray[(eventArr[i].MCP_ID.length - 1) % 6]}" width="100%">`
                     }
                     ///////////////////////////////////////
-
-                    // set performance for Task OK button : new
+                    closeTableList();
+                    // set performance for Task OK button
                     document.querySelector(".Task-OK-btn").addEventListener("click", ()=>{
                         document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
                         document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
@@ -1136,17 +1148,6 @@ function removeElementsByClass(className) {
 
 // new performance for close box 
 function closePopup() {
-    // if(document.querySelector(".Task-OK-btn") !== null) {
-    //     document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
-    //     document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
-    //     document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
-    //     ReEventButton();
-    //     show_task_info();
-    // }
-    // else{
-    //     document.getElementById('popup-edit-task').classList.remove('open-subpopup');
-    //     document.getElementById('popup-confirm-btn').classList.remove('open-subpopup');
-    // }
     document.querySelector(".assign-task").innerHTML = defaultAssignLayout;
         document.querySelector("#popup-confirm-btn").innerHTML = `<button class="confirm-btn">Xác nhận</button>`;
         document.querySelector("#popup-confirm-btn").classList.remove("open-subpopup");
@@ -1160,4 +1161,6 @@ function closePopup() {
     if (!document.querySelector(".route").classList.contains("able")) {
       document.querySelector(".route").classList.add("able");
     } 
+    closeTableList();
+
   }
