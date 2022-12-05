@@ -954,7 +954,7 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
         console.log(tmp_worker_id);
-        if(tmp_worker_id.length != 0){
+        if(tmp_worker_id.length != 0 && tmp_vehicle_id.length != 0 && tmp_MCP_id.length != 0){
             let e = document.getElementById("workers");
             let text = e.options[e.selectedIndex].text;
 
