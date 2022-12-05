@@ -79,7 +79,7 @@ body{
   width: 500px;
 }
 .card:hover{
-  color: rgb(210,201,210)
+  background-color:rgb(220, 220, 220);
 }
 
 .searchBox{
