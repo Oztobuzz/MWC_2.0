@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.1/css/font-awesome.min.css">     -->
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+
+    <div class="nav-bar">
+        <ul>
+            <li><a href="main.html"><i class="fa fa-tachometer"></i>BẢNG ĐIỀU KHIỂN</a></li>
+            <li><a href="Overview_W.html"><i class="fa fa-database"></i>QUẢN LÝ</a></li>
+            <li><a href="Contact.html"><i class="fa fa-phone"></i>LIÊN HỆ</a></li>
+            <li><a href="index.html"><i class="fa fa-sign-out"></i>THOÁT</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <div class="header">
+                <img src="./image/Back officer.png" alt="avatar" class="ava">
+                <h4>Điều phối viên</h4>
+            </div>
+            <div class="friend-list">
+                <div tabindex="1" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Mẫn Cao Kỳ</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="2" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Tiếp Hữu Vượng</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="3" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Ngạc Việt Phương</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="4" class="friend chatting">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Điêu Duy Quang</h5>
+                    <h6 id="printhere">Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="5" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Thi Trọng Khánh</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="6" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Đỗ Thiện Minh</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="7" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Liễu Thiên Mạnh</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="8" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Phùng Thiện Ngôn</h5>
+                    <h6>Nhiệm vụ đã được phân công/h6>
+                </div>
+                <div tabindex="9" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Kông Ngọc Khôi</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="10" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Cát Ðình Trung</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+                <div tabindex="11" class="friend">
+                    <img src="./image/Back officer.png" alt="avatar" class="ava">
+                    <h5>Tôn Thất Thành Long</h5>
+                    <h6>Nhiệm vụ đã được phân công</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+
+            <div class="msg-header">
+                <img src="./image/white - Back officer.png" alt="avatar" class="ava">
+                
+                <div class="active">
+                    <h5>Điêu Duy Quang</h5>
+                    <h6>Đang hoạt động</h6>
+                </div>
+                <h6>ID: CLT828</h6>
+                <div class="header-icons">
+                    <i class="fa fa-phone"></i>
+                    <i class="fa fa-video-camera"></i>
+                    <i class="fa fa-info-circle"></i>
+                </div>
+            
+            </div>
+            
+            <div class="chatting-frame">
+                <div class="friend-msg">
+                    <div>
+                        <div class="content-msg">Xin chào</div>
+                    </div>
+                </div>
+                <div class="my-msg">
+                    <div>
+                        <div class="content-msg">Nhiệm vụ đã được phân công</div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-chat">
+                <input type="text" placeholder="Aa" id="msg">
+                <button class="btn" id="send">Gửi</i></button>
+                <script>
+
+                    const obj = {
+                        msg: document.querySelector("#msg"),
+                        send: document.querySelector("#send"),
+                        Cdisplay: document.querySelector(".chatting-frame"),
+                    };
+
+                    function displayMyMSG(){
+                        obj.Cdisplay.insertAdjacentHTML("beforeend", `
+                            <div class="my-msg">
+                                <div>
+                                    <div class="content-msg"><p>${obj.msg.value}</p></div>
+                                </div>
+                            </div>
+                        `)
+                    }
+                    
+                    obj.msg.addEventListener("keypress", function(event) {
+                        if(obj.msg.value.length > 0 && event.key === "Enter") {
+                            obj.msg.value = document.getElementById("msg").value;
+                            document.getElementById("printhere").innerHTML = obj.msg.value;
+                            displayMyMSG();
+                            obj.msg.value = "";
+                        }                        
+                    })
+
+                    obj.send.addEventListener("click", () => {
+                        if(obj.msg.value.length > 0) {
+                            obj.msg.value = document.getElementById("msg").value;
+                            document.getElementById("printhere").innerHTML = obj.msg.value;
+                            displayMyMSG();
+                            obj.msg.value = "";
+                        }
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

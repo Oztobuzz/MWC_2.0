@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    background-color:whitesmoke;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.cardList{
+  background-color: whitesmoke;
+  padding: 0px 50px;
+  border-radius: 10px;
+  /* width: 100%; */
+}
+
+.header{
+  display:flex;  
+}
+
+.card{
+  display: flex;
+  /* border: 0.5px grey solid; */
+  margin: 5px 0px;
+  border-radius: 5px;
+  padding: 5px 5px;
+  font-size: medium;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  height: fit-content;
+}
+.header
+{
+  display: flex;
+  /* border: 1px black solid; */
+  padding: 5px 5px;
+  font-size: medium;
+  justify-content: space-between;
+  
+}
+.header h2{
+  width: 300px;
+  text-align: left;
+  padding: 0px 30px;
+  font-weight: 900;
+  color: black;
+  font-family: 'Montserrat';
+}
+.header #roleWorker{
+  width: 300px;
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  padding: 0px 30px;
+  font-weight: 900;
+  color: black;
+}
+.header #roleWorker h2{
+  width: fit-content;
+  text-align: left;
+  color: black;
+  padding: 0;
+}
+.header select{
+  width: 20px;
+  height: 20px;
+  margin: 25px 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+.card p{
+  width: 300px;
+  text-align: left;
+  padding: 5px 30px;
+  font-size: medium;
+  margin: 0;
+}
+#address{
+  width: 500px;
+}
+.card:hover{
+  background-color:rgb(220, 220, 220);
+}
+
+.searchBox{
+  width: 80%;
+  margin: 10px 10%;
+  border-radius: 5px;
+  font-size: medium;
+  padding: 10px 10px;
+}
+
+.container #intro{
+  color:black;
+  text-align: center;
+
+}
+
+#intro{
+  padding: 0 10px;
+}
+
+.navOverview{
+  display: flex;
+  justify-content:space-between;
+  margin: 0px 20%;
+}
+
+.navOverview li{
+  list-style: none;
+  background-color:gray;
+  width: 200px;
+  text-align: center;
+  padding: 10px 0px;
+  border-radius: 10px;
+  transition: all 0.1s ease-in-out;
+}
+.navOverview li a{
+  color: black;
+  font-weight:900;
+  font-size: large;
+  text-decoration: none;
+  font-family: 'Montserrat';
+}
+
+.navOverview li:hover{
+  scale: 110%;
+  background-color: brown;
+}
+
+.navHeader{
+  width: 100%;
+  height: 10%;
+
+  gap: 0;
+
+}
+
+.navHeader{
+  color: #fff;
+  background: linear-gradient(to right, #0b6b41, #cfe796);
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.navHeader ul {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navHeader ul li {
+  width: 180px;
+  padding: 12px;
+}
+
+.navHeader ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navHeader ul li:first-child {
+  width: 270px;
+}
+
+.navHeader ul li:hover {
+  background: linear-gradient(to left, #0b6b41, #cfe796);
+  border-radius: 2px;
+}
+
+.navHeader .fa {
+  margin-right: 8px;
+} 
+
+.navOverview .overviewChosen {
+  scale: 110%;
+  background-color: brown;
+}
+.navOverview .overviewChosen a {
+  color:azure
+}

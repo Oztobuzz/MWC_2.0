@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="stylesheet" href="Overview.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="root">
+        <div class="navHeader">
+            <ul>
+                <li><a href="main.html"><i class="fa fa-tachometer"></i>BẢNG ĐIỀU KHIỂN</a></li>
+                <li><a href="Overview_W.html"><i class="fa fa-database"></i>QUẢN LÝ</a></li> 
+                <li><a href="Contact.html"><i class="fa fa-phone"></i>LIÊN HỆ</a></li>
+                <li><a href="index.html"><i class="fa fa-sign-out"></i>THOÁT</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <h2 id="intro">Chào mừng mọi người đến với bảng thông tin, ở đây mọi người có thể xem và tìm kiếm thông tin
+                của tất cả nhân viên, phương tiện và MCP trong hệ thống.  
+            </h2>
+            <div class="navOverview">
+                <li><a href="Overview_W.html">CÔNG NHÂN</a></li>
+                <li class="overviewChosen"><a href="#">PHƯƠNG TIỆN</a></li>
+                <li><a href="Overview_MCP.html">MCP</a></li>
+            </div>
+            <div class="App">
+                <input type="search" class = "searchBox" placeholder="Tìm phương tiện theo số hiệu">
+                <div class="cardList">
+                    <div class="header">
+                        <h2>Số hiệu</h2>
+                        <h2>Tải trọng (Tấn)</h2>
+                        <h2>Sức chứa (Tấn)</h2>
+                        <h2>Mức tiêu nhiên liệu (Lít)</h2>
+                        <h2>Trạng thái</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Overview_V.js"></script>
+</body>
+</html>

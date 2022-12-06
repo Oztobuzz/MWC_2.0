@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" type="text/css" href="Login.css">
+</head>
+<body> 
+    <section>
+    <div class="span">
+        <h2>Chào mừng đến với UWC 2.0</h2>
+    </div>
+    <div class="second-place">
+        <div class="login">
+            <h1>ĐĂNG NHẬP THÀNH VIÊN</h1>
+            <br>
+            <p>Tên người dùng</p>
+            <br>
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <br>
+            <p>Mật khẩu</p>
+            <br>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <br>
+            <button onclick="auth()">Đăng nhập</button>
+        </div>
+    </div>
+    </section>
+    <script>
+        function auth() {
+            /*var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;*/
+            if (document.getElementById("username").value != "" && document.getElementById("password").value != "") {
+                window.location.assign("main.html");
+            }
+            else {
+                alert("Invalid Information");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

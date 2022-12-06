@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch biểu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/6.2.0/css/font-awesome.min.css"> -->
+
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li><a href="main.html"><i class="fa fa-tachometer"></i>BẢNG ĐIỀU KHIỂN</a></li>
+        <li><a href="Overview_W.html"><i class="fa fa-database"></i>QUẢN LÝ</a></li>
+        <li><a href="Contact.html"><i class="fa fa-phone"></i>LIÊN HỆ</a></li>
+        <li><a href="index.html"><i class="fa fa-sign-out"></i>THOÁT</a></li>
+    </ul>
+</div>
+
+<div class="container1">
+    <div class="left">
+        <div class="calendar">
+            <div class="month">
+                <i class="fa fa-angle-left prev change-month"></i>
+                <div class="date"></div>
+                <i class="fa fa-angle-right next change-month"></i>
+            </div>
+            <div class="weekdays">
+                <div>Chủ nhật</div>
+                <div>Thứ hai</div>
+                <div>Thứ ba</div>
+                <div>Thứ tư</div>
+                <div>Thứ năm</div>
+                <div>Thứ sáu</div>
+                <div>Thứ bảy</div>
+            </div>
+            <div class="days">
+                <!-- js -->
+            </div>
+            <div class="goto-today">
+                <div class="goto">
+                    <input type="text" placeholder="mm/yyyy" class="date-input">
+                    <button class="goto-btn go-btn">Đi</button>
+                </div>
+                <button class="today-btn go-btn">Hôm nay</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="popup-assign" id="popup">
+    <div class="assign-box">
+        <div class="frame f1">
+            <div class="today-date">
+                <div class="event-date"></div>
+        </div>
+        <div class="events">
+            
+        </div>
+        <div class="add-task-area">
+            <button class="add-btn">
+                <p>Thêm nhiệm vụ</p>
+                <i class="fa fa-plus close"></i>
+            </button>
+        </div>
+    </div>
+    <div class="frame f2">
+        <div class="empty-div"></div>
+        <div class="assign-task">
+            <div class="popup-asg-info" id="popup-edit-task">
+                <div class="choose-type">
+                    <label for="workers">Chọn chức vụ:</label>
+                    <select name="workers" id="workers">
+                        <option value="Người thu rác">Người thu rác</option>
+                        <option value="Người dọn rác">Người dọn rác</option>
+                    </select>
+                </div>
+
+                <div class="worker-ID">
+                    <p>Chọn nhân viên:</p>
+                    <button class="add-worker-btn unable-color active" id="worker-btn">Thêm nhân viên</button>
+                </div>
+
+                <div class="vehicle-ID">
+                    <p>Chọn phương tiện:</p>
+                    <button class="add-vehicle-btn unable-color active" id="vehicle-btn">Thêm phương tiện</button>
+                </div>
+
+                <div class="choose-MCP">
+                    <div class="choose-MCP-in">
+                        <div class="choose-MCP-in-1">
+                            <p>Chọn MCPs:</p>
+                        </div>
+                        <div class="choose-MCP-in-2">
+                            <button class="choose-MCP-btn unable-color active MCP-btn">Thêm MCPs</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="MCP-final">
+                    <button class="make-route-btn unable-color">Tạo đường đi</button>
+                    <button class="identify-MCP-btn disable-color" id="identify-MCP-btn">Xác định MCP</button>
+                </div>
+            </div>
+        </div>
+        <div class="confirm-task-area">
+            <div class="popup-asg-info" id="popup-confirm-btn">
+                <button class="confirm-btn">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+    <div class="frame f3">
+        <div class="close-box">
+            <i class="fa fa-times" onclick=closePopup()></i>
+        </div>
+        <div class="info-up">
+            <!--New-->
+            <div class="container2" id="container2">
+                <div class="content">
+                    <table class="table-fixed">
+                        <thead><tr>
+                            <th width="90px">ID</th>
+                            <th width="210px">Họ và tên</th>
+                            <th width="120px">Chức vụ</th>
+                            <th width="200px">Trạng thái</th>
+                        </tr></thead>
+                        <tbody id="myTable1"></tbody>
+                    </table>
+                </div>
+                <button type="button" id="W-OK-btn">OK</button>
+            </div>
+            <div class="container3" id="container3">
+                <div class="content1">
+                    <table class="table-fixed1">
+                        <thead><tr>
+                            <th width="79px">ID</th>
+                            <th width="110px">Khối lượng (Tấn)</th>
+                            <th width="110px">Sức chứa (Tấn)</th>
+                            <th width="120px">Tiêu thụ (Lít)</th>
+                            <th width="180px">Trạng thái</th>
+                        </tr></thead>
+                        <tbody id="myTable2"></tbody>
+                    </table>
+                </div>
+                <button type="button" id="V-OK-btn">OK</button>
+            </div>
+            <div class="container4" id="container4">
+                <div class="content2">
+                    <table class="table-fixed2">
+                        <thead><tr>
+                            <th width="80px">ID</th>
+                            <th width="360px">Địa chỉ</th>
+                            <th width="130px">Trạng thái</th>
+                        </tr></thead>
+                        <tbody id="myTable3"></tbody>
+                    </table>
+                </div>
+                <button type="button" id="MCP-OK-btn">OK</button>
+            </div>
+            <!-- new -->
+            <div class="route able">
+
+            </div>
+            <!--     -->
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="make_calendar.js"></script>
+
+</body>
+</html>
