@@ -739,7 +739,6 @@ function buildWorkerTable(data) {
     let table = document.getElementById('myTable1');
     table.innerHTML = "";
     let Wtype = document.getElementById("workers");
-    console.log(Wtype.value);
     let Filter = [];
     for (let i = 0; i < eventArr.length; i++){
         Filter.push(eventArr[i].worker_id);
@@ -918,7 +917,6 @@ function highlight2(e) {
     if (element[0] !== undefined) { //it must be selected
         let e = document.getElementById("workers");
         let text = e.options[e.selectedIndex].text;
-        console.log(text);
         if (text === "Người dọn rác" && 
             tmp_MCP_id.length === 1) {
                 tmp_MCP_id[0] = element[0].children[0].firstChild.data;
@@ -932,7 +930,6 @@ function highlight2(e) {
 
             }
             else {
-                console.log(2);
                 tmp_MCP_id.push(element[0].children[0].firstChild.data);
                 tmp_MCP_address.push(element[0].children[1].innerText);
             }
@@ -965,7 +962,6 @@ document.getElementById('MCP-OK-btn').addEventListener("click", () => {
 // add complete task
 function ConfirmButton(){
     document.querySelector(".confirm-btn").addEventListener("click", () => {
-        console.log(tmp_worker_id);
         if((tmp_worker_type == "Người thu rác" && tmp_worker_id.length != 0 && tmp_vehicle_id.length != 0 && tmp_MCP_id.length != 0) || 
             (tmp_worker_type == "Người dọn rác" && tmp_worker_id.length != 0 && tmp_MCP_id.length != 0)){
             let e = document.getElementById("workers");
@@ -973,7 +969,6 @@ function ConfirmButton(){
 
             const event = new Event(`Task ${document.querySelectorAll(".event").length + 1}`, dayN);
             event.input_type(text, tmp_worker_id, tmp_worker_name, tmp_vehicle_id, tmp_MCP_id, tmp_MCP_address);
-            //console.log(event)
             eventArr.push(event);
             const el = document.createElement(`div`);
             el.classList.add("event","newlyadd");
@@ -986,14 +981,12 @@ function ConfirmButton(){
                     break;
                 }
             }
-            console.log(WorkerList);
             for(let k = 0; k < VehicleList.length; k++){
                 if(VehicleList[k].ID === tmp_vehicle_id){
                     VehicleList[k].State = "Đã phân công";
                     break;
                 }
             }
-            console.log(VehicleList);
             // new 
             document.getElementById("worker-btn").innerText = "Thêm nhân viên";
 
@@ -1015,11 +1008,11 @@ function ConfirmButton(){
             tmp_worker_id = "";
             tmp_worker_name = "";
             tmp_worker_type = "";
+            
+            closeTableList();
 
             show_task_info();
             MCP_button();
-
-            console.log(eventArr);
     }
 
 })}
@@ -1078,7 +1071,6 @@ const defaultConfirmButton = document.querySelector(".confirm-btn");
 function show_task_info() {
     let tmp_name = "";
     document.querySelectorAll(".event").forEach(tt => {
-        // console.log(tt);
         tt.addEventListener("click", () => {
             tmp_name = tt.innerText;
             let tmp_inner = "";
@@ -1096,7 +1088,6 @@ function show_task_info() {
                     }
                     tmp_inner +=   `<br>
                                     <p>Danh sách MCP: </p>`;
-                    // console.log(eventArr[i].MCP_address);
                     for (let j = 0; j < eventArr[i].MCP_address.length; j++){
                         tmp_inner += `<div class="MCP-task-address">${eventArr[i].MCP_address[j]}</div>`;
                     }
