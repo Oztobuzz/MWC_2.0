@@ -1,5 +1,6 @@
 body {
     background: linear-gradient(to right, #0b6b41, #cfe796);
+    background: #d6cda4;
 }
 * {
     margin: 0;
@@ -58,9 +59,12 @@ section{
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    background: linear-gradient(to right, #0a643d, #ace28a);;
+    /* background: linear-gradient(to right, #0a643d, #ace28a);; */
+    background: #1c6758;
+
     color: white;
     font-size: 18px;
+    font-weight: 700;
     margin-top: 15px;
 }
 .login p {

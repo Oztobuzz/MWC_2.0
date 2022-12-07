@@ -7,7 +7,8 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-    background-color: #6FB98F;
+    /* background-color:rgba(217, 216, 216, 0.786); */
+    background: #eef2e6;
     margin: 0;
 }
 
@@ -22,7 +23,9 @@ body {
 
 .container {
     color: #fff;
-    background: linear-gradient(to right, #0b6b41, #cfe796);
+    /* background: linear-gradient(to right, #0b6b41, #cfe796); */
+    background: #1c6758;
+
     text-align: center;
     font-weight: 700;
     font-size: 22px;
@@ -31,6 +34,7 @@ body {
 .container ul {
     display: inline-flex;
     list-style: none;
+    padding: 15px;
 }
 
 .container ul li {
@@ -38,7 +42,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 180px;
-    padding: 12px;
+    padding: 10px;
 }
 
 .container ul li:first-child {
@@ -51,8 +55,9 @@ body {
 }
 
 .container ul li:hover {
-    background: linear-gradient(to left, #0b6b41, #cfe796);
-    border-radius: 2px;
+    /* background: linear-gradient(to left, #0b6b41, #cfe796); */
+    background: #36a770;
+    border-radius: 10px;
 }
 
 .container .fa {
