@@ -7,7 +7,7 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-    background: #eef2e6;
+    background-color: #6FB98F;
     margin: 0;
 }
 
@@ -22,11 +22,10 @@ body {
 
 .nav-bar {
     color: #fff;
-    background: #1c6758;
+    background: linear-gradient(to right, #0b6b41, #cfe796);
     text-align: center;
     font-weight: 700;
     font-size: 22px;
-    padding: 15px;
 }
 
 .nav-bar ul {
@@ -51,8 +50,8 @@ body {
 }
 
 .nav-bar ul li:hover {
-    background: #36a770;
-    border-radius: 10px;
+    background: linear-gradient(to left, #0b6b41, #cfe796);
+    border-radius: 2px;
 }
 
 .nav-bar .fa {
