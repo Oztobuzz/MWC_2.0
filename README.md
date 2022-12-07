@@ -18,3 +18,8 @@ There will be multiple steps from analyze requirement to modelling and finally a
 This is the public online repository for our team's MVC_2.0 project. 
 
 This repository will cointain all related documents, materials and folders for Requirement, System modelling and Architectural design.
+
+## Related Links
+- Link Website: https://oztobuzz.github.io/MWC_2.0/
+- Link Drive: https://drive.google.com/drive/folders/1NZWH1vlXyQI6RStxewSMMCplO36tOHxh?usp=sharing
+- Link Slide: https://docs.google.com/presentation/d/1poHh1aNybpiiDjlONpPFq_SFNg7MDuAoqqkfFDFW248/edit?usp=sharing
